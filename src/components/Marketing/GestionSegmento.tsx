@@ -108,7 +108,11 @@ export function GestionSegmento({ campaign, onClose }: { campaign: Campaign; onC
         console.log('Campaña completa recibida:', campaign);
 
         const response = await axios.get(
+<<<<<<< HEAD
           `https://fitoffice2-ff8035a9df10.herokuapp.com/api/segments/campaign/${campaign._id}`,
+=======
+          `https://fitoffice-a7ed6ea26ba4.herokuapp.com/api/segments/campaign/${campaign._id}`,
+>>>>>>> 264be574fa9db2ca7c87c3d8b1e8ddad2d870b25
           {
             headers: {
               Authorization: `Bearer ${token}`
@@ -116,7 +120,11 @@ export function GestionSegmento({ campaign, onClose }: { campaign: Campaign; onC
           }
         );
 
+<<<<<<< HEAD
         console.log('URL de la petición:', `https://fitoffice2-ff8035a9df10.herokuapp.com/api/segments/campaign/${campaign._id}`);
+=======
+        console.log('URL de la petición:', `https://fitoffice-a7ed6ea26ba4.herokuapp.com/api/segments/campaign/${campaign._id}`);
+>>>>>>> 264be574fa9db2ca7c87c3d8b1e8ddad2d870b25
         console.log('Respuesta completa de la API:', response);
         console.log('Segmentos obtenidos:', response.data);
         
@@ -155,7 +163,11 @@ export function GestionSegmento({ campaign, onClose }: { campaign: Campaign; onC
       const etapasPipeline = getEtapasFromPipeline();
       
       const response = await axios.post(
+<<<<<<< HEAD
         'https://fitoffice2-ff8035a9df10.herokuapp.com/api/segments',
+=======
+        'https://fitoffice-a7ed6ea26ba4.herokuapp.com/api/segments',
+>>>>>>> 264be574fa9db2ca7c87c3d8b1e8ddad2d870b25
         {
           ...newSegment,
           campaignId: campaign._id,
@@ -184,7 +196,11 @@ export function GestionSegmento({ campaign, onClose }: { campaign: Campaign; onC
       setLoading(true);
       const token = localStorage.getItem('token');
       await axios.delete(
+<<<<<<< HEAD
         `https://fitoffice2-ff8035a9df10.herokuapp.com/api/segments/${segmentoId}`,
+=======
+        `https://fitoffice-a7ed6ea26ba4.herokuapp.com/api/segments/${segmentoId}`,
+>>>>>>> 264be574fa9db2ca7c87c3d8b1e8ddad2d870b25
         {
           headers: {
             Authorization: `Bearer ${token}`

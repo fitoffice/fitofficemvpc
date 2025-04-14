@@ -85,7 +85,11 @@ const VistaRutinasPredefinidas: React.FC<VistaRutinasPredefinidasProps> = ({
         throw new Error('No se encontró el token de autenticación');
       }
 
+<<<<<<< HEAD
       const response = await axios.get('https://fitoffice2-ff8035a9df10.herokuapp.com/api/routines/routines', {
+=======
+      const response = await axios.get('https://fitoffice-a7ed6ea26ba4.herokuapp.com/api/routines/routines', {
+>>>>>>> 264be574fa9db2ca7c87c3d8b1e8ddad2d870b25
         headers: {
           'Authorization': `Bearer ${token}`
         }
@@ -142,7 +146,11 @@ const VistaRutinasPredefinidas: React.FC<VistaRutinasPredefinidasProps> = ({
 
         // Realizar la petición POST al endpoint para copiar la rutina usando el planningId recibido como prop
         const response = await axios.post(
+<<<<<<< HEAD
           `https://fitoffice2-ff8035a9df10.herokuapp.com/api/plannings/${planningId}/weeks/${selectedWeek}/days/${selectedDay}/copy-routine`,
+=======
+          `https://fitoffice-a7ed6ea26ba4.herokuapp.com/api/plannings/${planningId}/weeks/${selectedWeek}/days/${selectedDay}/copy-routine`,
+>>>>>>> 264be574fa9db2ca7c87c3d8b1e8ddad2d870b25
           {
             routineId: selectedRoutine._id
           },

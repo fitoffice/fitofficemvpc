@@ -45,7 +45,11 @@ export const VistaClientes: React.FC<VistaClientesProps> = ({
   const fetchAvailableClients = async () => {
     try {
       setLoading(true);
+<<<<<<< HEAD
       const response = await axios.get('https://fitoffice2-ff8035a9df10.herokuapp.com/api/clientes');
+=======
+      const response = await axios.get('https://fitoffice-a7ed6ea26ba4.herokuapp.com/api/clientes');
+>>>>>>> 264be574fa9db2ca7c87c3d8b1e8ddad2d870b25
       setAvailableClients(response.data);
     } catch (error) {
       console.error('Error fetching clients:', error);
@@ -56,7 +60,11 @@ export const VistaClientes: React.FC<VistaClientesProps> = ({
 
   const handleAssignClient = async (clientId: string) => {
     try {
+<<<<<<< HEAD
       await axios.post(`https://fitoffice2-ff8035a9df10.herokuapp.com/api/planningtemplate/templates/${templateId}/assign`, {
+=======
+      await axios.post(`https://fitoffice-a7ed6ea26ba4.herokuapp.com/api/planningtemplate/templates/${templateId}/assign`, {
+>>>>>>> 264be574fa9db2ca7c87c3d8b1e8ddad2d870b25
         clientId
       });
       onClientAssigned();

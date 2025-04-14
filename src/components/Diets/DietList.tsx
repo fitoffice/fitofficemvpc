@@ -43,6 +43,15 @@ const DietList: React.FC = () => {
     rangoKcal: { min: '', max: '' }
   });
 
+<<<<<<< HEAD
+=======
+  const handleFilterChange = (key: string, value: string | { min: string, max: string }) => {
+    setFilters(prev => ({
+      ...prev,
+      [key]: value
+    }));
+  };
+>>>>>>> 264be574fa9db2ca7c87c3d8b1e8ddad2d870b25
 
   const applyFilters = (data: any[]) => {
     return data.filter(item => {
@@ -132,6 +141,7 @@ const DietList: React.FC = () => {
     console.log('Download diet:', dietId);
   };
 
+<<<<<<< HEAD
   const handleDeleteDiet = async (dietId: string) => {
     try {
       const token = localStorage.getItem('token');
@@ -162,6 +172,11 @@ const DietList: React.FC = () => {
       console.error('Error deleting diet:', err);
       setError(err.message);
     }
+=======
+  const handleDeleteDiet = (dietId: string) => {
+    // TODO: Implement delete diet functionality
+    console.log('Delete diet:', dietId);
+>>>>>>> 264be574fa9db2ca7c87c3d8b1e8ddad2d870b25
   };
 
   const renderCell = (key: string, value: any, item: any) => {
@@ -423,7 +438,11 @@ const DietList: React.FC = () => {
         throw new Error('No se encontró el token de autenticación');
       }
 
+<<<<<<< HEAD
       const response = await fetch('https://fitoffice2-ff8035a9df10.herokuapp.com/api/dietas', {
+=======
+      const response = await fetch('https://fitoffice-a7ed6ea26ba4.herokuapp.com/api/dietas', {
+>>>>>>> 264be574fa9db2ca7c87c3d8b1e8ddad2d870b25
         method: 'GET',
         headers: {
           'Content-Type': 'application/json',
@@ -548,7 +567,11 @@ const DietList: React.FC = () => {
         throw new Error('No se encontró el token de autenticación');
       }
 
+<<<<<<< HEAD
       const response = await fetch('https://fitoffice2-ff8035a9df10.herokuapp.com/api/comidas', { 
+=======
+      const response = await fetch('https://fitoffice-a7ed6ea26ba4.herokuapp.com/api/comidas', { 
+>>>>>>> 264be574fa9db2ca7c87c3d8b1e8ddad2d870b25
         method: 'GET',
         headers: {
           'Accept': 'application/json',

@@ -59,7 +59,11 @@ const GastoWidget = forwardRef<{ fetchGastos: () => Promise<void> }, GastoWidget
         throw new Error('Token no encontrado');
       }
 
+<<<<<<< HEAD
       const response = await axios.get('https://fitoffice2-ff8035a9df10.herokuapp.com/api/gastos', {
+=======
+      const response = await axios.get('https://fitoffice-a7ed6ea26ba4.herokuapp.com/api/gastos', {
+>>>>>>> 264be574fa9db2ca7c87c3d8b1e8ddad2d870b25
         headers: {
           'Content-Type': 'application/json',
           Authorization: `Bearer ${token}`,
@@ -259,7 +263,11 @@ const GastoWidget = forwardRef<{ fetchGastos: () => Promise<void> }, GastoWidget
         throw new Error('Token no encontrado');
       }
 
+<<<<<<< HEAD
       await axios.delete(`https://fitoffice2-ff8035a9df10.herokuapp.com/api/gastos/${id}`, {
+=======
+      await axios.delete(`https://fitoffice-a7ed6ea26ba4.herokuapp.com/api/gastos/${id}`, {
+>>>>>>> 264be574fa9db2ca7c87c3d8b1e8ddad2d870b25
         headers: {
           'Authorization': `Bearer ${token}`,
           'Content-Type': 'application/json'
@@ -288,7 +296,11 @@ const GastoWidget = forwardRef<{ fetchGastos: () => Promise<void> }, GastoWidget
         throw new Error('Token no encontrado');
       }
 
+<<<<<<< HEAD
       await axios.patch(`https://fitoffice2-ff8035a9df10.herokuapp.com/api/gastos/${editedGasto._id}`, editedGasto, {
+=======
+      await axios.patch(`https://fitoffice-a7ed6ea26ba4.herokuapp.com/api/gastos/${editedGasto._id}`, editedGasto, {
+>>>>>>> 264be574fa9db2ca7c87c3d8b1e8ddad2d870b25
         headers: {
           'Authorization': `Bearer ${token}`,
           'Content-Type': 'application/json'

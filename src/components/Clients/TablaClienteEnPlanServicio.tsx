@@ -50,7 +50,11 @@ const TablaClienteEnPlanServicio: React.FC<TablaClienteEnPlanServicioProps> = ({
 
         console.log('TablaClienteEnPlanServicio - Obteniendo clientes del plan...');
         // Primero obtenemos la lista de clientes del plan
+<<<<<<< HEAD
         const responsePlan = await fetch(`https://fitoffice2-ff8035a9df10.herokuapp.com/api/planes-servicio/${planId}/clientes`, {
+=======
+        const responsePlan = await fetch(`https://fitoffice-a7ed6ea26ba4.herokuapp.com/api/planes-servicio/${planId}/clientes`, {
+>>>>>>> 264be574fa9db2ca7c87c3d8b1e8ddad2d870b25
           headers: {
             'Authorization': `Bearer ${token}`
           }
@@ -70,7 +74,11 @@ const TablaClienteEnPlanServicio: React.FC<TablaClienteEnPlanServicioProps> = ({
         // Luego obtenemos los detalles de cada cliente
         const detallesPromises = clientesDelPlan.map(async (cliente: any) => {
           console.log('TablaClienteEnPlanServicio - Solicitando detalles para cliente:', cliente._id);
+<<<<<<< HEAD
           const responseCliente = await fetch(`https://fitoffice2-ff8035a9df10.herokuapp.com/api/clientes/${cliente._id}`, {
+=======
+          const responseCliente = await fetch(`https://fitoffice-a7ed6ea26ba4.herokuapp.com/api/clientes/${cliente._id}`, {
+>>>>>>> 264be574fa9db2ca7c87c3d8b1e8ddad2d870b25
             headers: {
               'Authorization': `Bearer ${token}`
             }

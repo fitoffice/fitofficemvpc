@@ -52,7 +52,11 @@ const AsociarGastoPopup: React.FC<AsociarGastoPopupProps> = ({
     try {
       const token = localStorage.getItem('token');
       console.log('Solicitando servicios...');
+<<<<<<< HEAD
       const response = await fetch('https://fitoffice2-ff8035a9df10.herokuapp.com/api/servicios/services', {
+=======
+      const response = await fetch('https://fitoffice-a7ed6ea26ba4.herokuapp.com/api/servicios/services', {
+>>>>>>> 264be574fa9db2ca7c87c3d8b1e8ddad2d870b25
         headers: {
           'Authorization': `Bearer ${token}`,
           'Content-Type': 'application/json',
@@ -77,7 +81,11 @@ const AsociarGastoPopup: React.FC<AsociarGastoPopupProps> = ({
     try {
       const token = localStorage.getItem('token');
       console.log('Solicitando planes de pago...');
+<<<<<<< HEAD
       const response = await fetch('https://fitoffice2-ff8035a9df10.herokuapp.com/api/servicios/paymentplans', {
+=======
+      const response = await fetch('https://fitoffice-a7ed6ea26ba4.herokuapp.com/api/servicios/paymentplans', {
+>>>>>>> 264be574fa9db2ca7c87c3d8b1e8ddad2d870b25
         headers: {
           'Authorization': `Bearer ${token}`,
           'Content-Type': 'application/json',
@@ -111,7 +119,11 @@ const AsociarGastoPopup: React.FC<AsociarGastoPopupProps> = ({
       };
       console.log('Datos a enviar:', JSON.stringify(requestBody, null, 2));
 
+<<<<<<< HEAD
       const response = await fetch(`https://fitoffice2-ff8035a9df10.herokuapp.com/api/gastos/${gastoId}/asociar`, {
+=======
+      const response = await fetch(`https://fitoffice-a7ed6ea26ba4.herokuapp.com/api/gastos/${gastoId}/asociar`, {
+>>>>>>> 264be574fa9db2ca7c87c3d8b1e8ddad2d870b25
         method: 'PATCH',
         headers: {
           'Authorization': `Bearer ${token}`,

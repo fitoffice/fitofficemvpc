@@ -133,7 +133,11 @@ const VistaExcel: React.FC<VistaExcelProps> = ({
       }
 
       console.log('🔑 Token found, making API request...');
+<<<<<<< HEAD
       const response = await fetch(`https://fitoffice2-ff8035a9df10.herokuapp.com/api/plannings/${planningId}/exercises`, {
+=======
+      const response = await fetch(`https://fitoffice-a7ed6ea26ba4.herokuapp.com/api/plannings/${planningId}/exercises`, {
+>>>>>>> 264be574fa9db2ca7c87c3d8b1e8ddad2d870b25
         method: 'GET',
         headers: {
           'Authorization': `Bearer ${token}`,
@@ -880,7 +884,11 @@ const VistaExcel: React.FC<VistaExcelProps> = ({
       console.log('Final updated exercises:', updatedExercises);
 
       // Hacer la llamada a la API
+<<<<<<< HEAD
       fetch(`https://fitoffice2-ff8035a9df10.herokuapp.com/api/plannings/${planningId}/week/${semanaActual}/day/${selectedDay}/csv`, {
+=======
+      fetch(`https://fitoffice-a7ed6ea26ba4.herokuapp.com/api/plannings/${planningId}/week/${semanaActual}/day/${selectedDay}/csv`, {
+>>>>>>> 264be574fa9db2ca7c87c3d8b1e8ddad2d870b25
         method: 'PUT',
         headers: {
           'Authorization': `Bearer ${token}`,

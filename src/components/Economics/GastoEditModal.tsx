@@ -27,7 +27,11 @@ const GastoEditModal: React.FC = () => {
         throw new Error('Token no encontrado');
       }
 
+<<<<<<< HEAD
       await axios.patch(`https://fitoffice2-ff8035a9df10.herokuapp.com/api/gastos/${selectedGasto._id}`, selectedGasto, {
+=======
+      await axios.patch(`https://fitoffice-a7ed6ea26ba4.herokuapp.com/api/gastos/${selectedGasto._id}`, selectedGasto, {
+>>>>>>> 264be574fa9db2ca7c87c3d8b1e8ddad2d870b25
         headers: {
           'Authorization': `Bearer ${token}`,
           'Content-Type': 'application/json'

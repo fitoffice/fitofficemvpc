@@ -65,14 +65,22 @@ export const PlanningDataProvider: React.FC<PlanningDataProviderProps> = ({ chil
 
       // Realizar ambas peticiones en paralelo
       const [planningsResponse, templatesResponse] = await Promise.all([
+<<<<<<< HEAD
         fetch('https://fitoffice2-ff8035a9df10.herokuapp.com/api/plannings/schemas', {
+=======
+        fetch('https://fitoffice-a7ed6ea26ba4.herokuapp.com/api/plannings/schemas', {
+>>>>>>> 264be574fa9db2ca7c87c3d8b1e8ddad2d870b25
           method: 'GET',
           headers: {
             'Content-Type': 'application/json',
             Authorization: `Bearer ${token}`,
           },
         }),
+<<<<<<< HEAD
         fetch('https://fitoffice2-ff8035a9df10.herokuapp.com/api/planningtemplate/templates', {
+=======
+        fetch('https://fitoffice-a7ed6ea26ba4.herokuapp.com/api/planningtemplate/templates', {
+>>>>>>> 264be574fa9db2ca7c87c3d8b1e8ddad2d870b25
           method: 'GET',
           headers: {
             'Content-Type': 'application/json',
@@ -148,7 +156,11 @@ export const PlanningDataProvider: React.FC<PlanningDataProviderProps> = ({ chil
         throw new Error('No se encontró el token de autenticación');
       }
 
+<<<<<<< HEAD
       const response = await fetch(`https://fitoffice2-ff8035a9df10.herokuapp.com/api/plannings/${id}`, {
+=======
+      const response = await fetch(`https://fitoffice-a7ed6ea26ba4.herokuapp.com/api/plannings/${id}`, {
+>>>>>>> 264be574fa9db2ca7c87c3d8b1e8ddad2d870b25
         method: 'DELETE',
         headers: {
           'Content-Type': 'application/json',

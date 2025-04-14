@@ -88,6 +88,7 @@ const CSVRoutinePopup: React.FC<CSVRoutinePopupProps> = ({ isOpen, onClose, onIm
       }
     }
   };
+<<<<<<< HEAD
   const downloadExampleCSV = (format: CSVFormat) => {
     import('../../utils/csvExamples')
       .then(module => {
@@ -122,6 +123,8 @@ const CSVRoutinePopup: React.FC<CSVRoutinePopupProps> = ({ isOpen, onClose, onIm
         setError('Error al generar el archivo CSV de ejemplo');
       });
   };
+=======
+>>>>>>> 264be574fa9db2ca7c87c3d8b1e8ddad2d870b25
 
   const parseCSVFile = (file: File) => {
     readCSVFile(file)
@@ -241,10 +244,17 @@ const CSVRoutinePopup: React.FC<CSVRoutinePopupProps> = ({ isOpen, onClose, onIm
     }
     
     // Validate mapping before import
+<<<<<<< HEAD
     const errors = validateMapping(fieldMapping);
     
     if (errors.length > 0) {
       setError(errors.join('. '));
+=======
+    validateMapping(fieldMapping);
+    
+    if (mappingErrors.length > 0) {
+      setError(mappingErrors.join('. '));
+>>>>>>> 264be574fa9db2ca7c87c3d8b1e8ddad2d870b25
       return;
     }
   
@@ -253,6 +263,7 @@ const CSVRoutinePopup: React.FC<CSVRoutinePopupProps> = ({ isOpen, onClose, onIm
     
     try {
       // Parse the CSV with the selected format
+<<<<<<< HEAD
       const parsedData = await parseCSVWithFormat(file, csvFormat, fieldMapping);
       
       // Add routine metadata to the parsed data
@@ -275,6 +286,23 @@ const CSVRoutinePopup: React.FC<CSVRoutinePopupProps> = ({ isOpen, onClose, onIm
         method: 'POST',
         headers: {
           Authorization: `Bearer ${token}`,
+=======
+      const parsedData: FormattedRoutineData = await parseCSVWithFormat(file, csvFormat, fieldMapping);
+      
+      // Add routine metadata to the parsed data
+      const routineData = {
+        ...parsedData,
+        name: routineName,
+        tags: routineTags.split(',').map(tag => tag.trim()).filter(tag => tag),
+        description: routineDescription,
+        notes: routineNotes
+      };
+      
+      // Send the routine data to the API
+      const response = await fetch('https://fitoffice-a7ed6ea26ba4.herokuapp.com/api/routines/routines', {
+        method: 'POST',
+        headers: {
+>>>>>>> 264be574fa9db2ca7c87c3d8b1e8ddad2d870b25
           'Content-Type': 'application/json',
         },
         body: JSON.stringify(routineData),
@@ -285,6 +313,10 @@ const CSVRoutinePopup: React.FC<CSVRoutinePopupProps> = ({ isOpen, onClose, onIm
         throw new Error(errorData.message || `Error al enviar la rutina: ${response.status}`);
       }
       
+<<<<<<< HEAD
+=======
+      // Here you can do something with the routineData before calling onImport
+>>>>>>> 264be574fa9db2ca7c87c3d8b1e8ddad2d870b25
       console.log('Routine data sent to API:', routineData);
       
       await onImport(file);
@@ -305,7 +337,12 @@ const CSVRoutinePopup: React.FC<CSVRoutinePopupProps> = ({ isOpen, onClose, onIm
     } finally {
       setIsLoading(false);
     }
+<<<<<<< HEAD
   };  const handleBackToUpload = () => {
+=======
+  };
+  const handleBackToUpload = () => {
+>>>>>>> 264be574fa9db2ca7c87c3d8b1e8ddad2d870b25
     setShowPreview(false);
   };
 
@@ -583,6 +620,7 @@ const CSVRoutinePopup: React.FC<CSVRoutinePopupProps> = ({ isOpen, onClose, onIm
                                       ? 'border-gray-700 hover:bg-gray-700/30' 
                                       : 'border-gray-200 hover:bg-gray-100/50'
                                   }`}>
+<<<<<<< HEAD
                                     <input 
                                       type="radio" 
                                       name="csvFormat" 
@@ -615,6 +653,25 @@ const CSVRoutinePopup: React.FC<CSVRoutinePopupProps> = ({ isOpen, onClose, onIm
                                           Descargar ejemplo
                                         </button>
                                       </div>
+=======
+                                       <input 
+  type="radio" 
+  name="csvFormat" 
+  value="sameVariable" 
+  checked={csvFormat === 'sameVariable'}
+  onChange={handleCsvFormatChange}
+  className={`mt-0.5 mr-3 ${
+    theme === 'dark' ? 'accent-blue-500' : 'accent-blue-600'
+  }`}
+/>
+
+                                    <div>
+                                      <span className={`text-sm font-medium block ${
+                                        theme === 'dark' ? 'text-white' : 'text-gray-800'
+                                      }`}>
+                                        Cada set estará dividido por comas
+                                      </span>
+>>>>>>> 264be574fa9db2ca7c87c3d8b1e8ddad2d870b25
                                       <span className={`text-xs ${
                                         theme === 'dark' ? 'text-gray-400' : 'text-gray-500'
                                       }`}>
@@ -632,12 +689,16 @@ const CSVRoutinePopup: React.FC<CSVRoutinePopupProps> = ({ isOpen, onClose, onIm
                                       type="radio" 
                                       name="csvFormat" 
                                       value="sameVariable" 
+<<<<<<< HEAD
                                       checked={csvFormat === 'sameVariable'}
                                       onChange={handleCsvFormatChange}
+=======
+>>>>>>> 264be574fa9db2ca7c87c3d8b1e8ddad2d870b25
                                       className={`mt-0.5 mr-3 ${
                                         theme === 'dark' ? 'accent-blue-500' : 'accent-blue-600'
                                       }`}
                                     />
+<<<<<<< HEAD
                                     <div className="flex-1">
                                       <div className="flex justify-between items-start">
                                         <span className={`text-sm font-medium block ${
@@ -660,6 +721,14 @@ const CSVRoutinePopup: React.FC<CSVRoutinePopupProps> = ({ isOpen, onClose, onIm
                                           Descargar ejemplo
                                         </button>
                                       </div>
+=======
+                                    <div>
+                                      <span className={`text-sm font-medium block ${
+                                        theme === 'dark' ? 'text-white' : 'text-gray-800'
+                                      }`}>
+                                        Misma variable para todos los sets
+                                      </span>
+>>>>>>> 264be574fa9db2ca7c87c3d8b1e8ddad2d870b25
                                       <span className={`text-xs ${
                                         theme === 'dark' ? 'text-gray-400' : 'text-gray-500'
                                       }`}>
@@ -673,6 +742,7 @@ const CSVRoutinePopup: React.FC<CSVRoutinePopupProps> = ({ isOpen, onClose, onIm
                                       ? 'border-gray-700 hover:bg-gray-700/30' 
                                       : 'border-gray-200 hover:bg-gray-100/50'
                                   }`}>
+<<<<<<< HEAD
                                     <input 
                                       type="radio" 
                                       name="csvFormat" 
@@ -705,6 +775,24 @@ const CSVRoutinePopup: React.FC<CSVRoutinePopupProps> = ({ isOpen, onClose, onIm
                                           Descargar ejemplo
                                         </button>
                                       </div>
+=======
+<input 
+  type="radio" 
+  name="csvFormat" 
+  value="exercisePerSet" 
+  checked={csvFormat === 'exercisePerSet'}
+  onChange={handleCsvFormatChange}
+  className={`mt-0.5 mr-3 ${
+    theme === 'dark' ? 'accent-blue-500' : 'accent-blue-600'
+  }`}
+/>
+                                    <div>
+                                      <span className={`text-sm font-medium block ${
+                                        theme === 'dark' ? 'text-white' : 'text-gray-800'
+                                      }`}>
+                                        Cada vez que se nombra el ejercicio es un set
+                                      </span>
+>>>>>>> 264be574fa9db2ca7c87c3d8b1e8ddad2d870b25
                                       <span className={`text-xs ${
                                         theme === 'dark' ? 'text-gray-400' : 'text-gray-500'
                                       }`}>

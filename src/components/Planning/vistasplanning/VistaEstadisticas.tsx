@@ -100,7 +100,11 @@ const VistaEstadisticas: React.FC<VistaEstadisticasProps> = ({
           throw new Error('No se encontró el token de autenticación');
         }
         
+<<<<<<< HEAD
         const apiUrl = `https://fitoffice2-ff8035a9df10.herokuapp.com/api/plannings/${planningId}/esqueleto`;
+=======
+        const apiUrl = `https://fitoffice-a7ed6ea26ba4.herokuapp.com/api/plannings/${planningId}/esqueleto`;
+>>>>>>> 264be574fa9db2ca7c87c3d8b1e8ddad2d870b25
         console.log('URL de la petición GET esqueleto:', apiUrl);
         
         const response = await fetch(apiUrl, {
@@ -384,7 +388,11 @@ const VistaEstadisticas: React.FC<VistaEstadisticasProps> = ({
       }
       
       // Prepare the API URL with the correct endpoint
+<<<<<<< HEAD
       const apiUrl = `https://fitoffice2-ff8035a9df10.herokuapp.com/api/plannings/${planningId}/periodos/${periodId}/aplicar-completo`;
+=======
+      const apiUrl = `https://fitoffice-a7ed6ea26ba4.herokuapp.com/api/plannings/${planningId}/periodos/${periodId}/aplicar-completo`;
+>>>>>>> 264be574fa9db2ca7c87c3d8b1e8ddad2d870b25
       console.log('URL de la petición:', apiUrl);
       
       // Make the API call
@@ -535,11 +543,19 @@ const handleDaySelect = async (dayNumber: number) => {
           finDia: endWeekInfo.day
         };
         console.log('Payload preparado para enviar a la API:', payload);
+<<<<<<< HEAD
         console.log('URL de la petición:', `https://fitoffice2-ff8035a9df10.herokuapp.com/api/plannings/${planningId}/periodos`);
 
         // Make the API call
         console.log('Iniciando petición a la API...');
         const response = await fetch(`https://fitoffice2-ff8035a9df10.herokuapp.com/api/plannings/${planningId}/periodos`, {
+=======
+        console.log('URL de la petición:', `https://fitoffice-a7ed6ea26ba4.herokuapp.com/api/plannings/${planningId}/periodos`);
+
+        // Make the API call
+        console.log('Iniciando petición a la API...');
+        const response = await fetch(`https://fitoffice-a7ed6ea26ba4.herokuapp.com/api/plannings/${planningId}/periodos`, {
+>>>>>>> 264be574fa9db2ca7c87c3d8b1e8ddad2d870b25
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
@@ -610,7 +626,11 @@ const handleDaySelect = async (dayNumber: number) => {
       console.log('Token obtenido:', token ? 'Token encontrado' : 'Token no encontrado');
   
       // Prepare the API URL
+<<<<<<< HEAD
       const apiUrl = `https://fitoffice2-ff8035a9df10.herokuapp.com/api/plannings/${planningId}/periodos/${periodToDelete.id}`;
+=======
+      const apiUrl = `https://fitoffice-a7ed6ea26ba4.herokuapp.com/api/plannings/${planningId}/periodos/${periodToDelete.id}`;
+>>>>>>> 264be574fa9db2ca7c87c3d8b1e8ddad2d870b25
       console.log('URL de la petición DELETE:', apiUrl);
   
       // Make the API call

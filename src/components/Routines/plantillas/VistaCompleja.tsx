@@ -192,7 +192,11 @@ export const VistaCompleja: React.FC<VistaComplejaProps> = ({
         if (newExercisesData[exerciseId]) continue;
         
         try {
+<<<<<<< HEAD
           const response = await fetch(`https://fitoffice2-ff8035a9df10.herokuapp.com/api/exercises/${exerciseId}`);
+=======
+          const response = await fetch(`https://fitoffice-a7ed6ea26ba4.herokuapp.com/api/exercises/${exerciseId}`);
+>>>>>>> 264be574fa9db2ca7c87c3d8b1e8ddad2d870b25
           if (response.ok) {
             const result = await response.json();
             if (result.data) {
@@ -339,10 +343,17 @@ export const VistaCompleja: React.FC<VistaComplejaProps> = ({
       let url;
       if (selectedPeriod?._id) {
         // If we have a period ID, use the rangos endpoint
+<<<<<<< HEAD
         url = `https://fitoffice2-ff8035a9df10.herokuapp.com/api/planningtemplate/templates/${plantilla._id}/rangos/${selectedPeriod._id}/days/${diaSeleccionado}/sessions`;
       } else {
         // Otherwise, use the regular endpoint with week and day
         url = `https://fitoffice2-ff8035a9df10.herokuapp.com/api/planningtemplate/templates/${plantilla._id}/weeks/${currentWeek}/days/${currentDayInWeek}/sessions`;
+=======
+        url = `https://fitoffice-a7ed6ea26ba4.herokuapp.com/api/planningtemplate/templates/${plantilla._id}/rangos/${selectedPeriod._id}/days/${diaSeleccionado}/sessions`;
+      } else {
+        // Otherwise, use the regular endpoint with week and day
+        url = `https://fitoffice-a7ed6ea26ba4.herokuapp.com/api/planningtemplate/templates/${plantilla._id}/weeks/${currentWeek}/days/${currentDayInWeek}/sessions`;
+>>>>>>> 264be574fa9db2ca7c87c3d8b1e8ddad2d870b25
       }
       
       console.log('VistaCompleja - URL para crear sesión:', url);

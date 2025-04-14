@@ -49,7 +49,11 @@ const EdicionDeIngresos: React.FC<EdicionDeIngresosProps> = ({ ingreso, onClose,
         console.log('Token obtenido:', token ? 'Token existe' : 'Token no encontrado');
         
         console.log('Realizando petición a API de planes de pago');
+<<<<<<< HEAD
         const response = await fetch('https://fitoffice2-ff8035a9df10.herokuapp.com/api/payment-plans', {
+=======
+        const response = await fetch('https://fitoffice-a7ed6ea26ba4.herokuapp.com/api/payment-plans', {
+>>>>>>> 264be574fa9db2ca7c87c3d8b1e8ddad2d870b25
           headers: { 'Authorization': `Bearer ${token}` }
         });
         
@@ -119,7 +123,11 @@ const EdicionDeIngresos: React.FC<EdicionDeIngresosProps> = ({ ingreso, onClose,
   
     try {
       const token = localStorage.getItem('token');
+<<<<<<< HEAD
       const response = await fetch(`https://fitoffice2-ff8035a9df10.herokuapp.com/api/ingresos/${ingreso._id}`, {
+=======
+      const response = await fetch(`https://fitoffice-a7ed6ea26ba4.herokuapp.com/api/ingresos/${ingreso._id}`, {
+>>>>>>> 264be574fa9db2ca7c87c3d8b1e8ddad2d870b25
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',

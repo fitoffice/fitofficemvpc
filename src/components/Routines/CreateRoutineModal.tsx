@@ -88,7 +88,11 @@ const CreateRoutineModal: React.FC<CreateRoutineModalProps> = ({
 
   const fetchExercises = async () => {
     try {
+<<<<<<< HEAD
       const response = await axios.get('https://fitoffice2-ff8035a9df10.herokuapp.com/api/exercises');
+=======
+      const response = await axios.get('https://fitoffice-a7ed6ea26ba4.herokuapp.com/api/exercises');
+>>>>>>> 264be574fa9db2ca7c87c3d8b1e8ddad2d870b25
       setApiExercises(response.data.data);
     } catch (error) {
       console.error('Error fetching exercises:', error);
@@ -222,8 +226,13 @@ const CreateRoutineModal: React.FC<CreateRoutineModalProps> = ({
     console.log('Datos de la rutina:', routineData);
     
     try {
+<<<<<<< HEAD
       console.log('Enviando petición POST a https://fitoffice2-ff8035a9df10.herokuapp.com/api/routines...');
       const response = await axios.post('https://fitoffice2-ff8035a9df10.herokuapp.com/api/routines', routineData);
+=======
+      console.log('Enviando petición POST a https://fitoffice-a7ed6ea26ba4.herokuapp.com/api/routines...');
+      const response = await axios.post('https://fitoffice-a7ed6ea26ba4.herokuapp.com/api/routines', routineData);
+>>>>>>> 264be574fa9db2ca7c87c3d8b1e8ddad2d870b25
       console.log('Rutina guardada exitosamente:', response.data);
       
       // Remove the addRoutine line

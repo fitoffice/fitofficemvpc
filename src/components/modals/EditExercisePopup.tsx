@@ -107,11 +107,19 @@ const EditExercisePopup: React.FC<EditExercisePopupProps> = ({
       console.log('Fetching RM data for exercise:', {
         exerciseId,
         planningId,
+<<<<<<< HEAD
         url: `https://fitoffice2-ff8035a9df10.herokuapp.com/api/plannings/${planningId}/exercises/${exerciseId}/rm`
       });
 
       const token = localStorage.getItem('token');
       const response = await fetch(`https://fitoffice2-ff8035a9df10.herokuapp.com/api/plannings/${planningId}/exercises/${exerciseId}/rm`, {
+=======
+        url: `https://fitoffice-a7ed6ea26ba4.herokuapp.com/api/plannings/${planningId}/exercises/${exerciseId}/rm`
+      });
+
+      const token = localStorage.getItem('token');
+      const response = await fetch(`https://fitoffice-a7ed6ea26ba4.herokuapp.com/api/plannings/${planningId}/exercises/${exerciseId}/rm`, {
+>>>>>>> 264be574fa9db2ca7c87c3d8b1e8ddad2d870b25
         method: 'GET',
         headers: {
           'Authorization': `Bearer ${token}`,
@@ -247,7 +255,11 @@ const EditExercisePopup: React.FC<EditExercisePopupProps> = ({
         };
   
         console.log('DATOS ENVIADOS AL SERVIDOR:', {
+<<<<<<< HEAD
           url: `https://fitoffice2-ff8035a9df10.herokuapp.com/api/plannings/${effectivePlanningId}/periodos/${periodoId}/porcentajes`,
+=======
+          url: `https://fitoffice-a7ed6ea26ba4.herokuapp.com/api/plannings/${effectivePlanningId}/periodos/${periodoId}/porcentajes`,
+>>>>>>> 264be574fa9db2ca7c87c3d8b1e8ddad2d870b25
           method: 'PUT',
           headers: {
             'Content-Type': 'application/json',
@@ -267,7 +279,11 @@ const EditExercisePopup: React.FC<EditExercisePopupProps> = ({
         console.log('Using Planning ID:', effectivePlanningId);
         console.log('Periodo ID:', periodoId);
         
+<<<<<<< HEAD
         const url = `https://fitoffice2-ff8035a9df10.herokuapp.com/api/plannings/${effectivePlanningId}/periodos/${periodoId}/porcentajes`;
+=======
+        const url = `https://fitoffice-a7ed6ea26ba4.herokuapp.com/api/plannings/${effectivePlanningId}/periodos/${periodoId}/porcentajes`;
+>>>>>>> 264be574fa9db2ca7c87c3d8b1e8ddad2d870b25
         console.log('Making PUT request to URL:', url);
   
         const response = await fetch(url, {
@@ -392,7 +408,11 @@ const EditExercisePopup: React.FC<EditExercisePopupProps> = ({
         console.log('Prepared request data:', requestData);
         console.log('Using IDs for request:', { planningId: safePlanningId, periodoId: safePeriodoId });
         
+<<<<<<< HEAD
         const url = `https://fitoffice2-ff8035a9df10.herokuapp.com/api/plannings/${safePlanningId}/periodos/${safePeriodoId}/porcentajes`;
+=======
+        const url = `https://fitoffice-a7ed6ea26ba4.herokuapp.com/api/plannings/${safePlanningId}/periodos/${safePeriodoId}/porcentajes`;
+>>>>>>> 264be574fa9db2ca7c87c3d8b1e8ddad2d870b25
         console.log('Making PUT request to URL:', url);
         const response = await fetch(url, {
           method: 'PUT',

@@ -56,7 +56,11 @@ const DocumentosWidget: React.FC<DocumentosWidgetProps> = ({
         };
 
         // Fetch contracts
+<<<<<<< HEAD
         const contractsResponse = await fetch('https://fitoffice2-ff8035a9df10.herokuapp.com/api/contracts', { headers });
+=======
+        const contractsResponse = await fetch('https://fitoffice-a7ed6ea26ba4.herokuapp.com/api/contracts', { headers });
+>>>>>>> 264be574fa9db2ca7c87c3d8b1e8ddad2d870b25
         const contractsData = await contractsResponse.json();
         const contractsDocs = contractsData.data.contracts.map((contract: any) => ({
           _id: contract._id,
@@ -71,7 +75,11 @@ const DocumentosWidget: React.FC<DocumentosWidgetProps> = ({
         }));
 
         // Fetch otros documentos
+<<<<<<< HEAD
         const otrosDocsResponse = await fetch('https://fitoffice2-ff8035a9df10.herokuapp.com/api/otros-documentos', { headers });
+=======
+        const otrosDocsResponse = await fetch('https://fitoffice-a7ed6ea26ba4.herokuapp.com/api/otros-documentos', { headers });
+>>>>>>> 264be574fa9db2ca7c87c3d8b1e8ddad2d870b25
         const otrosDocsData = await otrosDocsResponse.json();
         const otrosDocs = otrosDocsData.data.documentos.map((doc: any) => ({
           _id: doc._id,
@@ -85,7 +93,11 @@ const DocumentosWidget: React.FC<DocumentosWidgetProps> = ({
         }));
 
         // Fetch licenses
+<<<<<<< HEAD
         const licensesResponse = await fetch('https://fitoffice2-ff8035a9df10.herokuapp.com/api/licenses', { headers });
+=======
+        const licensesResponse = await fetch('https://fitoffice-a7ed6ea26ba4.herokuapp.com/api/licenses', { headers });
+>>>>>>> 264be574fa9db2ca7c87c3d8b1e8ddad2d870b25
         const licensesData = await licensesResponse.json();
         const licensesDocs = licensesData.data.licenses.map((license: any) => ({
           _id: license._id,

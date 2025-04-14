@@ -156,7 +156,11 @@ const PanelFinanzas: React.FC<PanelFinanzasProps> = ({ cliente, servicioId, plan
     // Fetch payment plan data if ID is provided
     if (planPagoId) {
       setLoading(prev => ({ ...prev, plan: true }));
+<<<<<<< HEAD
       fetch(`https://fitoffice2-ff8035a9df10.herokuapp.com/api/payment-plans/${planPagoId}`, {
+=======
+      fetch(`https://fitoffice-a7ed6ea26ba4.herokuapp.com/api/payment-plans/${planPagoId}`, {
+>>>>>>> 264be574fa9db2ca7c87c3d8b1e8ddad2d870b25
         headers: headers
       })
         .then(response => {
@@ -180,7 +184,11 @@ const PanelFinanzas: React.FC<PanelFinanzasProps> = ({ cliente, servicioId, plan
     // Fetch service data if ID is provided
     if (servicioId) {
       setLoading(prev => ({ ...prev, servicio: true }));
+<<<<<<< HEAD
       fetch(`https://fitoffice2-ff8035a9df10.herokuapp.com/api/servicios/services/${servicioId}`, {
+=======
+      fetch(`https://fitoffice-a7ed6ea26ba4.herokuapp.com/api/servicios/services/${servicioId}`, {
+>>>>>>> 264be574fa9db2ca7c87c3d8b1e8ddad2d870b25
         headers: headers
       })
         .then(response => {
@@ -202,7 +210,11 @@ const PanelFinanzas: React.FC<PanelFinanzasProps> = ({ cliente, servicioId, plan
     }
     if (cliente && cliente._id) {
       setLoading(prev => ({ ...prev, pagos: true }));
+<<<<<<< HEAD
       fetch(`https://fitoffice2-ff8035a9df10.herokuapp.com/api/ingresos/clientes/${cliente._id}/ingresos`, {
+=======
+      fetch(`https://fitoffice-a7ed6ea26ba4.herokuapp.com/api/ingresos/clientes/${cliente._id}/ingresos`, {
+>>>>>>> 264be574fa9db2ca7c87c3d8b1e8ddad2d870b25
         headers: headers
       })
         .then(response => {

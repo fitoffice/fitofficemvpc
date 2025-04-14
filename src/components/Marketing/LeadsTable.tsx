@@ -59,7 +59,11 @@ export function LeadsTable() {
         throw new Error('No se encontró el token de autenticación');
       }
 
+<<<<<<< HEAD
       const response = await axios.get('https://fitoffice2-ff8035a9df10.herokuapp.com/api/leads', {
+=======
+      const response = await axios.get('https://fitoffice-a7ed6ea26ba4.herokuapp.com/api/leads', {
+>>>>>>> 264be574fa9db2ca7c87c3d8b1e8ddad2d870b25
         headers: {
           'Authorization': `Bearer ${token}`
         }
@@ -98,7 +102,11 @@ export function LeadsTable() {
       console.log('Datos enviados en la petición POST:', leadData);
 
       const response = await axios.post(
+<<<<<<< HEAD
         'https://fitoffice2-ff8035a9df10.herokuapp.com/api/leads',
+=======
+        'https://fitoffice-a7ed6ea26ba4.herokuapp.com/api/leads',
+>>>>>>> 264be574fa9db2ca7c87c3d8b1e8ddad2d870b25
         leadData,
         {
           headers: {
@@ -140,7 +148,11 @@ export function LeadsTable() {
       };
 
       const response = await axios.put(
+<<<<<<< HEAD
         `https://fitoffice2-ff8035a9df10.herokuapp.com/api/leads/${id}`,
+=======
+        `https://fitoffice-a7ed6ea26ba4.herokuapp.com/api/leads/${id}`,
+>>>>>>> 264be574fa9db2ca7c87c3d8b1e8ddad2d870b25
         leadData,
         {
           headers: {
@@ -213,7 +225,11 @@ export function LeadsTable() {
       }
 
       const response = await axios.post(
+<<<<<<< HEAD
         'https://fitoffice2-ff8035a9df10.herokuapp.com/api/leads/import-csv',
+=======
+        'https://fitoffice-a7ed6ea26ba4.herokuapp.com/api/leads/import-csv',
+>>>>>>> 264be574fa9db2ca7c87c3d8b1e8ddad2d870b25
         { leads: mappedData },
         {
           headers: {

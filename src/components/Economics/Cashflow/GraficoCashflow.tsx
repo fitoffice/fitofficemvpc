@@ -73,7 +73,11 @@ const GraficoCashflow: React.FC = () => {
         console.log('Iniciando peticiones a las APIs...');
 
         // Obtener ingresos
+<<<<<<< HEAD
         const ingresosResponse = await fetch('https://fitoffice2-ff8035a9df10.herokuapp.com/api/ingresos', {
+=======
+        const ingresosResponse = await fetch('https://fitoffice-a7ed6ea26ba4.herokuapp.com/api/ingresos', {
+>>>>>>> 264be574fa9db2ca7c87c3d8b1e8ddad2d870b25
           headers: {
             'Authorization': `Bearer ${token}`,
             'Content-Type': 'application/json'
@@ -81,7 +85,11 @@ const GraficoCashflow: React.FC = () => {
         });
 
         // Obtener gastos
+<<<<<<< HEAD
         const gastosResponse = await fetch('https://fitoffice2-ff8035a9df10.herokuapp.com/api/gastos', {
+=======
+        const gastosResponse = await fetch('https://fitoffice-a7ed6ea26ba4.herokuapp.com/api/gastos', {
+>>>>>>> 264be574fa9db2ca7c87c3d8b1e8ddad2d870b25
           headers: {
             'Authorization': `Bearer ${token}`,
             'Content-Type': 'application/json'

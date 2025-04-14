@@ -29,7 +29,11 @@ interface AuthContextType {
 const AuthContext = createContext<AuthContextType | undefined>(undefined);
 
 // URL de la API
+<<<<<<< HEAD
 const API_URL = 'https://fitoffice2-ff8035a9df10.herokuapp.com/api'; // Asegúrate de usar la URL correcta
+=======
+const API_URL = 'https://fitoffice-a7ed6ea26ba4.herokuapp.com/api'; // Asegúrate de usar la URL correcta
+>>>>>>> 264be574fa9db2ca7c87c3d8b1e8ddad2d870b25
 
 // Función para verificar si el token ha expirado
 const isTokenExpired = (token: string): boolean => {

@@ -23,13 +23,19 @@ import TableWithActions from '../../components/Common/TableWithActions';
 import { useTheme } from '../../contexts/ThemeContext';
 import { Link, useNavigate } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
+<<<<<<< HEAD
 import Joyride, { CallBackProps, STATUS, Step } from 'react-joyride'; // Import Joyride
+=======
+>>>>>>> 264be574fa9db2ca7c87c3d8b1e8ddad2d870b25
 
 import { usePlanificacionModal } from '../../contexts/PlanificacionModalContext';
 import { usePlanning } from '../../contexts/PlanningContext'; // Import the planning context
 import ArchivosplanificacionesComponent from '../../components/Routines/ArchivosplanificacionesComponent';
 import PlanningDetailsPopup from '../../components/Routines/PlanningDetailsPopup';
+<<<<<<< HEAD
 import CrearPlanificacionFormato1 from '../../components/Routines/CrearPlanificacionFormato1'; // Import the new component
+=======
+>>>>>>> 264be574fa9db2ca7c87c3d8b1e8ddad2d870b25
 
 // Importa otros componentes si es necesario
 
@@ -73,8 +79,12 @@ const PlanningList: React.FC = () => {
   
   // Add the missing planningData state declaration
   const [planningData, setPlanningData] = useState<any[]>([]);
+<<<<<<< HEAD
   const [showCreationForm, setShowCreationForm] = useState(false);
 
+=======
+  
+>>>>>>> 264be574fa9db2ca7c87c3d8b1e8ddad2d870b25
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedPlannings, setSelectedPlannings] = useState<string[]>([]);
   const [selectMode, setSelectMode] = useState(false);
@@ -94,6 +104,7 @@ const PlanningList: React.FC = () => {
   // Remove these duplicate declarations since they're coming from the context
   // const [loading, setLoading] = useState(true);
   // const [error, setError] = useState<string | null>(null);
+<<<<<<< HEAD
   const handleNewPlanningClick = () => {
     setShowCreationForm(true);
   };
@@ -107,6 +118,8 @@ const PlanningList: React.FC = () => {
     setShowCreationForm(false);
   };
 
+=======
+>>>>>>> 264be574fa9db2ca7c87c3d8b1e8ddad2d870b25
 
   // Datos estáticos para estadísticas (puedes actualizar estos valores dinámicamente si lo deseas)
   const [statsCards, setStatsCards] = useState([
@@ -205,7 +218,11 @@ const PlanningList: React.FC = () => {
 
       // Separar las peticiones para mejor visibilidad
       console.log('Fetching planning schemas...');
+<<<<<<< HEAD
       const planningsResponse = await fetch('https://fitoffice2-ff8035a9df10.herokuapp.com/api/plannings/schemas', {
+=======
+      const planningsResponse = await fetch('https://fitoffice-a7ed6ea26ba4.herokuapp.com/api/plannings/schemas', {
+>>>>>>> 264be574fa9db2ca7c87c3d8b1e8ddad2d870b25
         method: 'GET',
         headers: {
           'Content-Type': 'application/json',
@@ -227,7 +244,11 @@ const PlanningList: React.FC = () => {
 
       // Ahora hacer la petición de plantillas por separado
       console.log('Fetching templates...');
+<<<<<<< HEAD
       const templatesResponse = await fetch('https://fitoffice2-ff8035a9df10.herokuapp.com/api/planningtemplate/templates', {
+=======
+      const templatesResponse = await fetch('https://fitoffice-a7ed6ea26ba4.herokuapp.com/api/planningtemplate/templates', {
+>>>>>>> 264be574fa9db2ca7c87c3d8b1e8ddad2d870b25
         method: 'GET',
         headers: {
           'Content-Type': 'application/json',
@@ -526,7 +547,11 @@ const PlanningList: React.FC = () => {
         throw new Error('No se encontró el token de autenticación');
       }
 
+<<<<<<< HEAD
       const response = await fetch(`https://fitoffice2-ff8035a9df10.herokuapp.com/api/plannings/${id}/download`, {
+=======
+      const response = await fetch(`https://fitoffice-a7ed6ea26ba4.herokuapp.com/api/plannings/${id}/download`, {
+>>>>>>> 264be574fa9db2ca7c87c3d8b1e8ddad2d870b25
         method: 'GET',
         headers: {
           Authorization: `Bearer ${token}`,
@@ -774,8 +799,13 @@ const PlanningList: React.FC = () => {
             </div>
           </div>
           <div className="flex gap-3">
+<<<<<<< HEAD
           <Button
               onClick={handleNewPlanningClick}
+=======
+            <Button
+              onClick={() => openModal()}
+>>>>>>> 264be574fa9db2ca7c87c3d8b1e8ddad2d870b25
               variant="create"
             >
               <Plus className="w-5 h-5" />
@@ -823,6 +853,7 @@ const PlanningList: React.FC = () => {
         </div>
 
         {/* Search and Filters */}
+<<<<<<< HEAD
         {showCreationForm ? (
           // Show the creation form component
           <CrearPlanificacionFormato1 
@@ -877,6 +908,52 @@ const PlanningList: React.FC = () => {
                         : 'bg-white border border-gray-200'
                     }`}
                   >
+=======
+        <div className="flex flex-col sm:flex-row gap-4 mb-6">
+          <div className="flex-1 relative">
+            <input
+              type="text"
+              placeholder="Buscar planificaciones..."
+              className={`w-full px-4 py-3 pl-11 rounded-xl ${
+                theme === 'dark'
+                  ? 'bg-gray-700/50 text-white placeholder-gray-400 border-gray-600'
+                  : 'bg-gray-50 text-gray-900 placeholder-gray-500 border-gray-200'
+              } border focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300`}
+              value={searchTerm}
+              onChange={(e) => setSearchTerm(e.target.value)}
+            />
+            <Search className={`absolute left-3 top-3.5 ${
+              theme === 'dark' ? 'text-gray-400' : 'text-gray-500'
+            }`} />
+          </div>
+          <div className="relative" ref={filterRef}>
+            <Button
+              onClick={() => setIsFilterDropdownOpen(!isFilterDropdownOpen)}
+              variant="filter"
+            >
+                <Filter className="w-5 h-5" />
+
+              <span className="relative">
+                Filtros 
+                {Object.values(activeFilters).filter(f => f !== 'todos').length > 0 && (
+                  <span className="ml-1 px-2 py-0.5 text-sm bg-white/20 rounded-full">
+                    {Object.values(activeFilters).filter(f => f !== 'todos').length}
+                  </span>
+                )}
+              </span>
+            </Button>
+            {isFilterDropdownOpen && (
+              <motion.div
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: 10 }}
+                className={`absolute right-0 mt-2 w-72 p-4 rounded-2xl shadow-xl z-50 ${
+                  theme === 'dark'
+                    ? 'bg-gray-700 border border-gray-600'
+                    : 'bg-white border border-gray-200'
+                }`}
+              >
+>>>>>>> 264be574fa9db2ca7c87c3d8b1e8ddad2d870b25
                 <div className="space-y-4">
                   <div>
                     <label className={`block text-sm font-medium mb-2 ${
@@ -968,6 +1045,7 @@ const PlanningList: React.FC = () => {
 
         {/* Table Section */}
         {loading ? (
+<<<<<<< HEAD
               <div className="text-center py-10">
                 <motion.div
                   animate={{ rotate: 360 }}
@@ -997,6 +1075,35 @@ const PlanningList: React.FC = () => {
               />
             )}
           </>
+=======
+          <div className="text-center py-10">
+            <motion.div
+              animate={{ rotate: 360 }}
+              transition={{ duration: 1, repeat: Infinity, ease: "linear" }}
+              className="inline-block"
+            >
+              <Calendar className={`w-8 h-8 ${theme === 'dark' ? 'text-blue-400' : 'text-blue-600'}`} />
+            </motion.div>
+            <p className={`mt-4 ${theme === 'dark' ? 'text-gray-400' : 'text-gray-600'}`}>
+              Cargando planificaciones...
+            </p>
+          </div>
+        ) : error ? (
+          <div className="text-center py-10">
+            <X className="w-8 h-8 text-red-500 mx-auto mb-4" />
+            <p className="text-red-500">{error}</p>
+          </div>
+        ) : (
+          <TableWithActions
+            headers={headers}
+            data={processData(filteredPlannings)}
+            renderCell={renderCell}
+            onRowClick={item => handleToggleDetails(item._id)}
+            selectedRows={selectedPlannings}
+            onRowSelect={handleCheckboxChange}
+            showCheckboxes={selectMode}
+          />
+>>>>>>> 264be574fa9db2ca7c87c3d8b1e8ddad2d870b25
         )}
       </div>
 

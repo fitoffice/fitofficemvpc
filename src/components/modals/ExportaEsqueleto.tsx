@@ -39,7 +39,11 @@ const ExportaEsqueleto: React.FC<ExportaEsqueletoProps> = ({
           throw new Error('No se encontró el token de autenticación');
         }
 
+<<<<<<< HEAD
         const response = await fetch('https://fitoffice2-ff8035a9df10.herokuapp.com/api/plannings/schemas', {
+=======
+        const response = await fetch('https://fitoffice-a7ed6ea26ba4.herokuapp.com/api/plannings/schemas', {
+>>>>>>> 264be574fa9db2ca7c87c3d8b1e8ddad2d870b25
           headers: {
             'Authorization': `Bearer ${token}`,
             'Content-Type': 'application/json'

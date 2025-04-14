@@ -52,7 +52,11 @@ const IncomeChart = () => {
           throw new Error('No se encontró el token de autenticación');
         }
 
+<<<<<<< HEAD
         const response = await fetch('https://fitoffice2-ff8035a9df10.herokuapp.com/api/ingresos', {
+=======
+        const response = await fetch('https://fitoffice-a7ed6ea26ba4.herokuapp.com/api/ingresos', {
+>>>>>>> 264be574fa9db2ca7c87c3d8b1e8ddad2d870b25
           headers: {
             'Authorization': `Bearer ${token}`,
           },

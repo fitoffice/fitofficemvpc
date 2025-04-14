@@ -43,7 +43,11 @@ const OtrosDocumentosWidget: React.FC = () => {
   const fetchDocumentos = async () => {
     try {
       const token = localStorage.getItem('token');
+<<<<<<< HEAD
       const response = await axios.get<ApiResponse>('https://fitoffice2-ff8035a9df10.herokuapp.com/api/otros-documentos', {
+=======
+      const response = await axios.get<ApiResponse>('https://fitoffice-a7ed6ea26ba4.herokuapp.com/api/otros-documentos', {
+>>>>>>> 264be574fa9db2ca7c87c3d8b1e8ddad2d870b25
         headers: {
           Authorization: `Bearer ${token}`
         }
@@ -118,7 +122,11 @@ const OtrosDocumentosWidget: React.FC = () => {
   const handleView = async (documento: OtroDocumento) => {
     try {
       const token = localStorage.getItem('token');
+<<<<<<< HEAD
       const response = await axios.get(`https://fitoffice2-ff8035a9df10.herokuapp.com/api/otros-documentos/${documento._id}/download`, {
+=======
+      const response = await axios.get(`https://fitoffice-a7ed6ea26ba4.herokuapp.com/api/otros-documentos/${documento._id}/download`, {
+>>>>>>> 264be574fa9db2ca7c87c3d8b1e8ddad2d870b25
         headers: {
           'Authorization': `Bearer ${token}`
         },
@@ -150,7 +158,11 @@ const OtrosDocumentosWidget: React.FC = () => {
 
     try {
       const token = localStorage.getItem('token');
+<<<<<<< HEAD
       await axios.delete(`https://fitoffice2-ff8035a9df10.herokuapp.com/api/otros-documentos/${documentoId}`, {
+=======
+      await axios.delete(`https://fitoffice-a7ed6ea26ba4.herokuapp.com/api/otros-documentos/${documentoId}`, {
+>>>>>>> 264be574fa9db2ca7c87c3d8b1e8ddad2d870b25
         headers: {
           'Authorization': `Bearer ${token}`
         }

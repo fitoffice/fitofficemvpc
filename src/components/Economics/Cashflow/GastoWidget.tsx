@@ -76,7 +76,11 @@ const GastoWidget: React.FC<GastoWidgetProps> = () => {
         throw new Error('Token no encontrado');
       }
 
+<<<<<<< HEAD
       const response = await fetch(`https://fitoffice2-ff8035a9df10.herokuapp.com/api/gastos/${gastoId}/confirm`, {
+=======
+      const response = await fetch(`https://fitoffice-a7ed6ea26ba4.herokuapp.com/api/gastos/${gastoId}/confirm`, {
+>>>>>>> 264be574fa9db2ca7c87c3d8b1e8ddad2d870b25
         method: 'PUT',
         headers: {
           'Authorization': `Bearer ${token}`,
@@ -130,7 +134,11 @@ const GastoWidget: React.FC<GastoWidgetProps> = () => {
         throw new Error('Token no encontrado. Por favor, inicia sesión nuevamente.');
       }
 
+<<<<<<< HEAD
       const response = await fetch('https://fitoffice2-ff8035a9df10.herokuapp.com/api/gastos', {
+=======
+      const response = await fetch('https://fitoffice-a7ed6ea26ba4.herokuapp.com/api/gastos', {
+>>>>>>> 264be574fa9db2ca7c87c3d8b1e8ddad2d870b25
         method: 'GET',
         headers: {
           'Content-Type': 'application/json',
@@ -217,7 +225,11 @@ const GastoWidget: React.FC<GastoWidgetProps> = () => {
         throw new Error('Token no encontrado');
       }
 
+<<<<<<< HEAD
       const response = await fetch(`https://fitoffice2-ff8035a9df10.herokuapp.com/api/gastos/${gastoId}`, {
+=======
+      const response = await fetch(`https://fitoffice-a7ed6ea26ba4.herokuapp.com/api/gastos/${gastoId}`, {
+>>>>>>> 264be574fa9db2ca7c87c3d8b1e8ddad2d870b25
         method: 'DELETE',
         headers: {
           'Authorization': `Bearer ${token}`,
@@ -242,7 +254,11 @@ const GastoWidget: React.FC<GastoWidgetProps> = () => {
         throw new Error('Token no encontrado');
       }
 
+<<<<<<< HEAD
       const response = await fetch(`https://fitoffice2-ff8035a9df10.herokuapp.com/api/gastos/${gastoId}/confirm`, {
+=======
+      const response = await fetch(`https://fitoffice-a7ed6ea26ba4.herokuapp.com/api/gastos/${gastoId}/confirm`, {
+>>>>>>> 264be574fa9db2ca7c87c3d8b1e8ddad2d870b25
         method: 'PUT',
         headers: {
           'Authorization': `Bearer ${token}`,
@@ -276,7 +292,11 @@ const GastoWidget: React.FC<GastoWidgetProps> = () => {
       console.log('Token obtenido correctamente');
 
       console.log('Enviando solicitud de desasociación a la API...');
+<<<<<<< HEAD
       const response = await fetch(`https://fitoffice2-ff8035a9df10.herokuapp.com/api/gastos/${gastoId}/desasociar`, {
+=======
+      const response = await fetch(`https://fitoffice-a7ed6ea26ba4.herokuapp.com/api/gastos/${gastoId}/desasociar`, {
+>>>>>>> 264be574fa9db2ca7c87c3d8b1e8ddad2d870b25
         method: 'PUT',
         headers: {
           'Authorization': `Bearer ${token}`,
@@ -334,8 +354,13 @@ const GastoWidget: React.FC<GastoWidgetProps> = () => {
       if (!token || !selectedGastoId) return;
 
       const endpoint = data.tipo === 'servicio' 
+<<<<<<< HEAD
         ? `https://fitoffice2-ff8035a9df10.herokuapp.com/api/gastos/${selectedGastoId}/asociar-servicio`
         : `https://fitoffice2-ff8035a9df10.herokuapp.com/api/gastos/${selectedGastoId}/asociar-plan`;
+=======
+        ? `https://fitoffice-a7ed6ea26ba4.herokuapp.com/api/gastos/${selectedGastoId}/asociar-servicio`
+        : `https://fitoffice-a7ed6ea26ba4.herokuapp.com/api/gastos/${selectedGastoId}/asociar-plan`;
+>>>>>>> 264be574fa9db2ca7c87c3d8b1e8ddad2d870b25
 
       const response = await fetch(endpoint, {
         method: 'PATCH',

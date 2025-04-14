@@ -80,7 +80,11 @@ const ExerciseSelector: React.FC<ExerciseSelectorProps> = ({
       }
 
       console.log('ExerciseSelector: Realizando petición a la API de ejercicios');
+<<<<<<< HEAD
       const response = await axios.get('https://fitoffice2-ff8035a9df10.herokuapp.com/api/exercises', {
+=======
+      const response = await axios.get('https://fitoffice-a7ed6ea26ba4.herokuapp.com/api/exercises', {
+>>>>>>> 264be574fa9db2ca7c87c3d8b1e8ddad2d870b25
         headers: {
           'Authorization': `Bearer ${token}`
         }
@@ -117,7 +121,11 @@ const ExerciseSelector: React.FC<ExerciseSelectorProps> = ({
       });
 
       // Hacer la petición POST para añadir el ejercicio a la sesión
+<<<<<<< HEAD
       const url = `https://fitoffice2-ff8035a9df10.herokuapp.com/api/plannings/${planningId}/weeks/${weekNumber}/days/${selectedDay}/sessions/${sessionId}/exercises`;
+=======
+      const url = `https://fitoffice-a7ed6ea26ba4.herokuapp.com/api/plannings/${planningId}/weeks/${weekNumber}/days/${selectedDay}/sessions/${sessionId}/exercises`;
+>>>>>>> 264be574fa9db2ca7c87c3d8b1e8ddad2d870b25
       const response = await axios.post(
         url,
         { exerciseId: exercise._id },

@@ -58,7 +58,11 @@ export function EmailCampaign({ onClose }: EmailCampaignProps) {
     const fetchSegments = async () => {
       try {
         const token = localStorage.getItem('token');
+<<<<<<< HEAD
         const response = await axios.get('https://fitoffice2-ff8035a9df10.herokuapp.com/api/segments', {
+=======
+        const response = await axios.get('https://fitoffice-a7ed6ea26ba4.herokuapp.com/api/segments', {
+>>>>>>> 264be574fa9db2ca7c87c3d8b1e8ddad2d870b25
           headers: {
             Authorization: `Bearer ${token}`
           }
@@ -102,7 +106,11 @@ export function EmailCampaign({ onClose }: EmailCampaignProps) {
     try {
       const token = localStorage.getItem('token');
       const response = await axios.post(
+<<<<<<< HEAD
         'https://fitoffice2-ff8035a9df10.herokuapp.com/api/campanas-correo',
+=======
+        'https://fitoffice-a7ed6ea26ba4.herokuapp.com/api/campanas-correo',
+>>>>>>> 264be574fa9db2ca7c87c3d8b1e8ddad2d870b25
         campaignData,
         {
           headers: {
@@ -310,7 +318,11 @@ export function EmailCampaign({ onClose }: EmailCampaignProps) {
       onSave={async () => {
         try {
           const token = localStorage.getItem('token');
+<<<<<<< HEAD
           await fetch('https://fitoffice2-ff8035a9df10.herokuapp.com/api/segments', {
+=======
+          await fetch('https://fitoffice-a7ed6ea26ba4.herokuapp.com/api/segments', {
+>>>>>>> 264be574fa9db2ca7c87c3d8b1e8ddad2d870b25
             method: 'POST',
             headers: {
               'Authorization': `Bearer ${token}`,
@@ -324,7 +336,11 @@ export function EmailCampaign({ onClose }: EmailCampaignProps) {
             })
           });
           // Refresh segments list after creating new segment
+<<<<<<< HEAD
           const response = await axios.get('https://fitoffice2-ff8035a9df10.herokuapp.com/api/segments', {
+=======
+          const response = await axios.get('https://fitoffice-a7ed6ea26ba4.herokuapp.com/api/segments', {
+>>>>>>> 264be574fa9db2ca7c87c3d8b1e8ddad2d870b25
             headers: {
               Authorization: `Bearer ${token}`
             }

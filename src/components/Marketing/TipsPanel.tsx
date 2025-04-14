@@ -93,7 +93,11 @@ export function TipsPanel({ onClose }: Props) {
         }
       };
 
+<<<<<<< HEAD
       const response = await fetch('https://fitoffice2-ff8035a9df10.herokuapp.com/api/automations/tips', {
+=======
+      const response = await fetch('https://fitoffice-a7ed6ea26ba4.herokuapp.com/api/automations/tips', {
+>>>>>>> 264be574fa9db2ca7c87c3d8b1e8ddad2d870b25
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -121,7 +125,11 @@ export function TipsPanel({ onClose }: Props) {
       }
 
       setIsLoading(true);
+<<<<<<< HEAD
       const response = await fetch('https://fitoffice2-ff8035a9df10.herokuapp.com/api/automations/tips/planned', {
+=======
+      const response = await fetch('https://fitoffice-a7ed6ea26ba4.herokuapp.com/api/automations/tips/planned', {
+>>>>>>> 264be574fa9db2ca7c87c3d8b1e8ddad2d870b25
         headers: {
           'Authorization': `Bearer ${token}`
         }
@@ -148,7 +156,11 @@ export function TipsPanel({ onClose }: Props) {
         return;
       }
 
+<<<<<<< HEAD
       const response = await fetch(`https://fitoffice2-ff8035a9df10.herokuapp.com/api/automations/tips/${tipId}/execute`, {
+=======
+      const response = await fetch(`https://fitoffice-a7ed6ea26ba4.herokuapp.com/api/automations/tips/${tipId}/execute`, {
+>>>>>>> 264be574fa9db2ca7c87c3d8b1e8ddad2d870b25
         method: 'POST',
         headers: {
           'Authorization': `Bearer ${token}`

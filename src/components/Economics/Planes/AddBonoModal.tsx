@@ -36,7 +36,11 @@ const AddBonoModal: React.FC<AddBonoModalProps> = ({ isOpen, onClose, onBonoAdde
   useEffect(() => {
     const fetchData = async () => {
       try {
+<<<<<<< HEAD
         const clientesRes = await axios.get('https://fitoffice2-ff8035a9df10.herokuapp.com/api/clientes');
+=======
+        const clientesRes = await axios.get('https://fitoffice-a7ed6ea26ba4.herokuapp.com/api/clientes');
+>>>>>>> 264be574fa9db2ca7c87c3d8b1e8ddad2d870b25
         setClientes(clientesRes.data);
       } catch (err) {
         console.error('Error fetching data:', err);
@@ -61,7 +65,11 @@ const AddBonoModal: React.FC<AddBonoModalProps> = ({ isOpen, onClose, onBonoAdde
     e.preventDefault();
     try {
       const token = localStorage.getItem('token');
+<<<<<<< HEAD
       await axios.post('https://fitoffice2-ff8035a9df10.herokuapp.com/api/bonos', formData, {
+=======
+      await axios.post('https://fitoffice-a7ed6ea26ba4.herokuapp.com/api/bonos', formData, {
+>>>>>>> 264be574fa9db2ca7c87c3d8b1e8ddad2d870b25
         headers: {
           'Authorization': `Bearer ${token}`
         }

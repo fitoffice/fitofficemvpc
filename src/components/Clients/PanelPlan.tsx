@@ -79,7 +79,11 @@ const PanelPlan: React.FC<PlanPlanProps> = ({ clienteId, planningId, planningDet
           const token = localStorage.getItem('token');
           console.log('Using token:', token ? 'Token exists' : 'No token found');
           
+<<<<<<< HEAD
           const response = await fetch(`https://fitoffice2-ff8035a9df10.herokuapp.com/api/plannings/${planningId}`, {
+=======
+          const response = await fetch(`https://fitoffice-a7ed6ea26ba4.herokuapp.com/api/plannings/${planningId}`, {
+>>>>>>> 264be574fa9db2ca7c87c3d8b1e8ddad2d870b25
             headers: {
               'Authorization': `Bearer ${token}`
             }
@@ -122,7 +126,11 @@ const PanelPlan: React.FC<PlanPlanProps> = ({ clienteId, planningId, planningDet
     const fetchExercises = async () => {
       try {
         console.log('Fetching exercises...');
+<<<<<<< HEAD
         const response = await fetch('https://fitoffice2-ff8035a9df10.herokuapp.com/api/exercises');
+=======
+        const response = await fetch('https://fitoffice-a7ed6ea26ba4.herokuapp.com/api/exercises');
+>>>>>>> 264be574fa9db2ca7c87c3d8b1e8ddad2d870b25
         if (response.ok) {
           const data: ExerciseResponse = await response.json();
           console.log('Exercises fetched successfully:', data);
@@ -141,7 +149,11 @@ const PanelPlan: React.FC<PlanPlanProps> = ({ clienteId, planningId, planningDet
       try {
         console.log('Fetching RMs...');
         const token = localStorage.getItem('token');
+<<<<<<< HEAD
         const response = await fetch(`https://fitoffice2-ff8035a9df10.herokuapp.com/api/rms`, {
+=======
+        const response = await fetch(`https://fitoffice-a7ed6ea26ba4.herokuapp.com/api/rms`, {
+>>>>>>> 264be574fa9db2ca7c87c3d8b1e8ddad2d870b25
           headers: {
             'Authorization': `Bearer ${token}`
           }

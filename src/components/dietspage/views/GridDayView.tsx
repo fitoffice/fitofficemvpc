@@ -102,7 +102,11 @@ export default function GridDayView({
         
         // Realizar la petición DELETE a la API con el dietId correcto
         const response = await axios.delete(
+<<<<<<< HEAD
           `https://fitoffice2-ff8035a9df10.herokuapp.com/api/dietas/${dietId}/dias/${date}/comidas/${mealId}`,
+=======
+          `https://fitoffice-a7ed6ea26ba4.herokuapp.com/api/dietas/${dietId}/dias/${date}/comidas/${mealId}`,
+>>>>>>> 264be574fa9db2ca7c87c3d8b1e8ddad2d870b25
           {
             headers: {
               Authorization: `Bearer ${token}`

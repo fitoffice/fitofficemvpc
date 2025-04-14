@@ -110,7 +110,11 @@ export const AutomationProvider: React.FC<AutomationProviderProps> = ({ children
         return;
       }
 
+<<<<<<< HEAD
       const response = await fetch('https://fitoffice2-ff8035a9df10.herokuapp.com/api/automations', {
+=======
+      const response = await fetch('https://fitoffice-a7ed6ea26ba4.herokuapp.com/api/automations', {
+>>>>>>> 264be574fa9db2ca7c87c3d8b1e8ddad2d870b25
         headers: {
           'Authorization': `Bearer ${token}`,
           'Content-Type': 'application/json'
@@ -171,7 +175,11 @@ export const AutomationProvider: React.FC<AutomationProviderProps> = ({ children
         return null;
       }
 
+<<<<<<< HEAD
       const response = await fetch('https://fitoffice2-ff8035a9df10.herokuapp.com/api/automations', {
+=======
+      const response = await fetch('https://fitoffice-a7ed6ea26ba4.herokuapp.com/api/automations', {
+>>>>>>> 264be574fa9db2ca7c87c3d8b1e8ddad2d870b25
         method: 'POST',
         headers: {
           'Authorization': `Bearer ${token}`,
@@ -231,7 +239,11 @@ export const AutomationProvider: React.FC<AutomationProviderProps> = ({ children
       const automation = automations.find(a => a.id === id);
       if (!automation) return false;
 
+<<<<<<< HEAD
       const response = await fetch(`https://fitoffice2-ff8035a9df10.herokuapp.com/api/automations/${id}`, {
+=======
+      const response = await fetch(`https://fitoffice-a7ed6ea26ba4.herokuapp.com/api/automations/${id}`, {
+>>>>>>> 264be574fa9db2ca7c87c3d8b1e8ddad2d870b25
         method: 'PUT',
         headers: {
           'Authorization': `Bearer ${token}`,

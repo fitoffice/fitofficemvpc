@@ -2,8 +2,13 @@ import axios from 'axios';
 import { io, Socket } from 'socket.io-client';
 import { Message } from '../components/Chat/types';
 
+<<<<<<< HEAD
 const API_URL = 'https://fitoffice2-ff8035a9df10.herokuapp.com/api';
 const SOCKET_URL = 'https://fitoffice2-ff8035a9df10.herokuapp.com'; // Socket server URL
+=======
+const API_URL = 'https://fitoffice-a7ed6ea26ba4.herokuapp.com/api';
+const SOCKET_URL = 'https://fitoffice-a7ed6ea26ba4.herokuapp.com'; // Socket server URL
+>>>>>>> 264be574fa9db2ca7c87c3d8b1e8ddad2d870b25
 
 export interface ChatHistory {
   messages: Message[];

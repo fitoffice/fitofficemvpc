@@ -64,7 +64,11 @@ const VistaCuestionario: React.FC<VistaCuestionarioProps> = ({
 
   const fetchClientes = async () => {
     try {
+<<<<<<< HEAD
       const response = await axios.get('https://fitoffice2-ff8035a9df10.herokuapp.com/api/clientes');
+=======
+      const response = await axios.get('https://fitoffice-a7ed6ea26ba4.herokuapp.com/api/clientes');
+>>>>>>> 264be574fa9db2ca7c87c3d8b1e8ddad2d870b25
       setClientes(response.data);
     } catch (error) {
       console.error('Error al cargar los clientes:', error);
@@ -73,7 +77,11 @@ const VistaCuestionario: React.FC<VistaCuestionarioProps> = ({
 
   const fetchCuestionarioData = async () => {
     try {
+<<<<<<< HEAD
       const response = await axios.get(`https://fitoffice2-ff8035a9df10.herokuapp.com/api/cuestionarios/${cuestionarioId}`);
+=======
+      const response = await axios.get(`https://fitoffice-a7ed6ea26ba4.herokuapp.com/api/cuestionarios/${cuestionarioId}`);
+>>>>>>> 264be574fa9db2ca7c87c3d8b1e8ddad2d870b25
       console.log('Datos del cuestionario recibidos:', response.data);
       setCuestionarioData(response.data);
     } catch (error) {
@@ -94,7 +102,11 @@ const VistaCuestionario: React.FC<VistaCuestionarioProps> = ({
     
     setLoading(true);
     try {
+<<<<<<< HEAD
       await axios.post(`https://fitoffice2-ff8035a9df10.herokuapp.com/api/cuestionarios/${cuestionarioId}/clientes`, {
+=======
+      await axios.post(`https://fitoffice-a7ed6ea26ba4.herokuapp.com/api/cuestionarios/${cuestionarioId}/clientes`, {
+>>>>>>> 264be574fa9db2ca7c87c3d8b1e8ddad2d870b25
         clienteIds: selectedClientes
       });
       // Recargar los datos del cuestionario

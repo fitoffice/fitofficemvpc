@@ -9,14 +9,20 @@ import {
   Download,
   Share2,
   Plus,
+<<<<<<< HEAD
   Columns, // Added Columns icon
   Upload, // Added Upload icon for CSV import
+=======
+>>>>>>> 264be574fa9db2ca7c87c3d8b1e8ddad2d870b25
 } from 'lucide-react';
 import { useTheme } from '../../contexts/ThemeContext';
 import Button from '../Common/Button';
 import FilterPanel from './FilterPanel';
+<<<<<<< HEAD
 import TableFieldsOrganizer from './TableFieldsOrganizer'; // Import the new component
 import CSVPopup from './CSVPopup'; // Import the new CSVPopup component
+=======
+>>>>>>> 264be574fa9db2ca7c87c3d8b1e8ddad2d870b25
 
 interface Filters {
   estado: string;
@@ -39,8 +45,11 @@ interface ClientListHeaderProps {
   onCreateClient: () => void;
   selectedClients: string[]; // Add this prop to receive selected client IDs
   refreshClients: () => void; // Add this prop to refresh the client list after deletion
+<<<<<<< HEAD
   visibleColumns?: string[]; // Add this prop
   setVisibleColumns?: (columns: string[]) => void; // Add this prop
+=======
+>>>>>>> 264be574fa9db2ca7c87c3d8b1e8ddad2d870b25
 }
 
 const ClientListHeader: React.FC<ClientListHeaderProps> = ({
@@ -55,6 +64,7 @@ const ClientListHeader: React.FC<ClientListHeaderProps> = ({
   setViewMode,
   onCreateClient,
   selectedClients, // Destructure the new prop
+<<<<<<< HEAD
   refreshClients,
   visibleColumns, // Add these props to the destructuring
   setVisibleColumns,
@@ -63,6 +73,12 @@ const ClientListHeader: React.FC<ClientListHeaderProps> = ({
   const [isDeleting, setIsDeleting] = useState(false);
   const [tableFieldsOpen, setTableFieldsOpen] = useState(false);
   const [csvPopupOpen, setCsvPopupOpen] = useState(false); // Add state for CSV popup
+=======
+  refreshClients, // Destructure the refresh function
+}) => {
+  const { theme } = useTheme();
+  const [isDeleting, setIsDeleting] = useState(false);
+>>>>>>> 264be574fa9db2ca7c87c3d8b1e8ddad2d870b25
 
   // Function to handle deleting multiple clients
   const handleDeleteMultipleClients = async () => {
@@ -92,13 +108,21 @@ const ClientListHeader: React.FC<ClientListHeaderProps> = ({
           console.log(`Sending DELETE request for client ID: ${clientId}`);
           
           // Log the complete request information for this client
+<<<<<<< HEAD
           console.log(`DELETE Request to: https://fitoffice2-ff8035a9df10.herokuapp.com/api/clientes/${clientId}`);
+=======
+          console.log(`DELETE Request to: https://fitoffice-a7ed6ea26ba4.herokuapp.com/api/clientes/${clientId}`);
+>>>>>>> 264be574fa9db2ca7c87c3d8b1e8ddad2d870b25
           console.log("Headers:", {
             'Authorization': `Bearer ${token}`,
             'Content-Type': 'application/json',
           });
           
+<<<<<<< HEAD
           const response = await fetch(`https://fitoffice2-ff8035a9df10.herokuapp.com/api/clientes/${clientId}`, {
+=======
+          const response = await fetch(`https://fitoffice-a7ed6ea26ba4.herokuapp.com/api/clientes/${clientId}`, {
+>>>>>>> 264be574fa9db2ca7c87c3d8b1e8ddad2d870b25
             method: 'DELETE',
             headers: {
               'Authorization': `Bearer ${token}`,
@@ -184,6 +208,7 @@ const ClientListHeader: React.FC<ClientListHeaderProps> = ({
             </button>
           </div>
 
+<<<<<<< HEAD
           {/* CSV Import Button */}
           <Button 
             variant="filter" 
@@ -194,6 +219,8 @@ const ClientListHeader: React.FC<ClientListHeaderProps> = ({
             Importar CSV
           </Button>
 
+=======
+>>>>>>> 264be574fa9db2ca7c87c3d8b1e8ddad2d870b25
           <div className="relative">
             <Button
               variant="filter"
@@ -206,6 +233,7 @@ const ClientListHeader: React.FC<ClientListHeaderProps> = ({
             {filterOpen && <FilterPanel filters={filters} setFilters={setFilters} />}
           </div>
 
+<<<<<<< HEAD
           {/* Add Table Fields Organizer Button */}
           {viewMode === 'table' && setVisibleColumns && (
             <div className="relative">
@@ -227,6 +255,8 @@ const ClientListHeader: React.FC<ClientListHeaderProps> = ({
             </div>
           )}
 
+=======
+>>>>>>> 264be574fa9db2ca7c87c3d8b1e8ddad2d870b25
           {/* Botón "Nuevo Cliente" con onClick */}
           <Button variant="create" onClick={onCreateClient} className="flex items-center">
             <Plus className="w-5 h-5 mr-2" />
@@ -235,6 +265,7 @@ const ClientListHeader: React.FC<ClientListHeaderProps> = ({
         </div>
       </div>
 
+<<<<<<< HEAD
       {/* CSV Popup */}
       {csvPopupOpen && (
         <CSVPopup 
@@ -246,6 +277,8 @@ const ClientListHeader: React.FC<ClientListHeaderProps> = ({
         />
       )}
 
+=======
+>>>>>>> 264be574fa9db2ca7c87c3d8b1e8ddad2d870b25
       {selectedClientsCount > 0 && (
         <motion.div
           initial={{ opacity: 0, y: 20 }}

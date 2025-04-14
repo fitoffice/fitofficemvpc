@@ -70,7 +70,11 @@ const FacturaForm: React.FC<FacturaFormProps> = ({ onSubmit }) => {
     const fetchLastInvoiceNumber = async () => {
       try {
         const token = localStorage.getItem('token');
+<<<<<<< HEAD
         const response = await fetch('https://fitoffice2-ff8035a9df10.herokuapp.com/api/invoice/last-number', {
+=======
+        const response = await fetch('https://fitoffice-a7ed6ea26ba4.herokuapp.com/api/invoice/last-number', {
+>>>>>>> 264be574fa9db2ca7c87c3d8b1e8ddad2d870b25
           headers: {
             'Authorization': `Bearer ${token}`,
             'Content-Type': 'application/json',
@@ -120,7 +124,11 @@ const FacturaForm: React.FC<FacturaFormProps> = ({ onSubmit }) => {
           return;
         }
 
+<<<<<<< HEAD
         const response = await fetch('https://fitoffice2-ff8035a9df10.herokuapp.com/api/clientes', {
+=======
+        const response = await fetch('https://fitoffice-a7ed6ea26ba4.herokuapp.com/api/clientes', {
+>>>>>>> 264be574fa9db2ca7c87c3d8b1e8ddad2d870b25
           headers: {
             'Authorization': `Bearer ${token}`,
             'Content-Type': 'application/json',
@@ -298,9 +306,15 @@ const FacturaForm: React.FC<FacturaFormProps> = ({ onSubmit }) => {
       };
 
       console.log('Datos que se enviarán al servidor:', formDataToSend);
+<<<<<<< HEAD
       console.log('URL de la API:', 'https://fitoffice2-ff8035a9df10.herokuapp.com/api/invoice');
 
       const response = await fetch('https://fitoffice2-ff8035a9df10.herokuapp.com/api/invoice', {
+=======
+      console.log('URL de la API:', 'https://fitoffice-a7ed6ea26ba4.herokuapp.com/api/invoice');
+
+      const response = await fetch('https://fitoffice-a7ed6ea26ba4.herokuapp.com/api/invoice', {
+>>>>>>> 264be574fa9db2ca7c87c3d8b1e8ddad2d870b25
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

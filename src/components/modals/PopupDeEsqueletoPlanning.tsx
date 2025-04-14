@@ -244,7 +244,11 @@ const PopupDeEsqueletoPlanning: React.FC<PopupDeEsqueletoPlanningProps> = ({
     });
 
     try {
+<<<<<<< HEAD
       const response = await fetch(`https://fitoffice2-ff8035a9df10.herokuapp.com/api/plannings/${planningId}/periodo`, {
+=======
+      const response = await fetch(`https://fitoffice-a7ed6ea26ba4.herokuapp.com/api/plannings/${planningId}/periodo`, {
+>>>>>>> 264be574fa9db2ca7c87c3d8b1e8ddad2d870b25
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -311,7 +315,11 @@ const PopupDeEsqueletoPlanning: React.FC<PopupDeEsqueletoPlanningProps> = ({
 
       console.log('📦 Periodos formateados:', periodosFormateados);
 
+<<<<<<< HEAD
       const response = await fetch(`https://fitoffice2-ff8035a9df10.herokuapp.com/api/plannings/${planningId}/esqueleto`, {
+=======
+      const response = await fetch(`https://fitoffice-a7ed6ea26ba4.herokuapp.com/api/plannings/${planningId}/esqueleto`, {
+>>>>>>> 264be574fa9db2ca7c87c3d8b1e8ddad2d870b25
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -346,7 +354,11 @@ const PopupDeEsqueletoPlanning: React.FC<PopupDeEsqueletoPlanningProps> = ({
     const fetchExercises = async () => {
       setLoading(true);
       try {
+<<<<<<< HEAD
         const response = await fetch('https://fitoffice2-ff8035a9df10.herokuapp.com/api/exercises');
+=======
+        const response = await fetch('https://fitoffice-a7ed6ea26ba4.herokuapp.com/api/exercises');
+>>>>>>> 264be574fa9db2ca7c87c3d8b1e8ddad2d870b25
         const data = await response.json();
         setExercises(data.data);
       } catch (error) {

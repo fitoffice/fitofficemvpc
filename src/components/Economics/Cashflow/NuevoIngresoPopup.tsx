@@ -49,21 +49,33 @@ const NuevoIngresoPopup: React.FC<NuevoIngresoPopupProps> = ({ onClose, onSubmit
       const token = localStorage.getItem('token');
       try {
         // Fetch clientes
+<<<<<<< HEAD
         const clientesResponse = await fetch('https://fitoffice2-ff8035a9df10.herokuapp.com/api/clientes', {
+=======
+        const clientesResponse = await fetch('https://fitoffice-a7ed6ea26ba4.herokuapp.com/api/clientes', {
+>>>>>>> 264be574fa9db2ca7c87c3d8b1e8ddad2d870b25
           headers: { 'Authorization': `Bearer ${token}` }
         });
         const clientesData = await clientesResponse.json();
         setClientes(clientesData);
 
         // Fetch planes de pago
+<<<<<<< HEAD
         const planesResponse = await fetch('https://fitoffice2-ff8035a9df10.herokuapp.com/api/payment-plans', {
+=======
+        const planesResponse = await fetch('https://fitoffice-a7ed6ea26ba4.herokuapp.com/api/payment-plans', {
+>>>>>>> 264be574fa9db2ca7c87c3d8b1e8ddad2d870b25
           headers: { 'Authorization': `Bearer ${token}` }
         });
         const planesData = await planesResponse.json();
         setPlanesDePago(planesData);
 
         // Fetch servicios
+<<<<<<< HEAD
         const serviciosResponse = await fetch('https://fitoffice2-ff8035a9df10.herokuapp.com/api/servicios/services', {
+=======
+        const serviciosResponse = await fetch('https://fitoffice-a7ed6ea26ba4.herokuapp.com/api/servicios/services', {
+>>>>>>> 264be574fa9db2ca7c87c3d8b1e8ddad2d870b25
           headers: { 'Authorization': `Bearer ${token}` }
         });
         const serviciosData = await serviciosResponse.json();

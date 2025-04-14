@@ -211,7 +211,11 @@ const ReporteForm: React.FC<ReporteFormProps> = ({ onSubmit }) => {
       setLoading(prev => ({ ...prev, clientes: true }));
       try {
         const token = localStorage.getItem('token');
+<<<<<<< HEAD
         const response = await fetch('https://fitoffice2-ff8035a9df10.herokuapp.com/api/clientes/basico', {
+=======
+        const response = await fetch('https://fitoffice-a7ed6ea26ba4.herokuapp.com/api/clientes/basico', {
+>>>>>>> 264be574fa9db2ca7c87c3d8b1e8ddad2d870b25
           headers: {
             'Authorization': `Bearer ${token}`
           }
@@ -239,7 +243,11 @@ const ReporteForm: React.FC<ReporteFormProps> = ({ onSubmit }) => {
       setLoading(prev => ({ ...prev, ingresos: true }));
       try {
         const token = localStorage.getItem('token');
+<<<<<<< HEAD
         const response = await fetch('https://fitoffice2-ff8035a9df10.herokuapp.com/api/ingresos/basico', {
+=======
+        const response = await fetch('https://fitoffice-a7ed6ea26ba4.herokuapp.com/api/ingresos/basico', {
+>>>>>>> 264be574fa9db2ca7c87c3d8b1e8ddad2d870b25
           headers: {
             'Authorization': `Bearer ${token}`
           }
@@ -267,7 +275,11 @@ const ReporteForm: React.FC<ReporteFormProps> = ({ onSubmit }) => {
       setLoading(prev => ({ ...prev, gastos: true }));
       try {
         const token = localStorage.getItem('token');
+<<<<<<< HEAD
         const response = await fetch('https://fitoffice2-ff8035a9df10.herokuapp.com/api/gastos/basico', {
+=======
+        const response = await fetch('https://fitoffice-a7ed6ea26ba4.herokuapp.com/api/gastos/basico', {
+>>>>>>> 264be574fa9db2ca7c87c3d8b1e8ddad2d870b25
           headers: {
             'Authorization': `Bearer ${token}`
           }
@@ -295,7 +307,11 @@ const ReporteForm: React.FC<ReporteFormProps> = ({ onSubmit }) => {
       setLoading(prev => ({ ...prev, servicios: true }));
       try {
         const token = localStorage.getItem('token');
+<<<<<<< HEAD
         const response = await fetch('https://fitoffice2-ff8035a9df10.herokuapp.com/api/servicios/services/basico', {
+=======
+        const response = await fetch('https://fitoffice-a7ed6ea26ba4.herokuapp.com/api/servicios/services/basico', {
+>>>>>>> 264be574fa9db2ca7c87c3d8b1e8ddad2d870b25
           headers: {
             'Authorization': `Bearer ${token}`
           }
@@ -496,10 +512,17 @@ const ReporteForm: React.FC<ReporteFormProps> = ({ onSubmit }) => {
       };
       
       console.log('Enviando datos al servidor:', reportData);
+<<<<<<< HEAD
       console.log('URL de la petición:', 'https://fitoffice2-ff8035a9df10.herokuapp.com/api/reports');
       
       // Make POST request to create report
       const response = await fetch('https://fitoffice2-ff8035a9df10.herokuapp.com/api/reports', {
+=======
+      console.log('URL de la petición:', 'https://fitoffice-a7ed6ea26ba4.herokuapp.com/api/reports');
+      
+      // Make POST request to create report
+      const response = await fetch('https://fitoffice-a7ed6ea26ba4.herokuapp.com/api/reports', {
+>>>>>>> 264be574fa9db2ca7c87c3d8b1e8ddad2d870b25
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

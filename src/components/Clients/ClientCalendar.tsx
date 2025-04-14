@@ -36,7 +36,11 @@ const ClientCalendar: React.FC<ClientCalendarProps> = ({ clientId }) => {
         }
 
         // Obtener eventos directamente usando el ID del cliente
+<<<<<<< HEAD
         const eventResponse = await fetch(`https://fitoffice2-ff8035a9df10.herokuapp.com/api/events/${clientId}`, {
+=======
+        const eventResponse = await fetch(`https://fitoffice-a7ed6ea26ba4.herokuapp.com/api/events/${clientId}`, {
+>>>>>>> 264be574fa9db2ca7c87c3d8b1e8ddad2d870b25
           headers: {
             'Authorization': `Bearer ${token}`,
             'Content-Type': 'application/json'

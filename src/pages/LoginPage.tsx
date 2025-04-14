@@ -25,9 +25,15 @@ const LoginPage: React.FC = () => {
     }`,
     card: `max-w-md w-full mx-4 ${
       theme === 'dark'
+<<<<<<< HEAD
         ? 'bg-gray-800/40'
         : 'bg-white/60'
     } rounded-3xl shadow-xl overflow-hidden transition-all duration-300 hover:shadow-2xl hover:shadow-blue-500/30 hover:border-blue-400/30 ${theme === 'dark' ? 'border border-gray-700/50' : 'border border-gray-200/50'} hover:-translate-y-1`,
+=======
+        ? 'bg-gray-800/40 backdrop-blur-sm'
+        : 'bg-white/60 backdrop-blur-sm'
+    } rounded-3xl shadow-2xl overflow-hidden transition-all duration-500 ease-in-out transform hover:scale-[1.02] hover:shadow-blue-500/20 hover:-translate-y-1`,
+>>>>>>> 264be574fa9db2ca7c87c3d8b1e8ddad2d870b25
     header: 'relative h-40 bg-gradient-to-r from-blue-600 to-blue-400',
     title: `text-2xl font-bold text-center mb-8 ${
       theme === 'dark' ? 'text-white' : 'text-gray-800'

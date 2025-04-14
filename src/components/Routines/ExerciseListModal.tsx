@@ -34,7 +34,11 @@ const ExerciseListModal: React.FC<ExerciseListModalProps> = ({
   const fetchExercises = async () => {
     try {
       setLoading(true);
+<<<<<<< HEAD
       const response = await axios.get('https://fitoffice2-ff8035a9df10.herokuapp.com/api/exercises');
+=======
+      const response = await axios.get('https://fitoffice-a7ed6ea26ba4.herokuapp.com/api/exercises');
+>>>>>>> 264be574fa9db2ca7c87c3d8b1e8ddad2d870b25
       setExercises(response.data.data);
       
       // Extract unique categories

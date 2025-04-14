@@ -273,4 +273,8 @@ const PeriodosPlantillaCalendario: React.FC<PeriodosPlantillaCalendarioProps> = 
   );
 };
 
+<<<<<<< HEAD
 export default PeriodosPlantillaCalendario;
+=======
+export default PeriodosPlantillaCalendario;
+>>>>>>> 264be574fa9db2ca7c87c3d8b1e8ddad2d870b25

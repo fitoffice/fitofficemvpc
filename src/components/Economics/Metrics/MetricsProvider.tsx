@@ -48,7 +48,11 @@ export const MetricsProvider: React.FC<MetricsProviderProps> = ({ children }) =>
         throw new Error('Token no encontrado. Por favor, inicia sesión nuevamente.');
       }
 
+<<<<<<< HEAD
       const response = await fetch('https://fitoffice2-ff8035a9df10.herokuapp.com/api/gastos', {
+=======
+      const response = await fetch('https://fitoffice-a7ed6ea26ba4.herokuapp.com/api/gastos', {
+>>>>>>> 264be574fa9db2ca7c87c3d8b1e8ddad2d870b25
         method: 'GET',
         headers: {
           'Content-Type': 'application/json',
@@ -103,7 +107,11 @@ export const MetricsProvider: React.FC<MetricsProviderProps> = ({ children }) =>
         throw new Error('Token no encontrado. Por favor, inicia sesión nuevamente.');
       }
 
+<<<<<<< HEAD
       const response = await fetch('https://fitoffice2-ff8035a9df10.herokuapp.com/api/ingresos', {
+=======
+      const response = await fetch('https://fitoffice-a7ed6ea26ba4.herokuapp.com/api/ingresos', {
+>>>>>>> 264be574fa9db2ca7c87c3d8b1e8ddad2d870b25
         method: 'GET',
         headers: {
           'Content-Type': 'application/json',
@@ -148,7 +156,11 @@ export const MetricsProvider: React.FC<MetricsProviderProps> = ({ children }) =>
         throw new Error('Token no encontrado. Por favor, inicia sesión nuevamente.');
       }
 
+<<<<<<< HEAD
       const response = await fetch('https://fitoffice2-ff8035a9df10.herokuapp.com/api/clientes', {
+=======
+      const response = await fetch('https://fitoffice-a7ed6ea26ba4.herokuapp.com/api/clientes', {
+>>>>>>> 264be574fa9db2ca7c87c3d8b1e8ddad2d870b25
         headers: {
           'Authorization': `Bearer ${token}`,
           'Content-Type': 'application/json'

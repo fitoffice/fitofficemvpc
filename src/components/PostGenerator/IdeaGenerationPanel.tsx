@@ -73,7 +73,11 @@ const IdeaGenerationPanel: React.FC<IdeaGenerationPanelProps> = ({
       const token = localStorage.getItem('token');
 
       // Make API call to generate ideas
+<<<<<<< HEAD
       const response = await fetch('https://fitoffice2-ff8035a9df10.herokuapp.com/api/chats/posts/generacion-ideas', {
+=======
+      const response = await fetch('https://fitoffice-a7ed6ea26ba4.herokuapp.com/api/chats/posts/generacion-ideas', {
+>>>>>>> 264be574fa9db2ca7c87c3d8b1e8ddad2d870b25
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

@@ -1,8 +1,13 @@
 import React, { useState, useEffect } from 'react';
+<<<<<<< HEAD
 import {  Target, Flame, Calendar, AlertCircle, TrendingUp, Settings, Book, Apple } from 'lucide-react';
 import DietConfigPopup, { DietConfig } from './DietConfigPopup';
 import RecipePopup from './RecipePopup';
 import IngredientsPopup from './IngredientsPopup';
+=======
+import {  Target, Flame, Calendar, AlertCircle, TrendingUp, Settings } from 'lucide-react';
+import DietConfigPopup, { DietConfig } from './DietConfigPopup';
+>>>>>>> 264be574fa9db2ca7c87c3d8b1e8ddad2d870b25
 
 // Define props interface for DietInfo
 interface DietInfoProps {
@@ -29,8 +34,11 @@ export default function DietInfo({
 }: DietInfoProps) {
 
   const [isConfigOpen, setIsConfigOpen] = useState(false);
+<<<<<<< HEAD
   const [isRecipesOpen, setIsRecipesOpen] = useState(false);
   const [isIngredientsOpen, setIsIngredientsOpen] = useState(false);
+=======
+>>>>>>> 264be574fa9db2ca7c87c3d8b1e8ddad2d870b25
   const [dietConfig, setDietConfig] = useState<DietConfig>({
     calorieGoal: macros?.calories.target || 0,
     macros: {
@@ -76,6 +84,7 @@ export default function DietInfo({
     setIsConfigOpen(true);
   };
 
+<<<<<<< HEAD
   const handleRecipesClick = () => {
     setIsRecipesOpen(true);
     console.log('Abriendo panel de recetas');
@@ -86,6 +95,8 @@ export default function DietInfo({
     console.log('Abriendo panel de ingredientes');
   };
 
+=======
+>>>>>>> 264be574fa9db2ca7c87c3d8b1e8ddad2d870b25
   const handleConfigSave = (newConfig: DietConfig) => {
     setDietConfig(newConfig);
     console.log('Nueva configuración guardada:', newConfig);
@@ -111,6 +122,7 @@ export default function DietInfo({
         </div>
         
         {/* Configuration button - positioned in the top right corner */}
+<<<<<<< HEAD
         <div className="absolute top-6 right-6 z-10 flex gap-3">
           <button 
             onClick={handleConfigClick}
@@ -138,6 +150,15 @@ export default function DietInfo({
             <Apple className="w-6 h-6 text-white group-hover:text-yellow-300 transition-colors" />
           </button>
         </div>
+=======
+        <button 
+          onClick={handleConfigClick}
+          className="absolute top-6 right-6 z-10 p-3 bg-white/10 rounded-full backdrop-blur-md hover:bg-white/20 transition-all duration-300 hover:scale-110 hover:shadow-lg border border-white/10 group"
+          aria-label="Configurar dieta"
+        >
+          <Settings className="w-6 h-6 text-white group-hover:text-blue-300 transition-colors animate-pulse-slow" />
+        </button>
+>>>>>>> 264be574fa9db2ca7c87c3d8b1e8ddad2d870b25
         
         <div className="max-w-6xl mx-auto relative">
           <div className="flex flex-wrap items-center gap-3 mb-8">
@@ -186,8 +207,11 @@ export default function DietInfo({
             </div>
           </div>
 
+<<<<<<< HEAD
           {/* Action buttons for recipes and ingredients */}
 
+=======
+>>>>>>> 264be574fa9db2ca7c87c3d8b1e8ddad2d870b25
           {/* Enhanced grid items */}
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
             {/* Update each grid item with enhanced styling */}
@@ -219,6 +243,7 @@ export default function DietInfo({
         estado={estado}
         macrosData={macros}
       />
+<<<<<<< HEAD
 
       {/* Recipe Popup */}
       <RecipePopup
@@ -231,6 +256,8 @@ export default function DietInfo({
         isOpen={isIngredientsOpen}
         onClose={() => setIsIngredientsOpen(false)}
       />
+=======
+>>>>>>> 264be574fa9db2ca7c87c3d8b1e8ddad2d870b25
       <style jsx>{`
         @keyframes subtle-pulse {
           0%, 100% { opacity: 0.1; }

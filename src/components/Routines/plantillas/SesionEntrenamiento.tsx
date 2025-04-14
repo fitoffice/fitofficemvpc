@@ -148,7 +148,11 @@ const SesionEntrenamiento: React.FC<SesionEntrenamientoProps> = ({
         throw new Error('No se encontró el token de autenticación');
       }
 
+<<<<<<< HEAD
       const url = `https://fitoffice2-ff8035a9df10.herokuapp.com/api/plannings/${planningId}/weeks/${weekNumber}/days/${selectedDay}/sessions/${session._id}/exercises/${exerciseId}/sets/${setId}/render-config`;
+=======
+      const url = `https://fitoffice-a7ed6ea26ba4.herokuapp.com/api/plannings/${planningId}/weeks/${weekNumber}/days/${selectedDay}/sessions/${session._id}/exercises/${exerciseId}/sets/${setId}/render-config`;
+>>>>>>> 264be574fa9db2ca7c87c3d8b1e8ddad2d870b25
       
       await axios.patch(url, config, {
         headers: {
@@ -205,7 +209,11 @@ const SesionEntrenamiento: React.FC<SesionEntrenamientoProps> = ({
 
       // Enviar la petición PATCH al backend
       const response = await axios.patch(
+<<<<<<< HEAD
         `https://fitoffice2-ff8035a9df10.herokuapp.com/api/plannings/${planningId}/weeks/${weekNumber}/days/${selectedDay}/sessions/${session._id}/exercises/${exerciseId}/sets/${setId}/render-config`,
+=======
+        `https://fitoffice-a7ed6ea26ba4.herokuapp.com/api/plannings/${planningId}/weeks/${weekNumber}/days/${selectedDay}/sessions/${session._id}/exercises/${exerciseId}/sets/${setId}/render-config`,
+>>>>>>> 264be574fa9db2ca7c87c3d8b1e8ddad2d870b25
         newRenderConfig
       );
 
@@ -335,7 +343,11 @@ const SesionEntrenamiento: React.FC<SesionEntrenamientoProps> = ({
 
       console.log('Actualizando rondas para sesión:', session._id, 'Nuevas rondas:', editedRounds);
 
+<<<<<<< HEAD
       const response = await fetch(`https://fitoffice2-ff8035a9df10.herokuapp.com/api/plannings/session/${session._id}/rounds`, {
+=======
+      const response = await fetch(`https://fitoffice-a7ed6ea26ba4.herokuapp.com/api/plannings/session/${session._id}/rounds`, {
+>>>>>>> 264be574fa9db2ca7c87c3d8b1e8ddad2d870b25
         method: 'PATCH',
         headers: {
           'Content-Type': 'application/json',
@@ -360,7 +372,11 @@ const SesionEntrenamiento: React.FC<SesionEntrenamientoProps> = ({
 
   const handleDeleteSession = async () => {
     try {
+<<<<<<< HEAD
       await axios.delete(`https://fitoffice2-ff8035a9df10.herokuapp.com/api/plannings/session/${session._id}`, {
+=======
+      await axios.delete(`https://fitoffice-a7ed6ea26ba4.herokuapp.com/api/plannings/session/${session._id}`, {
+>>>>>>> 264be574fa9db2ca7c87c3d8b1e8ddad2d870b25
         headers: {
           'Content-Type': 'application/json',
           Authorization: `Bearer ${localStorage.getItem('token')}`
@@ -436,7 +452,11 @@ const SesionEntrenamiento: React.FC<SesionEntrenamientoProps> = ({
 
       // Hacer la petición a la API para añadir el set
       const response = await axios.post(
+<<<<<<< HEAD
         `https://fitoffice2-ff8035a9df10.herokuapp.com/api/plannings/${planningId}/weeks/${weekNumber}/days/${selectedDay}/sessions/${session._id}/exercises/${exerciseId}/sets`,
+=======
+        `https://fitoffice-a7ed6ea26ba4.herokuapp.com/api/plannings/${planningId}/weeks/${weekNumber}/days/${selectedDay}/sessions/${session._id}/exercises/${exerciseId}/sets`,
+>>>>>>> 264be574fa9db2ca7c87c3d8b1e8ddad2d870b25
         newSet
       );
 
@@ -594,7 +614,11 @@ const SesionEntrenamiento: React.FC<SesionEntrenamientoProps> = ({
         sets: updatedSets
       });
 
+<<<<<<< HEAD
       const url = `https://fitoffice2-ff8035a9df10.herokuapp.com/api/plannings/${planningId}/weeks/${weekNumber}/days/${selectedDay}/sessions/${session._id}/exercises/${exerciseId}`;
+=======
+      const url = `https://fitoffice-a7ed6ea26ba4.herokuapp.com/api/plannings/${planningId}/weeks/${weekNumber}/days/${selectedDay}/sessions/${session._id}/exercises/${exerciseId}`;
+>>>>>>> 264be574fa9db2ca7c87c3d8b1e8ddad2d870b25
       
       const response = await axios.put(
         url,

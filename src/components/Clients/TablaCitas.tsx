@@ -30,7 +30,11 @@ const TablaCitas = ({ datos, isDarkMode, onEditCita, onDeleteCita }: Props) => {
       // Get the token from localStorage
       const token = localStorage.getItem('token');
       
+<<<<<<< HEAD
       fetch(`https://fitoffice2-ff8035a9df10.herokuapp.com/api/servicios/services/${citaId}`, {
+=======
+      fetch(`https://fitoffice-a7ed6ea26ba4.herokuapp.com/api/servicios/services/${citaId}`, {
+>>>>>>> 264be574fa9db2ca7c87c3d8b1e8ddad2d870b25
         method: 'DELETE',
         headers: {
           'Content-Type': 'application/json',

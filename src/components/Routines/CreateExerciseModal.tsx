@@ -139,13 +139,21 @@ const CreateExerciseModal: React.FC<CreateExerciseModalProps> = ({
       }
 
       if (isEditing && initialData?._id) {
+<<<<<<< HEAD
         await axios.put(`https://fitoffice2-ff8035a9df10.herokuapp.com/api/exercises/${initialData._id}`, {
+=======
+        await axios.put(`https://fitoffice-a7ed6ea26ba4.herokuapp.com/api/exercises/${initialData._id}`, {
+>>>>>>> 264be574fa9db2ca7c87c3d8b1e8ddad2d870b25
           ...formData,
           grupoMuscular: formData.gruposMusculares,
           equipo: formData.equipamiento
         });
       } else {
+<<<<<<< HEAD
         await axios.post('https://fitoffice2-ff8035a9df10.herokuapp.com/api/exercises', {
+=======
+        await axios.post('https://fitoffice-a7ed6ea26ba4.herokuapp.com/api/exercises', {
+>>>>>>> 264be574fa9db2ca7c87c3d8b1e8ddad2d870b25
           ...formData,
           grupoMuscular: formData.gruposMusculares,
           equipo: formData.equipamiento

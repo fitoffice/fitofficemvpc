@@ -48,7 +48,11 @@ const LicenciasWidget: React.FC = () => {
   const handleView = async (licencia: Licencia) => {
     try {
       const token = localStorage.getItem('token');
+<<<<<<< HEAD
       const response = await axios.get(`https://fitoffice2-ff8035a9df10.herokuapp.com/api/licencias/${licencia._id}/download`, {
+=======
+      const response = await axios.get(`https://fitoffice-a7ed6ea26ba4.herokuapp.com/api/licencias/${licencia._id}/download`, {
+>>>>>>> 264be574fa9db2ca7c87c3d8b1e8ddad2d870b25
         headers: {
           'Authorization': `Bearer ${token}`
         },

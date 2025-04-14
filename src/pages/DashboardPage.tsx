@@ -24,9 +24,14 @@ import CashFlowChart from '../components/Economics/CashFlowChart';
 import MetricCard from '../components/Dashboard/MetricCard';
 import Button from '../components/Common/Button';
 import ClientTable from '../components/Clients/ClientTable';
+<<<<<<< HEAD
 import WelcomePopup from '../components/Dashboard/WelcomePopup';
 
 const API_URL = 'https://fitoffice2-ff8035a9df10.herokuapp.com/api'; // Asegúrate de que coincida con tu backend
+=======
+
+const API_URL = 'https://fitoffice-a7ed6ea26ba4.herokuapp.com/api'; // Asegúrate de que coincida con tu backend
+>>>>>>> 264be574fa9db2ca7c87c3d8b1e8ddad2d870b25
 
 const DashboardPage: React.FC = () => {
   const navigate = useNavigate();
@@ -35,7 +40,10 @@ const DashboardPage: React.FC = () => {
   // Add these new state variables
   const [isFilterDropdownOpen, setIsFilterDropdownOpen] = useState(false);
   const [filterType, setFilterType] = useState('todos');
+<<<<<<< HEAD
   const [isWelcomePopupOpen, setIsWelcomePopupOpen] = useState(true); // Set to true by default to test
+=======
+>>>>>>> 264be574fa9db2ca7c87c3d8b1e8ddad2d870b25
 
   // Estados para manejar términos de búsqueda
   const [searchTerm, setSearchTerm] = useState('');
@@ -57,6 +65,7 @@ const DashboardPage: React.FC = () => {
   const [alerts, setAlerts] = useState<any[]>([]);
   const [loading, setLoading] = useState<boolean>(false);
   const [error, setError] = useState<string | null>(null);
+<<<<<<< HEAD
   useEffect(() => {
     // Verificar si es la primera vez que el usuario visita el dashboard
     const hasVisitedBefore = localStorage.getItem('hasVisitedDashboard');
@@ -68,6 +77,8 @@ const DashboardPage: React.FC = () => {
       localStorage.setItem('hasVisitedDashboard', 'true');
     }
   }, []);
+=======
+>>>>>>> 264be574fa9db2ca7c87c3d8b1e8ddad2d870b25
 
   useEffect(() => {
     const fetchData = async () => {
@@ -88,7 +99,11 @@ const DashboardPage: React.FC = () => {
         // Función para obtener las alertas
         const fetchAlerts = async () => {
           try {
+<<<<<<< HEAD
             const response = await fetch('https://fitoffice2-ff8035a9df10.herokuapp.com/api/economic-alerts', {
+=======
+            const response = await fetch('https://fitoffice-a7ed6ea26ba4.herokuapp.com/api/economic-alerts', {
+>>>>>>> 264be574fa9db2ca7c87c3d8b1e8ddad2d870b25
               headers: {
                 'Authorization': `Bearer ${token}`,
                 'Content-Type': 'application/json'
@@ -131,12 +146,20 @@ const DashboardPage: React.FC = () => {
         await fetchClientes();
 
         // Fetch ingresos
+<<<<<<< HEAD
         const ingresosResponse = await fetch('https://fitoffice2-ff8035a9df10.herokuapp.com/api/ingresos', { headers });
+=======
+        const ingresosResponse = await fetch('https://fitoffice-a7ed6ea26ba4.herokuapp.com/api/ingresos', { headers });
+>>>>>>> 264be574fa9db2ca7c87c3d8b1e8ddad2d870b25
         const ingresosData = await ingresosResponse.json();
         setIngresos(ingresosData);
 
         // Fetch gastos
+<<<<<<< HEAD
         const gastosResponse = await fetch('https://fitoffice2-ff8035a9df10.herokuapp.com/api/gastos', { headers });
+=======
+        const gastosResponse = await fetch('https://fitoffice-a7ed6ea26ba4.herokuapp.com/api/gastos', { headers });
+>>>>>>> 264be574fa9db2ca7c87c3d8b1e8ddad2d870b25
         const gastosData = await gastosResponse.json();
         setGastos(gastosData);
 
@@ -232,11 +255,14 @@ const DashboardPage: React.FC = () => {
         ? 'bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900' 
         : 'bg-gradient-to-br from-gray-50 via-gray-100 to-blue-100'
     }`}>
+<<<<<<< HEAD
          <WelcomePopup 
         isOpen={isWelcomePopupOpen} 
         onClose={() => setIsWelcomePopupOpen(false)} 
         theme={theme} 
       />
+=======
+>>>>>>> 264be574fa9db2ca7c87c3d8b1e8ddad2d870b25
       {/* Contenido del Dashboard */}
       <div className="w-full space-y-6 px-4 sm:px-6 animate-fadeIn">
         {/* Título */}

@@ -1,15 +1,23 @@
 import React, { useState, useEffect } from 'react';
+<<<<<<< HEAD
 import { X, Plus, Trash2 } from 'lucide-react';
 import Button from '../Common/Button';
 import { useTheme } from '../../contexts/ThemeContext';
 import { usePlanning } from '../../contexts/PlanningContext'; // Import the planning context
 import CrearPlanificacionPeriodos from './CrearPlanificacionPeriodos'; // Import the new component
+=======
+import { X } from 'lucide-react';
+import Button from '../Common/Button';
+import { useTheme } from '../../contexts/ThemeContext';
+import { usePlanning } from '../../contexts/PlanningContext'; // Import the planning context
+>>>>>>> 264be574fa9db2ca7c87c3d8b1e8ddad2d870b25
 
 interface PopupCrearPlanificacionProps {
   onClose: () => void;
   onPlanningCreated?: () => void;
 }
 
+<<<<<<< HEAD
 // Define an interface for exercise RM
 interface ExerciseRM {
   name: string;
@@ -23,6 +31,8 @@ interface Periodo {
   descripcion: string;
 }
 
+=======
+>>>>>>> 264be574fa9db2ca7c87c3d8b1e8ddad2d870b25
 const PopupCrearPlanificacion: React.FC<PopupCrearPlanificacionProps> = ({
   onClose,
   onPlanningCreated,
@@ -45,6 +55,7 @@ const PopupCrearPlanificacion: React.FC<PopupCrearPlanificacionProps> = ({
   const [semanas, setSemanas] = useState(1);
   const [clienteId, setClienteId] = useState('');
   const [tipo, setTipo] = useState('Planificacion');
+<<<<<<< HEAD
   // Add state for exercise RMs with predefined exercises
   const [exerciseRMs, setExerciseRMs] = useState<ExerciseRM[]>([
     { name: 'Press Banca', rm: '' },
@@ -53,6 +64,8 @@ const PopupCrearPlanificacion: React.FC<PopupCrearPlanificacionProps> = ({
     { name: 'Peso Rumano', rm: '' },
     { name: 'Curl de Bíceps', rm: '' }
   ]);
+=======
+>>>>>>> 264be574fa9db2ca7c87c3d8b1e8ddad2d870b25
 
   const [clientes, setClientes] = useState<any[]>([]);
   const [loading, setLoading] = useState(false);
@@ -67,7 +80,11 @@ const PopupCrearPlanificacion: React.FC<PopupCrearPlanificacionProps> = ({
           throw new Error('No se encontró el token de autenticación');
         }
 
+<<<<<<< HEAD
         const response = await fetch('https://fitoffice2-ff8035a9df10.herokuapp.com/api/clientes', {
+=======
+        const response = await fetch('https://fitoffice-a7ed6ea26ba4.herokuapp.com/api/clientes', {
+>>>>>>> 264be574fa9db2ca7c87c3d8b1e8ddad2d870b25
           method: 'GET',
           headers: {
             'Content-Type': 'application/json',
@@ -91,6 +108,7 @@ const PopupCrearPlanificacion: React.FC<PopupCrearPlanificacionProps> = ({
     fetchClientes();
   }, []);
 
+<<<<<<< HEAD
   // Function to add a new exercise RM field
   const addExerciseRMField = () => {
     setExerciseRMs([...exerciseRMs, { name: '', rm: '' }]);
@@ -112,6 +130,8 @@ const PopupCrearPlanificacion: React.FC<PopupCrearPlanificacionProps> = ({
 
   const [periodos, setPeriodos] = useState<Periodo[]>([]);
 
+=======
+>>>>>>> 264be574fa9db2ca7c87c3d8b1e8ddad2d870b25
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
@@ -125,7 +145,11 @@ const PopupCrearPlanificacion: React.FC<PopupCrearPlanificacionProps> = ({
         throw new Error('No se encontró el token de autenticación');
       }
 
+<<<<<<< HEAD
       let endpoint = 'https://fitoffice2-ff8035a9df10.herokuapp.com/api/plannings';
+=======
+      let endpoint = 'https://fitoffice-a7ed6ea26ba4.herokuapp.com/api/plannings';
+>>>>>>> 264be574fa9db2ca7c87c3d8b1e8ddad2d870b25
       let requestBody: any = {
         nombre,
         descripcion,
@@ -137,6 +161,7 @@ const PopupCrearPlanificacion: React.FC<PopupCrearPlanificacionProps> = ({
         requestBody.fechaInicio = fechaInicio;
         requestBody.tipo = tipo;
         requestBody.clienteId = clienteId || null;
+<<<<<<< HEAD
         
         // Add exercise RMs to request body if they exist and are valid
         const validExerciseRMs = exerciseRMs.filter(ex => ex.name.trim() !== '' && ex.rm.trim() !== '');
@@ -151,6 +176,11 @@ const PopupCrearPlanificacion: React.FC<PopupCrearPlanificacionProps> = ({
       } else {
         // Si es una plantilla, usar el endpoint específico para plantillas
         endpoint = 'https://fitoffice2-ff8035a9df10.herokuapp.com/api/planningtemplate/templates';
+=======
+      } else {
+        // Si es una plantilla, usar el endpoint específico para plantillas
+        endpoint = 'https://fitoffice-a7ed6ea26ba4.herokuapp.com/api/planningtemplate/templates';
+>>>>>>> 264be574fa9db2ca7c87c3d8b1e8ddad2d870b25
       }
 
       const response = await fetch(endpoint, {
@@ -391,6 +421,7 @@ const PopupCrearPlanificacion: React.FC<PopupCrearPlanificacionProps> = ({
                 </div>
               )}
 
+<<<<<<< HEAD
               {/* Exercise RM Section - Only for Planificacion */}
               {tipo === 'Planificacion' && (
                 <div className="space-y-4">
@@ -454,6 +485,8 @@ const PopupCrearPlanificacion: React.FC<PopupCrearPlanificacionProps> = ({
                 />
               )}
 
+=======
+>>>>>>> 264be574fa9db2ca7c87c3d8b1e8ddad2d870b25
               {/* Submit Button */}
               <div className="pt-4 border-t border-gray-200 dark:border-gray-700">
                 <Button

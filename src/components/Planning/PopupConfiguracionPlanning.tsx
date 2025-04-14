@@ -1,10 +1,17 @@
+<<<<<<< HEAD
 import React, { useState, useEffect } from 'react';
+=======
+import React from 'react';
+>>>>>>> 264be574fa9db2ca7c87c3d8b1e8ddad2d870b25
 import { X } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { Planning } from '../../pages/types/planning';
 import Button from '../Common/Button';
 import { useTheme } from '../../contexts/ThemeContext';
+<<<<<<< HEAD
 import { useLocation } from 'react-router-dom';
+=======
+>>>>>>> 264be574fa9db2ca7c87c3d8b1e8ddad2d870b25
 
 interface PopupConfiguracionPlanningProps {
   planning: Planning | null;
@@ -20,6 +27,7 @@ const PopupConfiguracionPlanning: React.FC<PopupConfiguracionPlanningProps> = ({
   isOpen
 }) => {
   const { theme } = useTheme();
+<<<<<<< HEAD
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const location = useLocation();
@@ -30,6 +38,8 @@ const PopupConfiguracionPlanning: React.FC<PopupConfiguracionPlanningProps> = ({
     const segments = path.split('/');
     return segments[segments.length - 1];
   };
+=======
+>>>>>>> 264be574fa9db2ca7c87c3d8b1e8ddad2d870b25
   
   if (!isOpen || !planning) return null;
 
@@ -57,6 +67,7 @@ const PopupConfiguracionPlanning: React.FC<PopupConfiguracionPlanningProps> = ({
     }
   };
 
+<<<<<<< HEAD
   const handleSave = async () => {
     if (!planning) return;
     
@@ -101,6 +112,8 @@ const PopupConfiguracionPlanning: React.FC<PopupConfiguracionPlanningProps> = ({
     }
   };
 
+=======
+>>>>>>> 264be574fa9db2ca7c87c3d8b1e8ddad2d870b25
   return (
     <div className="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center">
       <motion.div 
@@ -152,28 +165,55 @@ const PopupConfiguracionPlanning: React.FC<PopupConfiguracionPlanningProps> = ({
             />
           </div>
 
+<<<<<<< HEAD
           {error && (
             <div className="p-3 bg-red-100 border border-red-400 text-red-700 rounded">
               {error}
             </div>
           )}
+=======
+          <div>
+            <label className="block text-sm font-medium mb-2">Número de semanas</label>
+            <input
+              type="number"
+              min="1"
+              value={planning.semanas || 4}
+              onChange={handleWeeksChange}
+              className={`w-full p-3 rounded-lg border ${
+                theme === 'dark' 
+                  ? 'bg-gray-700 border-gray-600 text-white' 
+                  : 'bg-white border-gray-300 text-gray-900'
+              } focus:ring-2 focus:ring-blue-500 focus:border-blue-500`}
+            />
+          </div>
+>>>>>>> 264be574fa9db2ca7c87c3d8b1e8ddad2d870b25
 
           <div className="flex justify-end space-x-4 mt-8">
             <Button
               variant="danger"
               onClick={onClose}
               className="px-6 py-2.5"
+<<<<<<< HEAD
               disabled={isLoading}
+=======
+>>>>>>> 264be574fa9db2ca7c87c3d8b1e8ddad2d870b25
             >
               Cancelar
             </Button>
             <Button
               variant="create"
+<<<<<<< HEAD
               onClick={handleSave}
               className="px-6 py-2.5"
               disabled={isLoading}
             >
               {isLoading ? 'Guardando...' : 'Guardar'}
+=======
+              onClick={onClose}
+              className="px-6 py-2.5"
+            >
+              Guardar
+>>>>>>> 264be574fa9db2ca7c87c3d8b1e8ddad2d870b25
             </Button>
           </div>
         </div>

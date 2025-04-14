@@ -43,7 +43,11 @@ const AIChat: React.FC<AIChatProps> = ({ onSendMessage, chatDescription, theme }
         {
           id: '1',
           type: 'bot',
+<<<<<<< HEAD
           content: `¡https://fitoffice2-ff8035a9df10.herokuapp.com/! 👋 ${chatDescription}. Describe tu consulta y te ayudaré a resolverla.`,
+=======
+          content: `¡https://fitoffice-a7ed6ea26ba4.herokuapp.com/! 👋 ${chatDescription}. Describe tu consulta y te ayudaré a resolverla.`,
+>>>>>>> 264be574fa9db2ca7c87c3d8b1e8ddad2d870b25
           timestamp: new Date(),
         }
       ]);

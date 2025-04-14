@@ -190,7 +190,11 @@ ${coachGuide.guide || 'No especificado'}`;
     try {
       console.log('🚀 Enviando petición con datos:', {
         method: 'POST',
+<<<<<<< HEAD
         endpoint: 'https://fitoffice2-ff8035a9df10.herokuapp.com/api/chats/micro-habits',
+=======
+        endpoint: 'https://fitoffice-a7ed6ea26ba4.herokuapp.com/api/chats/micro-habits',
+>>>>>>> 264be574fa9db2ca7c87c3d8b1e8ddad2d870b25
         payload: form
       });
 
@@ -199,7 +203,11 @@ ${coachGuide.guide || 'No especificado'}`;
         throw new Error('No se encontró el token de autenticación');
       }
 
+<<<<<<< HEAD
       const response = await fetch('https://fitoffice2-ff8035a9df10.herokuapp.com/api/chats/micro-habits', {
+=======
+      const response = await fetch('https://fitoffice-a7ed6ea26ba4.herokuapp.com/api/chats/micro-habits', {
+>>>>>>> 264be574fa9db2ca7c87c3d8b1e8ddad2d870b25
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -256,7 +264,11 @@ ${coachGuide.guide || 'No especificado'}`;
 
       console.log('🧪 Enviando petición de prueba:', {
         method: 'POST',
+<<<<<<< HEAD
         endpoint: 'https://fitoffice2-ff8035a9df10.herokuapp.com/api/chats/micro-habits',
+=======
+        endpoint: 'https://fitoffice-a7ed6ea26ba4.herokuapp.com/api/chats/micro-habits',
+>>>>>>> 264be574fa9db2ca7c87c3d8b1e8ddad2d870b25
         payload: testPayload
       });
 
@@ -265,7 +277,11 @@ ${coachGuide.guide || 'No especificado'}`;
         throw new Error('No se encontró el token de autenticación');
       }
 
+<<<<<<< HEAD
       const response = await fetch('https://fitoffice2-ff8035a9df10.herokuapp.com/api/chats/micro-habits', {
+=======
+      const response = await fetch('https://fitoffice-a7ed6ea26ba4.herokuapp.com/api/chats/micro-habits', {
+>>>>>>> 264be574fa9db2ca7c87c3d8b1e8ddad2d870b25
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

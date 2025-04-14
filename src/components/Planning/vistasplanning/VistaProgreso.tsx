@@ -317,7 +317,11 @@ const VistaProgreso: React.FC<VistaProgresoProps> = ({ planSemanal, clientId: pr
         throw new Error('No se encontró el ID de la planificación');
       }
 
+<<<<<<< HEAD
       const response = await fetch(`https://fitoffice2-ff8035a9df10.herokuapp.com/api/plannings/${planningId}/client`, {
+=======
+      const response = await fetch(`https://fitoffice-a7ed6ea26ba4.herokuapp.com/api/plannings/${planningId}/client`, {
+>>>>>>> 264be574fa9db2ca7c87c3d8b1e8ddad2d870b25
         headers: {
           'Authorization': `Bearer ${token}`
         }
@@ -350,7 +354,11 @@ const VistaProgreso: React.FC<VistaProgresoProps> = ({ planSemanal, clientId: pr
         throw new Error('No se encontró el token de autenticación');
       }
 
+<<<<<<< HEAD
       const response = await fetch('https://fitoffice2-ff8035a9df10.herokuapp.com/api/exercises', {
+=======
+      const response = await fetch('https://fitoffice-a7ed6ea26ba4.herokuapp.com/api/exercises', {
+>>>>>>> 264be574fa9db2ca7c87c3d8b1e8ddad2d870b25
         headers: {
           'Authorization': `Bearer ${token}`
         }
@@ -384,7 +392,11 @@ const VistaProgreso: React.FC<VistaProgresoProps> = ({ planSemanal, clientId: pr
         throw new Error('No se encontró el token de autenticación');
       }
 
+<<<<<<< HEAD
       const response = await fetch('https://fitoffice2-ff8035a9df10.herokuapp.com/api/rms', {
+=======
+      const response = await fetch('https://fitoffice-a7ed6ea26ba4.herokuapp.com/api/rms', {
+>>>>>>> 264be574fa9db2ca7c87c3d8b1e8ddad2d870b25
         headers: {
           'Content-Type': 'application/json',
           Authorization: `Bearer ${token}`,
@@ -415,7 +427,11 @@ const VistaProgreso: React.FC<VistaProgresoProps> = ({ planSemanal, clientId: pr
         throw new Error('No se encontró el ID del cliente');
       }
 
+<<<<<<< HEAD
       const response = await fetch('https://fitoffice2-ff8035a9df10.herokuapp.com/api/rms', {
+=======
+      const response = await fetch('https://fitoffice-a7ed6ea26ba4.herokuapp.com/api/rms', {
+>>>>>>> 264be574fa9db2ca7c87c3d8b1e8ddad2d870b25
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

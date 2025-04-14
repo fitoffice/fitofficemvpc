@@ -106,6 +106,7 @@ export const formatRoutineData = (
   
   // Create renderConfig with the first 3 mapped fields (or less if fewer fields are mapped)
   const renderConfig = {
+<<<<<<< HEAD
     campo1: mappedFields[0] === 'series' ? 'reps' : mappedFields[0] || 'repeticiones',
     campo2: mappedFields.length > 1 ? (mappedFields[1] === 'series' ? 'weight' : mappedFields[1]) : 'peso',
     campo3: mappedFields.length > 2 ? (mappedFields[2] === 'series' ? 'rest' : mappedFields[2]) : 'descanso'
@@ -118,6 +119,11 @@ export const formatRoutineData = (
     'descanso': 'rest',
     'ritmo': 'pace'
     // Other fields already match the expected API format
+=======
+    campo1: mappedFields[0] || 'repeticiones',
+    campo2: mappedFields.length > 1 ? mappedFields[1] : 'peso',
+    campo3: mappedFields.length > 2 ? mappedFields[2] : 'descanso'
+>>>>>>> 264be574fa9db2ca7c87c3d8b1e8ddad2d870b25
   };
   
   // Group exercises by name
@@ -136,6 +142,7 @@ export const formatRoutineData = (
     // Create a set with all available data
     const set: FormattedExerciseSet = {};
     
+<<<<<<< HEAD
     // Map all available fields to the set, using the standardized field names
     Object.entries(parsedData).forEach(([field, values]) => {
       if (field === 'exercises' || field === 'series') return; // Skip exercise name and series
@@ -145,17 +152,74 @@ export const formatRoutineData = (
         (set as any)[apiFieldName] = values[i];
       }
     });
+=======
+    if (parsedData.repetitions && parsedData.repetitions[i] !== undefined) {
+      set.reps = parsedData.repetitions[i];
+    }
+    
+    if (parsedData.weight && parsedData.weight[i] !== undefined) {
+      set.weight = parsedData.weight[i];
+    }
+    
+    if (parsedData.rest && parsedData.rest[i] !== undefined) {
+      set.rest = parsedData.rest[i];
+    }
+    
+    if (parsedData.rpe && parsedData.rpe[i] !== undefined) {
+      set.rpe = parsedData.rpe[i];
+    }
+    
+    if (parsedData.rir && parsedData.rir[i] !== undefined) {
+      set.rir = parsedData.rir[i];
+    }
+    
+    if (parsedData.rpm && parsedData.rpm[i] !== undefined) {
+      set.rpm = parsedData.rpm[i];
+    }
+    
+    if (parsedData.speed && parsedData.speed[i] !== undefined) {
+      set.speed = parsedData.speed[i];
+    }
+    
+    if (parsedData.cadence && parsedData.cadence[i] !== undefined) {
+      set.cadence = parsedData.cadence[i];
+    }
+    
+    if (parsedData.distance && parsedData.distance[i] !== undefined) {
+      set.distance = parsedData.distance[i];
+    }
+    
+    if (parsedData.height && parsedData.height[i] !== undefined) {
+      set.height = parsedData.height[i];
+    }
+    
+    if (parsedData.calories && parsedData.calories[i] !== undefined) {
+      set.calories = parsedData.calories[i];
+    }
+    
+    if (parsedData.round && parsedData.round[i] !== undefined) {
+      set.round = parsedData.round[i];
+    }
+    
+    if (parsedData.pace && parsedData.pace[i] !== undefined) {
+      set.pace = parsedData.pace[i];
+    }
+>>>>>>> 264be574fa9db2ca7c87c3d8b1e8ddad2d870b25
     
     exercise.sets.push(set);
   }
   
   return {
     exercises: Array.from(exerciseMap.values()),
+<<<<<<< HEAD
     renderConfig: {
       campo1: fieldNameMapping[renderConfig.campo1] || renderConfig.campo1,
       campo2: fieldNameMapping[renderConfig.campo2] || renderConfig.campo2,
       campo3: fieldNameMapping[renderConfig.campo3] || renderConfig.campo3
     }
+=======
+    renderConfig
+>>>>>>> 264be574fa9db2ca7c87c3d8b1e8ddad2d870b25
   };
 };
 

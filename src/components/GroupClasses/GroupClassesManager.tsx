@@ -235,7 +235,11 @@ const GroupClassesManager: React.FC<GroupClassesManagerProps> = ({
       const payload = generateApiPayload();
       console.log('📤 Enviando solicitud a la API...');
 
+<<<<<<< HEAD
       const response = await fetch('https://fitoffice2-ff8035a9df10.herokuapp.com/api/chats/group-class', {
+=======
+      const response = await fetch('https://fitoffice-a7ed6ea26ba4.herokuapp.com/api/chats/group-class', {
+>>>>>>> 264be574fa9db2ca7c87c3d8b1e8ddad2d870b25
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

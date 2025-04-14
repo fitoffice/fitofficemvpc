@@ -132,7 +132,11 @@ export function CampaignExpanded({ campaign, originalCampaign, campaignId, onClo
     const fetchCampaignData = async () => {
       try {
         // Use campaignId instead of campaign.id
+<<<<<<< HEAD
         const response = await axios.get(`https://fitoffice2-ff8035a9df10.herokuapp.com/api/campanas-correo/${campaignId}`);
+=======
+        const response = await axios.get(`https://fitoffice-a7ed6ea26ba4.herokuapp.com/api/campanas-correo/${campaignId}`);
+>>>>>>> 264be574fa9db2ca7c87c3d8b1e8ddad2d870b25
         console.log('Datos originales de la campaña:', response.data);
         setCampaignData(response.data);
         
@@ -210,13 +214,21 @@ export function CampaignExpanded({ campaign, originalCampaign, campaignId, onClo
       };
 
       console.log('Datos enviados a la API:', {
+<<<<<<< HEAD
         url: `https://fitoffice2-ff8035a9df10.herokuapp.com/api/campanas-correo/${campaign.id}/etapa-nombre`,
+=======
+        url: `https://fitoffice-a7ed6ea26ba4.herokuapp.com/api/campanas-correo/${campaign.id}/etapa-nombre`,
+>>>>>>> 264be574fa9db2ca7c87c3d8b1e8ddad2d870b25
         data: updateData,
         token
       });
 
       const response = await axios.put(
+<<<<<<< HEAD
         `https://fitoffice2-ff8035a9df10.herokuapp.com/api/campanas-correo/${campaignId}/etapa-nombre`, // Use campaignId
+=======
+        `https://fitoffice-a7ed6ea26ba4.herokuapp.com/api/campanas-correo/${campaignId}/etapa-nombre`, // Use campaignId
+>>>>>>> 264be574fa9db2ca7c87c3d8b1e8ddad2d870b25
         updateData,
         {
           headers: { 
@@ -282,7 +294,11 @@ export function CampaignExpanded({ campaign, originalCampaign, campaignId, onClo
       };
 
       await axios.put(
+<<<<<<< HEAD
         `https://fitoffice2-ff8035a9df10.herokuapp.com/api/campaign/${campaign.id}/pipeline`,
+=======
+        `https://fitoffice-a7ed6ea26ba4.herokuapp.com/api/campaign/${campaign.id}/pipeline`,
+>>>>>>> 264be574fa9db2ca7c87c3d8b1e8ddad2d870b25
         { pipeline: pipelineData },
         {
           headers: { 
@@ -338,7 +354,11 @@ export function CampaignExpanded({ campaign, originalCampaign, campaignId, onClo
       });
 
       const response = await axios.post(
+<<<<<<< HEAD
         `https://fitoffice2-ff8035a9df10.herokuapp.com/api/campanas-correo/${campaign.id}/etapa/${stageIndex}/correo`,
+=======
+        `https://fitoffice-a7ed6ea26ba4.herokuapp.com/api/campanas-correo/${campaign.id}/etapa/${stageIndex}/correo`,
+>>>>>>> 264be574fa9db2ca7c87c3d8b1e8ddad2d870b25
         emailData,
         {
           headers: {
@@ -383,7 +403,11 @@ export function CampaignExpanded({ campaign, originalCampaign, campaignId, onClo
       });
 
       const response = await axios.post(
+<<<<<<< HEAD
         `https://fitoffice2-ff8035a9df10.herokuapp.com/api/campanas-correo/${campaign.id}/etapa/${stageIndex}/enviar-email`,
+=======
+        `https://fitoffice-a7ed6ea26ba4.herokuapp.com/api/campanas-correo/${campaign.id}/etapa/${stageIndex}/enviar-email`,
+>>>>>>> 264be574fa9db2ca7c87c3d8b1e8ddad2d870b25
         {
           subject: emailContent.subject,
           body: emailContent.body,
@@ -432,7 +456,11 @@ export function CampaignExpanded({ campaign, originalCampaign, campaignId, onClo
       }
 
       console.log('Iniciando petición a la API de segmentos...');
+<<<<<<< HEAD
       const response = await fetch('https://fitoffice2-ff8035a9df10.herokuapp.com/api/segments', {
+=======
+      const response = await fetch('https://fitoffice-a7ed6ea26ba4.herokuapp.com/api/segments', {
+>>>>>>> 264be574fa9db2ca7c87c3d8b1e8ddad2d870b25
         method: 'GET',
         headers: {
           'Authorization': `Bearer ${token}`,
@@ -482,7 +510,11 @@ export function CampaignExpanded({ campaign, originalCampaign, campaignId, onClo
       
       const token = localStorage.getItem('token');
       await axios.put(
+<<<<<<< HEAD
         `https://fitoffice2-ff8035a9df10.herokuapp.com/api/campanas-correo/${campaign.id}/status`,
+=======
+        `https://fitoffice-a7ed6ea26ba4.herokuapp.com/api/campanas-correo/${campaign.id}/status`,
+>>>>>>> 264be574fa9db2ca7c87c3d8b1e8ddad2d870b25
         { status: newStatus },
         {
           headers: {
@@ -528,7 +560,11 @@ export function CampaignExpanded({ campaign, originalCampaign, campaignId, onClo
     try {
       const token = localStorage.getItem('token');
       await axios.post(
+<<<<<<< HEAD
         `https://fitoffice2-ff8035a9df10.herokuapp.com/api/campaign/${campaign.id}/copy`,
+=======
+        `https://fitoffice-a7ed6ea26ba4.herokuapp.com/api/campaign/${campaign.id}/copy`,
+>>>>>>> 264be574fa9db2ca7c87c3d8b1e8ddad2d870b25
         { nombre: newCampaignName },
         {
           headers: { 

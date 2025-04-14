@@ -70,8 +70,13 @@ const FacturasPage: React.FC<FacturasPageProps> = ({
       }
 
       const url = formData._id 
+<<<<<<< HEAD
         ? `https://fitoffice2-ff8035a9df10.herokuapp.com/api/invoice/${formData._id}`
         : 'https://fitoffice2-ff8035a9df10.herokuapp.com/api/invoice';
+=======
+        ? `https://fitoffice-a7ed6ea26ba4.herokuapp.com/api/invoice/${formData._id}`
+        : 'https://fitoffice-a7ed6ea26ba4.herokuapp.com/api/invoice';
+>>>>>>> 264be574fa9db2ca7c87c3d8b1e8ddad2d870b25
 
       const method = formData._id ? 'PUT' : 'POST';
 
@@ -117,7 +122,11 @@ const FacturasPage: React.FC<FacturasPageProps> = ({
       console.log('Fetching invoices with token:', token.substring(0, 10) + '...');
 
       // Realizar la petición GET al backend incluyendo el token en los encabezados
+<<<<<<< HEAD
       const response = await fetch('https://fitoffice2-ff8035a9df10.herokuapp.com/api/invoice', {
+=======
+      const response = await fetch('https://fitoffice-a7ed6ea26ba4.herokuapp.com/api/invoice', {
+>>>>>>> 264be574fa9db2ca7c87c3d8b1e8ddad2d870b25
         headers: {
           'Content-Type': 'application/json',
           'Authorization': `Bearer ${token}`,
@@ -228,7 +237,11 @@ const FacturasPage: React.FC<FacturasPageProps> = ({
         }
   
         // Fetch the complete invoice data
+<<<<<<< HEAD
         const response = await fetch(`https://fitoffice2-ff8035a9df10.herokuapp.com/api/invoice/${facturaId}`, {
+=======
+        const response = await fetch(`https://fitoffice-a7ed6ea26ba4.herokuapp.com/api/invoice/${facturaId}`, {
+>>>>>>> 264be574fa9db2ca7c87c3d8b1e8ddad2d870b25
           headers: {
             'Content-Type': 'application/json',
             'Authorization': `Bearer ${token}`,
@@ -267,7 +280,11 @@ const FacturasPage: React.FC<FacturasPageProps> = ({
   const handleDownloadFactura = async (facturaId: string) => {
     try {
       const token = localStorage.getItem('token');
+<<<<<<< HEAD
       const response = await fetch(`https://fitoffice2-ff8035a9df10.herokuapp.com/api/invoice/${facturaId}/pdf`, {
+=======
+      const response = await fetch(`https://fitoffice-a7ed6ea26ba4.herokuapp.com/api/invoice/${facturaId}/pdf`, {
+>>>>>>> 264be574fa9db2ca7c87c3d8b1e8ddad2d870b25
         headers: {
           'Authorization': `Bearer ${token}`,
         },
@@ -296,7 +313,11 @@ const FacturasPage: React.FC<FacturasPageProps> = ({
     if (window.confirm('¿Estás seguro de que deseas eliminar esta factura?')) {
       try {
         const token = localStorage.getItem('token');
+<<<<<<< HEAD
         const response = await fetch(`https://fitoffice2-ff8035a9df10.herokuapp.com/api/invoice/${facturaId}`, {
+=======
+        const response = await fetch(`https://fitoffice-a7ed6ea26ba4.herokuapp.com/api/invoice/${facturaId}`, {
+>>>>>>> 264be574fa9db2ca7c87c3d8b1e8ddad2d870b25
           method: 'DELETE',
           headers: {
             'Authorization': `Bearer ${token}`,
@@ -427,7 +448,11 @@ const FacturasPage: React.FC<FacturasPageProps> = ({
         
         for (const facturaId of selectedInvoices) {
           try {
+<<<<<<< HEAD
             const response = await fetch(`https://fitoffice2-ff8035a9df10.herokuapp.com/api/invoice/${facturaId}`, {
+=======
+            const response = await fetch(`https://fitoffice-a7ed6ea26ba4.herokuapp.com/api/invoice/${facturaId}`, {
+>>>>>>> 264be574fa9db2ca7c87c3d8b1e8ddad2d870b25
               headers: {
                 'Authorization': `Bearer ${token}`,
               },

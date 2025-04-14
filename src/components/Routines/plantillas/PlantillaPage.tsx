@@ -588,4 +588,8 @@ const PlantillaPage: React.FC = () => {
   );
 };
 
+<<<<<<< HEAD
 export default PlantillaPage;
+=======
+export default PlantillaPage;
+>>>>>>> 264be574fa9db2ca7c87c3d8b1e8ddad2d870b25

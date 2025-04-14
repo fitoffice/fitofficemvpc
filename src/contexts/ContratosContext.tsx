@@ -65,7 +65,11 @@ export const ContratosProvider: React.FC<ContratosProviderProps> = ({ children }
       }
       
       const response = await axios.get<ApiResponse>(
+<<<<<<< HEAD
         'https://fitoffice2-ff8035a9df10.herokuapp.com/api/contracts',
+=======
+        'https://fitoffice-a7ed6ea26ba4.herokuapp.com/api/contracts',
+>>>>>>> 264be574fa9db2ca7c87c3d8b1e8ddad2d870b25
         {
           headers: {
             Authorization: `Bearer ${token}`,
@@ -118,7 +122,11 @@ export const ContratosProvider: React.FC<ContratosProviderProps> = ({ children }
       console.log('Enviando datos de contrato:', JSON.stringify(contrato, null, 2));
       
       const response = await axios.post(
+<<<<<<< HEAD
         'https://fitoffice2-ff8035a9df10.herokuapp.com/api/contracts',
+=======
+        'https://fitoffice-a7ed6ea26ba4.herokuapp.com/api/contracts',
+>>>>>>> 264be574fa9db2ca7c87c3d8b1e8ddad2d870b25
         contrato,
         {
           headers: {
@@ -175,7 +183,11 @@ export const ContratosProvider: React.FC<ContratosProviderProps> = ({ children }
       const token = localStorage.getItem('token');
       
       const response = await axios.put(
+<<<<<<< HEAD
         `https://fitoffice2-ff8035a9df10.herokuapp.com/api/contracts/${id}`,
+=======
+        `https://fitoffice-a7ed6ea26ba4.herokuapp.com/api/contracts/${id}`,
+>>>>>>> 264be574fa9db2ca7c87c3d8b1e8ddad2d870b25
         contrato,
         {
           headers: {
@@ -205,7 +217,11 @@ export const ContratosProvider: React.FC<ContratosProviderProps> = ({ children }
       const token = localStorage.getItem('token');
       
       const response = await axios.delete(
+<<<<<<< HEAD
         `https://fitoffice2-ff8035a9df10.herokuapp.com/api/contracts/${id}`,
+=======
+        `https://fitoffice-a7ed6ea26ba4.herokuapp.com/api/contracts/${id}`,
+>>>>>>> 264be574fa9db2ca7c87c3d8b1e8ddad2d870b25
         {
           headers: {
             Authorization: `Bearer ${token}`,

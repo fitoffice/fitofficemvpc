@@ -98,10 +98,17 @@ const TablaPlanesServicio: React.FC<Props> = ({
       }
 
       console.log(`TablaPlanesServicio - Realizando petición para cliente ${clienteId}`);
+<<<<<<< HEAD
       console.log(`TablaPlanesServicio - URL de la petición: https://fitoffice2-ff8035a9df10.herokuapp.com/api/clientes/${clienteId}`);
       console.log(`TablaPlanesServicio - Token utilizado: ${token.substring(0, 10)}...`);
       
       const response = await fetch(`https://fitoffice2-ff8035a9df10.herokuapp.com/api/clientes/${clienteId}`, {
+=======
+      console.log(`TablaPlanesServicio - URL de la petición: https://fitoffice-a7ed6ea26ba4.herokuapp.com/api/clientes/${clienteId}`);
+      console.log(`TablaPlanesServicio - Token utilizado: ${token.substring(0, 10)}...`);
+      
+      const response = await fetch(`https://fitoffice-a7ed6ea26ba4.herokuapp.com/api/clientes/${clienteId}`, {
+>>>>>>> 264be574fa9db2ca7c87c3d8b1e8ddad2d870b25
         headers: {
           'Authorization': `Bearer ${token}`
         }
@@ -154,9 +161,15 @@ const TablaPlanesServicio: React.FC<Props> = ({
       }
       
       console.log(`TablaPlanesServicio - Realizando petición para plan ${planId}`);
+<<<<<<< HEAD
       console.log(`TablaPlanesServicio - URL de la petición: https://fitoffice2-ff8035a9df10.herokuapp.com/api/servicios/paymentplans/${planId}`);
       
       const response = await fetch(`https://fitoffice2-ff8035a9df10.herokuapp.com/api/servicios/paymentplans/${planId}`, {
+=======
+      console.log(`TablaPlanesServicio - URL de la petición: https://fitoffice-a7ed6ea26ba4.herokuapp.com/api/servicios/paymentplans/${planId}`);
+      
+      const response = await fetch(`https://fitoffice-a7ed6ea26ba4.herokuapp.com/api/servicios/paymentplans/${planId}`, {
+>>>>>>> 264be574fa9db2ca7c87c3d8b1e8ddad2d870b25
         headers: {
           'Authorization': `Bearer ${token}`
         }
@@ -256,6 +269,7 @@ const TablaPlanesServicio: React.FC<Props> = ({
     }));
   };
 
+<<<<<<< HEAD
   const handleFormSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
@@ -307,6 +321,17 @@ const TablaPlanesServicio: React.FC<Props> = ({
     }
   };
   
+=======
+  const handleFormSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    // Implementar lógica para actualizar el plan de pago
+    console.log('Actualizando plan de pago:', planEditando?._id, formData);
+    setIsModalOpen(false);
+    setPlanEditando(null);
+    // Actualizar el estado local o volver a obtener los datos
+  };
+
+>>>>>>> 264be574fa9db2ca7c87c3d8b1e8ddad2d870b25
   const handleAsociarClick = (planId: string) => {
     console.log('TablaPlanesServicio - Asociar cliente al plan:', planId);
     console.log('TablaPlanesServicio - Servicios adicionales a pasar:', serviciosAdicionales);

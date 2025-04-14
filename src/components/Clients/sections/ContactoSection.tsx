@@ -1,7 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { MapPin } from 'lucide-react';
 import SectionHeader from '../common/SectionHeader';
+<<<<<<< HEAD
 import { toast } from 'react-hot-toast';
+=======
+>>>>>>> 264be574fa9db2ca7c87c3d8b1e8ddad2d870b25
 
 interface DireccionData {
   calle: string;
@@ -16,13 +19,21 @@ interface ContactoSectionProps {
   theme: string;
   errors: any;
   isLoading: boolean;
+<<<<<<< HEAD
   onSave: (updatedDireccion?: DireccionData) => void;
+=======
+  onSave: () => void;
+>>>>>>> 264be574fa9db2ca7c87c3d8b1e8ddad2d870b25
   onChange: (direccion: DireccionData) => void;
   clientId: string;
 }
 
 const ContactoSection: React.FC<ContactoSectionProps> = ({
   direccion,
+<<<<<<< HEAD
+=======
+  editMode,
+>>>>>>> 264be574fa9db2ca7c87c3d8b1e8ddad2d870b25
   theme,
   errors,
   isLoading,
@@ -30,15 +41,24 @@ const ContactoSection: React.FC<ContactoSectionProps> = ({
   onChange,
   clientId,
 }) => {
+<<<<<<< HEAD
+=======
+  // Add local state to track input values
+>>>>>>> 264be574fa9db2ca7c87c3d8b1e8ddad2d870b25
   const [localDireccion, setLocalDireccion] = useState<DireccionData>({
     calle: '',
     ciudad: '',
     codigoPostal: '',
     pais: ''
   });
+<<<<<<< HEAD
   const [isEditing, setIsEditing] = useState(false);
   const [isSaving, setIsSaving] = useState(false);
 
+=======
+
+  // Update local state when props change
+>>>>>>> 264be574fa9db2ca7c87c3d8b1e8ddad2d870b25
   useEffect(() => {
     if (direccion) {
       setLocalDireccion(direccion);
@@ -46,6 +66,7 @@ const ContactoSection: React.FC<ContactoSectionProps> = ({
   }, [direccion]);
 
   const handleChange = (field: keyof DireccionData, value: string) => {
+<<<<<<< HEAD
     const updatedDireccion = { ...localDireccion, [field]: value };
     setLocalDireccion(updatedDireccion);
     onChange(updatedDireccion);
@@ -62,6 +83,30 @@ const ContactoSection: React.FC<ContactoSectionProps> = ({
       console.log("Datos enviados:", localDireccion);
 
       const response = await fetch(`https://fitoffice2-ff8035a9df10.herokuapp.com/api/clientes/${clientId}/contacto`, {
+=======
+    console.log(`Changing ${field} to:`, value);
+    
+    // Update local state first
+    const updatedDireccion = {
+      ...localDireccion,
+      [field]: value
+    };
+    
+    setLocalDireccion(updatedDireccion);
+    console.log('Updated direccion:', updatedDireccion);
+    
+    // Then notify parent component
+    onChange(updatedDireccion);
+  };
+
+  // Function to save data to API
+  const saveDireccion = async () => {
+    try {
+      // Get the token from localStorage
+      const token = localStorage.getItem('token');
+      
+      const response = await fetch(`https://fitoffice-a7ed6ea26ba4.herokuapp.com/api/clientes/${clientId}/contacto`, {
+>>>>>>> 264be574fa9db2ca7c87c3d8b1e8ddad2d870b25
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
@@ -70,6 +115,7 @@ const ContactoSection: React.FC<ContactoSectionProps> = ({
         body: JSON.stringify(localDireccion),
       });
 
+<<<<<<< HEAD
       const responseData = await response.json();
       console.log('Respuesta del servidor:', responseData);
 
@@ -94,6 +140,16 @@ const ContactoSection: React.FC<ContactoSectionProps> = ({
       setIsEditing(true);
     } else {
       saveDireccion();
+=======
+      if (!response.ok) {
+        throw new Error('Error al guardar la dirección');
+      }
+
+      // Call the onSave callback to notify parent component
+      onSave();
+    } catch (error) {
+      console.error('Error saving address:', error);
+>>>>>>> 264be574fa9db2ca7c87c3d8b1e8ddad2d870b25
     }
   };
 
@@ -131,17 +187,29 @@ const ContactoSection: React.FC<ContactoSectionProps> = ({
         title="Información de Contacto"
         Icon={MapPin}
         theme={theme}
+<<<<<<< HEAD
         editMode={isEditing}
         onSave={handleButtonClick}
         isLoading={isLoading || isSaving}
+=======
+        editMode={editMode}
+        onSave={saveDireccion}
+        isLoading={isLoading}
+>>>>>>> 264be574fa9db2ca7c87c3d8b1e8ddad2d870b25
         iconColor="emerald"
       />
       <div className="p-6">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+<<<<<<< HEAD
           {/* Calle */}
           <div className="space-y-1">
             <label className={labelClasses}>Calle</label>
             {isEditing ? (
+=======
+          <div className="space-y-1">
+            <label className={labelClasses}>Calle</label>
+            {editMode ? (
+>>>>>>> 264be574fa9db2ca7c87c3d8b1e8ddad2d870b25
               <input
                 type="text"
                 value={localDireccion.calle || ''}
@@ -152,12 +220,23 @@ const ContactoSection: React.FC<ContactoSectionProps> = ({
             ) : (
               <p className="text-lg">{localDireccion.calle}</p>
             )}
+<<<<<<< HEAD
             {errors?.calle && <p className={errorClasses}>{errors.calle}</p>}
           </div>
           {/* Ciudad */}
           <div className="space-y-1">
             <label className={labelClasses}>Ciudad</label>
             {isEditing ? (
+=======
+            {errors?.calle && (
+              <p className={errorClasses}>{errors.calle}</p>
+            )}
+          </div>
+
+          <div className="space-y-1">
+            <label className={labelClasses}>Ciudad</label>
+            {editMode ? (
+>>>>>>> 264be574fa9db2ca7c87c3d8b1e8ddad2d870b25
               <input
                 type="text"
                 value={localDireccion.ciudad || ''}
@@ -168,12 +247,23 @@ const ContactoSection: React.FC<ContactoSectionProps> = ({
             ) : (
               <p className="text-lg">{localDireccion.ciudad}</p>
             )}
+<<<<<<< HEAD
             {errors?.ciudad && <p className={errorClasses}>{errors.ciudad}</p>}
           </div>
           {/* Código Postal */}
           <div className="space-y-1">
             <label className={labelClasses}>Código Postal</label>
             {isEditing ? (
+=======
+            {errors?.ciudad && (
+              <p className={errorClasses}>{errors.ciudad}</p>
+            )}
+          </div>
+
+          <div className="space-y-1">
+            <label className={labelClasses}>Código Postal</label>
+            {editMode ? (
+>>>>>>> 264be574fa9db2ca7c87c3d8b1e8ddad2d870b25
               <input
                 type="text"
                 value={localDireccion.codigoPostal || ''}
@@ -184,12 +274,23 @@ const ContactoSection: React.FC<ContactoSectionProps> = ({
             ) : (
               <p className="text-lg">{localDireccion.codigoPostal}</p>
             )}
+<<<<<<< HEAD
             {errors?.codigoPostal && <p className={errorClasses}>{errors.codigoPostal}</p>}
           </div>
           {/* País */}
           <div className="space-y-1">
             <label className={labelClasses}>País</label>
             {isEditing ? (
+=======
+            {errors?.codigoPostal && (
+              <p className={errorClasses}>{errors.codigoPostal}</p>
+            )}
+          </div>
+
+          <div className="space-y-1">
+            <label className={labelClasses}>País</label>
+            {editMode ? (
+>>>>>>> 264be574fa9db2ca7c87c3d8b1e8ddad2d870b25
               <input
                 type="text"
                 value={localDireccion.pais || ''}
@@ -200,10 +301,20 @@ const ContactoSection: React.FC<ContactoSectionProps> = ({
             ) : (
               <p className="text-lg">{localDireccion.pais}</p>
             )}
+<<<<<<< HEAD
             {errors?.pais && <p className={errorClasses}>{errors.pais}</p>}
           </div>
         </div>
         {!isEditing && Object.values(localDireccion).every(value => value) && (
+=======
+            {errors?.pais && (
+              <p className={errorClasses}>{errors.pais}</p>
+            )}
+          </div>
+        </div>
+
+        {!editMode && Object.values(localDireccion).every(value => value) && (
+>>>>>>> 264be574fa9db2ca7c87c3d8b1e8ddad2d870b25
           <div className="mt-6">
             <a
               href={getGoogleMapsUrl()}

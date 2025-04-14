@@ -132,8 +132,13 @@ const AIPostCreator: React.FC = () => {
   
       // Determinar qué endpoint usar basado en desde dónde se llama la función
       const endpoint = keywords 
+<<<<<<< HEAD
         ? 'https://fitoffice2-ff8035a9df10.herokuapp.com/api/chats/posts/generacion-ideas' 
         : 'https://fitoffice2-ff8035a9df10.herokuapp.com/api/chats/posts/ideas';
+=======
+        ? 'https://fitoffice-a7ed6ea26ba4.herokuapp.com/api/chats/posts/generacion-ideas' 
+        : 'https://fitoffice-a7ed6ea26ba4.herokuapp.com/api/chats/posts/ideas';
+>>>>>>> 264be574fa9db2ca7c87c3d8b1e8ddad2d870b25
       
       const requestBody = keywords
         ? { palabrasClave: keywords, contextoAdicional: context || undefined }
@@ -225,7 +230,11 @@ const AIPostCreator: React.FC = () => {
         throw new Error('No se encontró el token de autenticación');
       }
 
+<<<<<<< HEAD
       const response = await fetch('https://fitoffice2-ff8035a9df10.herokuapp.com/api/chats/posts/content', {
+=======
+      const response = await fetch('https://fitoffice-a7ed6ea26ba4.herokuapp.com/api/chats/posts/content', {
+>>>>>>> 264be574fa9db2ca7c87c3d8b1e8ddad2d870b25
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -333,7 +342,11 @@ const AIPostCreator: React.FC = () => {
         throw new Error('No se encontró el token de autenticación');
       }
       
+<<<<<<< HEAD
       const response = await fetch('https://fitoffice2-ff8035a9df10.herokuapp.com/api/images/generate', {
+=======
+      const response = await fetch('https://fitoffice-a7ed6ea26ba4.herokuapp.com/api/images/generate', {
+>>>>>>> 264be574fa9db2ca7c87c3d8b1e8ddad2d870b25
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -382,7 +395,11 @@ const AIPostCreator: React.FC = () => {
         mood: selectedStyle.mood
       });
 
+<<<<<<< HEAD
       const response = await fetch('https://fitoffice2-ff8035a9df10.herokuapp.com/api/chats/posts/image', {
+=======
+      const response = await fetch('https://fitoffice-a7ed6ea26ba4.herokuapp.com/api/chats/posts/image', {
+>>>>>>> 264be574fa9db2ca7c87c3d8b1e8ddad2d870b25
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

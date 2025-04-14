@@ -1,5 +1,9 @@
+<<<<<<< HEAD
 // src/App.tsx
 import React, { useState } from 'react';
+=======
+ import React, { useState } from 'react';
+>>>>>>> 264be574fa9db2ca7c87c3d8b1e8ddad2d870b25
 import {
   BrowserRouter as Router,
   Route,
@@ -72,9 +76,13 @@ import { DietProvider } from './components/contexts/DietContext'; // Import the 
 import { RoutineCreationProvider } from './contexts/RoutineCreationContext';
 import { FilterProvider } from './contexts/FilterContext';
 import { NotesProvider } from './contexts/NotesContext';
+<<<<<<< HEAD
 // Importa el PeriodoProvider sin borrar nada
 // IMPORTA el nuevo SessionProvider sin borrar nada
 import DietManagementPage from './pages/DietManagementPage'; // Import the new DietManagementPage component
+=======
+
+>>>>>>> 264be574fa9db2ca7c87c3d8b1e8ddad2d870b25
 const PrivateRoute: React.FC<{ children: React.ReactNode }> = ({
   children,
 }) => {
@@ -105,21 +113,35 @@ function AppContent() {
     planningId: currentPlanningId || 'No planning ID',
     periodIndex: currentPeriodIndex !== undefined ? currentPeriodIndex : 'No period index'
   });
+<<<<<<< HEAD
   
+=======
+
+
+>>>>>>> 264be574fa9db2ca7c87c3d8b1e8ddad2d870b25
   // Si no hay usuario, mostrar la página de login
   if (location.pathname !== '/login' && !user) {
     return <Navigate to="/login" />;
   }
+<<<<<<< HEAD
   
+=======
+
+>>>>>>> 264be574fa9db2ca7c87c3d8b1e8ddad2d870b25
   // Si estamos en la ruta de login y hay usuario, redirigir al dashboard
   if (location.pathname === '/login' && user) {
     return <Navigate to="/" />;
   }
+<<<<<<< HEAD
   
+=======
+
+>>>>>>> 264be574fa9db2ca7c87c3d8b1e8ddad2d870b25
   // Si estamos en la ruta de login, mostrar solo el componente de login
   if (location.pathname === '/login') {
     return <LoginPage />;
   }
+<<<<<<< HEAD
   
   // Determinar si estamos en la ruta "/edit-planning/:id"
   const isOnEditPlanningPage = location.pathname.startsWith('/edit-planning/');
@@ -127,6 +149,15 @@ function AppContent() {
   // Determinar si debemos ocultar el layout
   const shouldHideLayout = isCommandAssisterOpen && isOnEditPlanningPage;
   
+=======
+
+  // Determinar si estamos en la ruta "/edit-planning/:id"
+  const isOnEditPlanningPage = location.pathname.startsWith('/edit-planning/');
+
+  // Determinar si debemos ocultar el layout
+  const shouldHideLayout = isCommandAssisterOpen && isOnEditPlanningPage;
+
+>>>>>>> 264be574fa9db2ca7c87c3d8b1e8ddad2d870b25
   return (
     <div
       className={`flex ${shouldHideLayout ? '' : 'flex-col'} min-h-screen ${
@@ -145,7 +176,12 @@ function AppContent() {
             <Route path="/clients" element={<PrivateRoute><ClientsPage /></PrivateRoute>} />
             <Route path="/routines" element={<PrivateRoute><RoutinesPage /></PrivateRoute>} />
             <Route path="/ai-routine" element={<PrivateRoute><AIRoutinePage /></PrivateRoute>} />
+<<<<<<< HEAD
             <Route path="/diets" element={<PrivateRoute><DietManagementPage /></PrivateRoute>} />            <Route path="/edicion-dieta/:id" element={<PrivateRoute><PageEdicionDieta /></PrivateRoute>} />
+=======
+            <Route path="/diets" element={<PrivateRoute><DietsPage /></PrivateRoute>} />
+            <Route path="/edicion-dieta/:id" element={<PrivateRoute><PageEdicionDieta /></PrivateRoute>} />
+>>>>>>> 264be574fa9db2ca7c87c3d8b1e8ddad2d870b25
             <Route path="/economics" element={<PrivateRoute><EconomicsPage /></PrivateRoute>} />
             <Route path="/economics/cashflow" element={<PrivateRoute><EconomicsPage initialSection="cashflow" /></PrivateRoute>} />
             <Route path="/economics/servicios" element={<PrivateRoute><EconomicsPage initialSection="planes" /></PrivateRoute>} />
@@ -180,7 +216,11 @@ function AppContent() {
             <Route path="/" element={<Navigate to="/dashboard" replace />} />
           </Routes>
         </main>
+<<<<<<< HEAD
  
+=======
+
+>>>>>>> 264be574fa9db2ca7c87c3d8b1e8ddad2d870b25
         {/* Checkin Modal */}
         {selectedCheckin && (
           <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50">
@@ -200,7 +240,13 @@ function AppContent() {
       onClose={closeExerciseModal}
       exercise={selectedExercise}
       onSave={(updatedExercise) => {
+<<<<<<< HEAD
         console.log('Exercise updated:', updatedExercise);
+=======
+        // Store the updated exercise information before closing the modal
+        console.log('Exercise updated:', updatedExercise);
+        // Pass the updated exercise to closeExerciseModal to maintain state
+>>>>>>> 264be574fa9db2ca7c87c3d8b1e8ddad2d870b25
         closeExerciseModal(updatedExercise);
       }}
       periodIndex={currentPeriodIndex}
@@ -212,7 +258,11 @@ function AppContent() {
       <AddLicenciaModal />
       <AddContratoModal />
       <AddDocumentoModal />
+<<<<<<< HEAD
  
+=======
+
+>>>>>>> 264be574fa9db2ca7c87c3d8b1e8ddad2d870b25
       <div className={`fixed bottom-4 right-4 z-50 ${isCommandAssisterOpen ? 'w-96' : 'w-auto'}`}>
         <CommandAssister
           isExpanded={isCommandAssisterOpen}
@@ -222,12 +272,17 @@ function AppContent() {
     </div>
   );
 }
+<<<<<<< HEAD
  
+=======
+
+>>>>>>> 264be574fa9db2ca7c87c3d8b1e8ddad2d870b25
 function App() {
   return (
     <Router>
       <ThemeProvider>
         <AuthProvider>
+<<<<<<< HEAD
               <CheckinProvider>
                 <PlanningProvider>
                   <LicenciaModalProvider>
@@ -279,6 +334,59 @@ function App() {
                   </LicenciaModalProvider>
                 </PlanningProvider>
               </CheckinProvider>
+=======
+          <CheckinProvider>
+            <PlanningProvider>
+              <LicenciaModalProvider>
+                <LicenciaEditModalProvider>
+                  <ContratoModalProvider>
+                    <DocumentoModalProvider>
+                      <ModalProvider>
+                        <AIRoutineModalProvider>
+                          <PlanificacionModalProvider>
+                            <ExerciseProvider>
+                              <CsvProvider>
+                                <AutomationProvider>
+                                  <EmailCampaignProvider>
+                                    <ClientProvider>
+                                      <GastosProvider>
+                                        <GastoEditModalProvider>
+                                          <LicenciasProvider>
+                                            <ContratosProvider>
+                                              <RoutineProvider>
+                                                <AddLicenciaModalProvider>
+                                                  <DietProvider>
+                                                    <RoutineCreationProvider>
+                                                      <AlertProvider>
+                                                          <FilterProvider>
+                                                            <NotesProvider>
+                                                                <AppContent />
+                                                            </NotesProvider>
+                                                          </FilterProvider>
+                                                      </AlertProvider>
+                                                    </RoutineCreationProvider>
+                                                  </DietProvider>
+                                                </AddLicenciaModalProvider>
+                                              </RoutineProvider>                      
+                                            </ContratosProvider>
+                                          </LicenciasProvider>
+                                        </GastoEditModalProvider>
+                                      </GastosProvider>
+                                    </ClientProvider>
+                                  </EmailCampaignProvider>
+                                </AutomationProvider>
+                              </CsvProvider>
+                            </ExerciseProvider>
+                          </PlanificacionModalProvider>
+                        </AIRoutineModalProvider>
+                      </ModalProvider>
+                    </DocumentoModalProvider>
+                  </ContratoModalProvider>
+                </LicenciaEditModalProvider>
+              </LicenciaModalProvider>
+            </PlanningProvider>
+          </CheckinProvider>
+>>>>>>> 264be574fa9db2ca7c87c3d8b1e8ddad2d870b25
         </AuthProvider>
       </ThemeProvider>
     </Router>

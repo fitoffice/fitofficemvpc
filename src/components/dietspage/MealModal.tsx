@@ -117,7 +117,11 @@ function MealModal({
         setLoading(true);
         setError(null);
         try {
+<<<<<<< HEAD
           const response = await fetch('https://fitoffice2-ff8035a9df10.herokuapp.com/api/comidas');
+=======
+          const response = await fetch('https://fitoffice-a7ed6ea26ba4.herokuapp.com/api/comidas');
+>>>>>>> 264be574fa9db2ca7c87c3d8b1e8ddad2d870b25
           if (!response.ok) {
             throw new Error('Error al obtener las comidas');
           }
@@ -503,7 +507,11 @@ function MealModal({
         const token = localStorage.getItem('token');
 
         // Construimos la URL base
+<<<<<<< HEAD
         let endpoint = `https://fitoffice2-ff8035a9df10.herokuapp.com/api/dietas/${dietId}/dias/${dayDate}/comidas`;
+=======
+        let endpoint = `https://fitoffice-a7ed6ea26ba4.herokuapp.com/api/dietas/${dietId}/dias/${dayDate}/comidas`;
+>>>>>>> 264be574fa9db2ca7c87c3d8b1e8ddad2d870b25
         let method = 'POST';
 
         // Si es edición y tenemos el mealId, actualizamos el endpoint y el método

@@ -5,7 +5,11 @@ import axios from 'axios';
 import { format } from 'date-fns';
 import { es } from 'date-fns/locale';
 
+<<<<<<< HEAD
 const API_URL = 'https://fitoffice2-ff8035a9df10.herokuapp.com/api';
+=======
+const API_URL = 'https://fitoffice-a7ed6ea26ba4.herokuapp.com/api';
+>>>>>>> 264be574fa9db2ca7c87c3d8b1e8ddad2d870b25
 
 interface Session {
   id: string;
@@ -79,7 +83,11 @@ const EditarClasePopup2: React.FC<EditarClasePopup2Props> = ({
         throw new Error('No se encontró el token de autenticación');
       }
 
+<<<<<<< HEAD
       const response = await axios.get('https://fitoffice2-ff8035a9df10.herokuapp.com/api/clientes/basico', {
+=======
+      const response = await axios.get('https://fitoffice-a7ed6ea26ba4.herokuapp.com/api/clientes/basico', {
+>>>>>>> 264be574fa9db2ca7c87c3d8b1e8ddad2d870b25
         headers: { Authorization: `Bearer ${token}` }
       });
       

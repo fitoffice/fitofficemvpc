@@ -67,7 +67,11 @@ export function Segments({ onClose }: SegmentsProps) {
         'Content-Type': 'application/json'
       };
 
+<<<<<<< HEAD
       const response = await fetch('https://fitoffice2-ff8035a9df10.herokuapp.com/api/segments', {
+=======
+      const response = await fetch('https://fitoffice-a7ed6ea26ba4.herokuapp.com/api/segments', {
+>>>>>>> 264be574fa9db2ca7c87c3d8b1e8ddad2d870b25
         headers
       });
       const data = await response.json();
@@ -91,14 +95,22 @@ export function Segments({ onClose }: SegmentsProps) {
       };
 
       // Fetch clients
+<<<<<<< HEAD
       const clientsResponse = await fetch('https://fitoffice2-ff8035a9df10.herokuapp.com/api/clientes', {
+=======
+      const clientsResponse = await fetch('https://fitoffice-a7ed6ea26ba4.herokuapp.com/api/clientes', {
+>>>>>>> 264be574fa9db2ca7c87c3d8b1e8ddad2d870b25
         headers
       });
       const clientsData = await clientsResponse.json();
       setClients(clientsData);
 
       // Fetch leads
+<<<<<<< HEAD
       const leadsResponse = await fetch('https://fitoffice2-ff8035a9df10.herokuapp.com/api/leads', {
+=======
+      const leadsResponse = await fetch('https://fitoffice-a7ed6ea26ba4.herokuapp.com/api/leads', {
+>>>>>>> 264be574fa9db2ca7c87c3d8b1e8ddad2d870b25
         headers
       });
       const leadsData = await leadsResponse.json();
@@ -131,7 +143,11 @@ export function Segments({ onClose }: SegmentsProps) {
         leadIds: newSegment.selectedLeads
       };
 
+<<<<<<< HEAD
       const response = await fetch('https://fitoffice2-ff8035a9df10.herokuapp.com/api/segments', {
+=======
+      const response = await fetch('https://fitoffice-a7ed6ea26ba4.herokuapp.com/api/segments', {
+>>>>>>> 264be574fa9db2ca7c87c3d8b1e8ddad2d870b25
         method: 'POST',
         headers,
         body: JSON.stringify(segmentData)

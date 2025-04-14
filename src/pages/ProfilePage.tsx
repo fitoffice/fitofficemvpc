@@ -67,7 +67,11 @@ const ProfilePage: React.FC = () => {
       if (!token) return;
 
       await axios.patch(
+<<<<<<< HEAD
         'https://fitoffice2-ff8035a9df10.herokuapp.com/api/entrenadores/perfil',
+=======
+        'https://fitoffice-a7ed6ea26ba4.herokuapp.com/api/entrenadores/perfil',
+>>>>>>> 264be574fa9db2ca7c87c3d8b1e8ddad2d870b25
         { [name]: value },
         {
           headers: {
@@ -89,7 +93,11 @@ const ProfilePage: React.FC = () => {
           throw new Error('No se encontró el token de autenticación');
         }
 
+<<<<<<< HEAD
         const response = await axios.get('https://fitoffice2-ff8035a9df10.herokuapp.com/api/entrenadores/perfil', {
+=======
+        const response = await axios.get('https://fitoffice-a7ed6ea26ba4.herokuapp.com/api/entrenadores/perfil', {
+>>>>>>> 264be574fa9db2ca7c87c3d8b1e8ddad2d870b25
           headers: {
             'Authorization': `Bearer ${token}`
           }
@@ -110,7 +118,11 @@ const ProfilePage: React.FC = () => {
         console.log('Token para servicios:', token);
         if (!token) return;
 
+<<<<<<< HEAD
         const response = await axios.get('https://fitoffice2-ff8035a9df10.herokuapp.com/api/servicios/services', {
+=======
+        const response = await axios.get('https://fitoffice-a7ed6ea26ba4.herokuapp.com/api/servicios/services', {
+>>>>>>> 264be574fa9db2ca7c87c3d8b1e8ddad2d870b25
           headers: {
             'Authorization': `Bearer ${token}`
           }
@@ -130,7 +142,11 @@ const ProfilePage: React.FC = () => {
         console.log('Token para clientes:', token);
         if (!token) return;
 
+<<<<<<< HEAD
         const response = await axios.get('https://fitoffice2-ff8035a9df10.herokuapp.com/api/clientes', {
+=======
+        const response = await axios.get('https://fitoffice-a7ed6ea26ba4.herokuapp.com/api/clientes', {
+>>>>>>> 264be574fa9db2ca7c87c3d8b1e8ddad2d870b25
           headers: {
             'Authorization': `Bearer ${token}`
           }
@@ -305,6 +321,7 @@ const ProfilePage: React.FC = () => {
               </div>
 
               {/* Sección Empresa */}
+<<<<<<< HEAD
               <div className="mt-8 pb-8 border-b border-gray-200/20">
                 <h2 className={`text-xl font-semibold mb-4 ${theme === 'dark' ? 'text-white' : 'text-gray-900'}`}>
                   Redes Sociales y Contacto
@@ -512,6 +529,9 @@ const ProfilePage: React.FC = () => {
                   </div>
                 </div>
               </div>
+=======
+              
+>>>>>>> 264be574fa9db2ca7c87c3d8b1e8ddad2d870b25
 
               {/* Estadísticas */}
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">

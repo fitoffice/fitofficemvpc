@@ -23,7 +23,11 @@ interface Filters {
   servicio: string;
 }
 
+<<<<<<< HEAD
 const API_URL = 'https://fitoffice2-ff8035a9df10.herokuapp.com/api';
+=======
+const API_URL = 'https://fitoffice-a7ed6ea26ba4.herokuapp.com/api';
+>>>>>>> 264be574fa9db2ca7c87c3d8b1e8ddad2d870b25
 
 const ClientList: React.FC<ClientListProps> = ({ onCreateClient }) => {
   const { theme } = useTheme();
@@ -44,6 +48,7 @@ const ClientList: React.FC<ClientListProps> = ({ onCreateClient }) => {
 
   const [serviciosData, setServiciosData] = useState<{ [key: string]: string }>({});
   const [planesDePagoData, setPlanesDePagoData] = useState<{ [key: string]: string }>({});
+<<<<<<< HEAD
   const [visibleColumns, setVisibleColumns] = useState<string[]>([
     'Nombre',
     'Email',
@@ -56,6 +61,9 @@ const ClientList: React.FC<ClientListProps> = ({ onCreateClient }) => {
     'Alertas',
     'Fecha Registro',
   ]);
+=======
+
+>>>>>>> 264be574fa9db2ca7c87c3d8b1e8ddad2d870b25
   // Estilos base
   const styles = {
     container: `${theme === 'dark' ? 'bg-gray-900' : 'bg-gray-50'} min-h-screen p-6`,
@@ -457,6 +465,7 @@ const ClientList: React.FC<ClientListProps> = ({ onCreateClient }) => {
         return (
           <div className="flex items-center">
             {client.estado === 'Activo' && <CheckCircle size={16} className="mr-2 text-green-500" />}
+<<<<<<< HEAD
             {`${client.nombre}`}
           </div>
         );
@@ -510,12 +519,47 @@ const ClientList: React.FC<ClientListProps> = ({ onCreateClient }) => {
           }
           
           // If no tags or not an array
+=======
+            {`${client.nombre} `}
+          </div>
+        );
+      case 'tags':
+        if (!value || value.length === 0) {
+>>>>>>> 264be574fa9db2ca7c87c3d8b1e8ddad2d870b25
           return (
             <span className="px-2 py-1 bg-gray-100 text-gray-800 rounded-full text-xs">
               Sin etiqueta
             </span>
           );
+<<<<<<< HEAD
       
+=======
+        }
+
+        const tagsToShow = value.slice(0, 3);
+        return (
+          <div className="flex flex-wrap gap-1">
+            {tagsToShow.map((tag: any) => (
+              <span
+                key={tag._id}
+                className="px-2 py-1 rounded-full text-xs"
+                style={{
+                  backgroundColor: `${tag.color}20`,
+                  color: tag.color,
+                  border: `1px solid ${tag.color}`,
+                }}
+              >
+                {tag.name}
+              </span>
+            ))}
+            {value.length > 3 && (
+              <span className="px-2 py-1 bg-gray-100 text-gray-600 rounded-full text-xs">
+                +{value.length - 3}
+              </span>
+            )}
+          </div>
+        );
+>>>>>>> 264be574fa9db2ca7c87c3d8b1e8ddad2d870b25
       case 'email':
         return value;
       case 'telefono':
@@ -534,6 +578,19 @@ const ClientList: React.FC<ClientListProps> = ({ onCreateClient }) => {
             {value}
           </span>
         );
+<<<<<<< HEAD
+=======
+      case 'tag':
+        return !value || value === 'Sin etiqueta' ? (
+          <span className="px-2 py-1 bg-gray-100 text-gray-800 rounded-full text-xs">
+            Sin etiqueta
+          </span>
+        ) : (
+          <span className="px-2 py-1 bg-blue-100 text-blue-800 rounded-full text-xs">
+            {value}
+          </span>
+        );
+>>>>>>> 264be574fa9db2ca7c87c3d8b1e8ddad2d870b25
       case 'planDePago':
         if (!client.planesDePago || !Array.isArray(client.planesDePago) || client.planesDePago.length === 0) {
           return '-';
@@ -664,7 +721,11 @@ const ClientList: React.FC<ClientListProps> = ({ onCreateClient }) => {
       </div>
 
       <div className="mb-8">
+<<<<<<< HEAD
       <ClientListHeader
+=======
+        <ClientListHeader
+>>>>>>> 264be574fa9db2ca7c87c3d8b1e8ddad2d870b25
           searchTerm={searchTerm}
           setSearchTerm={setSearchTerm}
           filterOpen={filterOpen}
@@ -675,11 +736,18 @@ const ClientList: React.FC<ClientListProps> = ({ onCreateClient }) => {
           viewMode={viewMode}
           setViewMode={setViewMode}
           onCreateClient={onCreateClient}
+<<<<<<< HEAD
           selectedClients={selectedClients}
           refreshClients={handleRefreshClients}
           visibleColumns={visibleColumns}
           setVisibleColumns={setVisibleColumns}
         />      </div>
+=======
+          selectedClients={selectedClients} // Pass the selected clients array
+          refreshClients={handleRefreshClients} // Pass the refresh function
+        />
+      </div>
+>>>>>>> 264be574fa9db2ca7c87c3d8b1e8ddad2d870b25
 
       {loading ? (
         <motion.div
@@ -701,6 +769,7 @@ const ClientList: React.FC<ClientListProps> = ({ onCreateClient }) => {
         >
           <p className={`text-lg ${theme === 'dark' ? 'text-red-200' : 'text-red-600'}`}>{error}</p>
         </motion.div>
+<<<<<<< HEAD
          ) : viewMode === 'table' ? (
           <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="overflow-x-auto">
             <div className="inline-block min-w-full align-middle">
@@ -841,6 +910,129 @@ const ClientList: React.FC<ClientListProps> = ({ onCreateClient }) => {
                           )}
                         </AnimatePresence>
   
+=======
+      ) : viewMode === 'table' ? (
+        <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="overflow-x-auto">
+          <div className="inline-block min-w-full align-middle">
+            <div
+              className={`overflow-hidden rounded-xl ${
+                theme === 'dark'
+                  ? 'bg-gray-800/50 backdrop-blur-sm border border-gray-700'
+                  : 'bg-white/50 backdrop-blur-sm border border-gray-200'
+              } shadow-lg`}
+            >
+              <table className="min-w-full divide-y divide-gray-200 dark:divide-gray-700">
+                <thead
+                  className={`${
+                    theme === 'dark' ? 'bg-gray-700/50' : 'bg-gray-50/50'
+                  }`}
+                >
+                  <tr>
+                    <th scope="col" className="relative px-6 py-4">
+                      <input
+                        type="checkbox"
+                        className="absolute left-4 top-1/2 -mt-2 h-4 w-4 rounded border-gray-300 text-blue-600 focus:ring-blue-500"
+                        checked={selectedClients.length === clientesData.length}
+                        onChange={toggleSelectAll}
+                      />
+                    </th>
+                    {columns.map((column) => (
+                      <th
+                        key={column}
+                        scope="col"
+                        className={`px-6 py-4 text-left text-sm font-semibold uppercase tracking-wider ${
+                          theme === 'dark' ? 'text-gray-300' : 'text-gray-600'
+                        }`}
+                      >
+                        {column}
+                      </th>
+                    ))}
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-gray-200 dark:divide-gray-700">
+                  {filteredClients.map((cliente, index) => (
+                    <React.Fragment key={cliente._id}>
+                      <motion.tr
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ delay: index * 0.05 }}
+                        whileHover={{ scale: 1.01 }}
+                        onClick={() => handleRowClick(cliente._id)}
+                        className={`cursor-pointer transition-all duration-200 ${
+                          theme === 'dark'
+                            ? 'hover:bg-gray-700/50'
+                            : 'hover:bg-blue-50/50'
+                        } ${
+                          selectedClients.includes(cliente._id)
+                            ? theme === 'dark'
+                              ? 'bg-gray-700/30'
+                              : 'bg-blue-50/70'
+                            : ''
+                        }`}
+                      >
+                        <td className="relative px-6 py-4">
+                          <input
+                            type="checkbox"
+                            className="absolute left-4 top-1/2 -mt-2 h-4 w-4 rounded border-gray-300 text-blue-600 focus:ring-blue-500"
+                            checked={selectedClients.includes(cliente._id)}
+                            onChange={(e) => toggleClientSelection(cliente._id, e)}
+                            onClick={(e) => e.stopPropagation()}
+                          />
+                        </td>
+                        {Object.entries({
+                          nombre: cliente.nombre,
+                          email: cliente.email,
+                          telefono: cliente.telefono,
+                          estado: cliente.estado,
+                          tags: cliente.tags,
+                          planDePago:
+                            cliente.planesDePago && cliente.planesDePago.length > 0
+                              ? cliente.planesDePago[0]?.nombre
+                              : null,
+                          servicio:
+                            cliente.servicios && cliente.servicios.length > 0
+                              ? cliente.servicios[0]?.nombre
+                              : null,
+                          ultimoCheckin: cliente.ultimoCheckin,
+                          alertas: cliente.alertas,
+                          fechaRegistro: cliente.fechaRegistro,
+                        }).map(([key, value]) => (
+                          <td
+                            key={key}
+                            className={`px-6 py-4 whitespace-nowrap ${
+                              theme === 'dark' ? 'text-gray-300' : 'text-gray-900'
+                            } ${key === 'nombre' ? 'font-medium' : 'text-sm'}`}
+                          >
+                            {renderCell(key, value, cliente)}
+                          </td>
+                        ))}
+                      </motion.tr>
+                      <AnimatePresence mode="wait">
+                        {openPanels.includes(cliente._id) && (
+                          <motion.tr
+                            initial={{ opacity: 0, height: 0 }}
+                            animate={{ opacity: 1, height: 'auto' }}
+                            exit={{ opacity: 0, height: 0 }}
+                            className={`${
+                              theme === 'dark' ? 'bg-gray-800/50' : 'bg-white/50'
+                            }`}
+                          >
+                            <td colSpan={columns.length + 1} className="p-0">
+                              <div
+                                className={`border-t ${
+                                  theme === 'dark' ? 'border-gray-700' : 'border-gray-200'
+                                }`}
+                              >
+                                <PanelCliente
+                                  clienteId={cliente._id}
+                                  onClose={() => handlePanelClose(cliente._id)}
+                                />
+                              </div>
+                            </td>
+                          </motion.tr>
+                        )}
+                      </AnimatePresence>
+>>>>>>> 264be574fa9db2ca7c87c3d8b1e8ddad2d870b25
                     </React.Fragment>
                   ))}
                 </tbody>

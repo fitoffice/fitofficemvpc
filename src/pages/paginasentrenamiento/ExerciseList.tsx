@@ -113,7 +113,11 @@ const ExerciseList: React.FC = () => {
   const fetchExercises = async () => {
     try {
       setLoading(true);
+<<<<<<< HEAD
       const response = await axios.get('https://fitoffice2-ff8035a9df10.herokuapp.com/api/exercises');
+=======
+      const response = await axios.get('https://fitoffice-a7ed6ea26ba4.herokuapp.com/api/exercises');
+>>>>>>> 264be574fa9db2ca7c87c3d8b1e8ddad2d870b25
       setExercises(response.data.data);
       setFilteredExercises(response.data.data);
       setError(null);
@@ -184,7 +188,11 @@ const ExerciseList: React.FC = () => {
     if (window.confirm(`¿Estás seguro de que deseas eliminar el ejercicio "${exercise.nombre}"?`)) {
       try {
         setLoading(true);
+<<<<<<< HEAD
         await axios.delete(`https://fitoffice2-ff8035a9df10.herokuapp.com/api/exercises/${exercise._id}`);
+=======
+        await axios.delete(`https://fitoffice-a7ed6ea26ba4.herokuapp.com/api/exercises/${exercise._id}`);
+>>>>>>> 264be574fa9db2ca7c87c3d8b1e8ddad2d870b25
         fetchExercises();
       } catch (error) {
         console.error('Error al eliminar el ejercicio:', error);

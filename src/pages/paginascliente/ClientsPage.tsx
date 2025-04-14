@@ -22,6 +22,10 @@ const ClientsPage: React.FC = () => {
     { id: 'calendario', label: 'Calendario', icon: Calendar, color: 'from-amber-500 to-orange-500' },
     { id: 'checkin', label: 'Check In', icon: CheckSquare, color: 'from-teal-500 to-cyan-500' },
     { id: 'chat', label: 'Chat', icon: MessageCircle, color: 'from-green-500 to-emerald-500' },
+<<<<<<< HEAD
+=======
+    { id: 'ia', label: 'Herramientas de IA', icon: Cpu, color: 'from-red-500 to-pink-500' },
+>>>>>>> 264be574fa9db2ca7c87c3d8b1e8ddad2d870b25
 
   ];
 

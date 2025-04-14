@@ -75,7 +75,11 @@ const ServiceCard: React.FC<ServiceCardProps> = ({
       const clientesPromises = planDePago.clientes.map(async (clienteId) => {
         try {
           console.log('Fetching data for client:', clienteId); // Debug log
+<<<<<<< HEAD
           const response = await axios.get(`https://fitoffice2-ff8035a9df10.herokuapp.com/api/clients/${clienteId}/datos-basicos`, {
+=======
+          const response = await axios.get(`https://fitoffice-a7ed6ea26ba4.herokuapp.com/api/clients/${clienteId}/datos-basicos`, {
+>>>>>>> 264be574fa9db2ca7c87c3d8b1e8ddad2d870b25
             headers: {
               'Authorization': `Bearer ${token}`
             }

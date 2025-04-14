@@ -116,6 +116,7 @@ const PanelAgenda: React.FC<PanelAgendaProps> = ({
   const notesContext = useNotes();
   const [hasInitialized, setHasInitialized] = useState(false);
 
+<<<<<<< HEAD
   // MODIFICADO: Solo se ejecuta al montar o cambiar clienteId, sin sincronizar continuamente con la prop "notas"
   useEffect(() => {
     if (clienteId && !hasInitialized) {
@@ -134,6 +135,26 @@ const PanelAgenda: React.FC<PanelAgendaProps> = ({
       setHasInitialized(true);
     }
   }, [clienteId, hasInitialized]); // Se elimina "notas" y "notesContext" del array de dependencias
+=======
+
+  useEffect(() => {
+    if (clienteId && !hasInitialized) {
+      notesContext.setClientId(clienteId);
+      // Only fetch notes if we don't already have them in the context
+      if (!notesContext.notes || notesContext.notes.length === 0) {
+        notesContext.fetchClientNotes(clienteId);
+      }
+      setHasInitialized(true);
+    }
+  }, [clienteId, notesContext, hasInitialized]);
+  
+  // Update the context notes when the prop notes change
+  useEffect(() => {
+    if (notas.length > 0 && clienteId) {
+      notesContext.setClientNotes(notas);
+    }
+  }, [notas, notesContext, clienteId]);
+>>>>>>> 264be574fa9db2ca7c87c3d8b1e8ddad2d870b25
 
   const safeNotes = Array.isArray(notesContext.notes) ? notesContext.notes : [];
 
@@ -161,7 +182,11 @@ const PanelAgenda: React.FC<PanelAgendaProps> = ({
           categoria: selectedCategory
         };
         
+<<<<<<< HEAD
         // Se usa la función del context para agregar la nota
+=======
+        // Use the context's addNote function
+>>>>>>> 264be574fa9db2ca7c87c3d8b1e8ddad2d870b25
         await notesContext.addNote(newNoteData);
         setNewNote('');
       } catch (error) {
@@ -300,7 +325,11 @@ const PanelAgenda: React.FC<PanelAgendaProps> = ({
   };
 
   return (
+<<<<<<< HEAD
     <div className="panel-agenda rounded-lg shadow-lg bg-white dark:bg-gray-800 overflow-hidden h-full flex flex-col">
+=======
+    <div className="panel-agenda rounded-lg shadow-lg bg-white dark:bg-gray-800 overflow-hidden">
+>>>>>>> 264be574fa9db2ca7c87c3d8b1e8ddad2d870b25
       <div className="tabs-container p-4 bg-gradient-to-r from-blue-500 to-purple-600 text-white">
         <div className="flex justify-between items-center mb-4">
           <h2 className="text-2xl font-bold">Agenda Personal</h2>
@@ -427,6 +456,7 @@ const PanelAgenda: React.FC<PanelAgendaProps> = ({
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
+<<<<<<< HEAD
             className="notas-container p-4 flex-1 flex flex-col"
           >
             <div className={`p-6 rounded-xl shadow-lg ${isDark ? 'bg-gray-800/50' : 'bg-white'} transition-all duration-300 flex-1 flex flex-col`}>
@@ -434,6 +464,15 @@ const PanelAgenda: React.FC<PanelAgendaProps> = ({
                 <div className="flex items-center space-x-2">
                   <StickyNote className="w-5 h-5 text-blue-500" />
                   <h3 className="text-lg font-semibold">Notas del Cliente</h3> 
+=======
+            className="notas-container p-4"
+          >
+            <div className={`p-6 rounded-xl shadow-lg ${isDark ? 'bg-gray-800/50' : 'bg-white'} transition-all duration-300 mb-6`}>
+              <div className="flex items-center justify-between mb-6">
+                <div className="flex items-center space-x-2">
+                  <StickyNote className="w-5 h-5 text-blue-500" />
+                  <h3 className="text-lg font-semibold">Notas del Cliente</h3>
+>>>>>>> 264be574fa9db2ca7c87c3d8b1e8ddad2d870b25
                 </div>
                 
                 {/* Show loading indicator when context is loading */}
@@ -470,7 +509,13 @@ const PanelAgenda: React.FC<PanelAgendaProps> = ({
                     disabled={isSubmitting}
                   >
                     {Object.entries(categoryLabels).map(([value, label]) => (
+<<<<<<< HEAD
                       <option key={value} value={value} className={isDark ? 'bg-gray-700' : 'bg-white'}>
+=======
+                      <option key={value} value={value} className={
+                        isDark ? 'bg-gray-700' : 'bg-white'
+                      }>
+>>>>>>> 264be574fa9db2ca7c87c3d8b1e8ddad2d870b25
                         {label}
                       </option>
                     ))}
@@ -491,6 +536,7 @@ const PanelAgenda: React.FC<PanelAgendaProps> = ({
                     disabled={isSubmitting}
                   />
                   <Button
+<<<<<<< HEAD
                     variant="normal"
                     onClick={handleAddNote}
                     className="bg-blue-500 hover:bg-blue-600 text-white"
@@ -503,6 +549,21 @@ const PanelAgenda: React.FC<PanelAgendaProps> = ({
                     )}
                     <span>Agregar</span>
                   </Button>
+=======
+  variant="normal"
+  onClick={handleAddNote}
+  className="bg-blue-500 hover:bg-blue-600 text-white"
+  disabled={isSubmitting || !newNote.trim()}
+>
+  {isSubmitting ? (
+    <div className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
+  ) : (
+    <Plus className="w-4 h-4" />
+  )}
+  <span>Agregar</span>
+</Button>
+
+>>>>>>> 264be574fa9db2ca7c87c3d8b1e8ddad2d870b25
                 </div>
                 <div className="flex flex-wrap gap-2">
                   {Object.entries(categoryLabels).map(([category, label]) => (
@@ -528,7 +589,11 @@ const PanelAgenda: React.FC<PanelAgendaProps> = ({
               </div>
 
               {/* Lista de notas */}
+<<<<<<< HEAD
               <div className="space-y-4 overflow-y-auto pr-2 custom-scrollbar flex-1">
+=======
+              <div className="space-y-4">
+>>>>>>> 264be574fa9db2ca7c87c3d8b1e8ddad2d870b25
                 {notesContext.loading && !safeNotes.length ? (
                   <div className="text-center py-8">
                     <div className="w-8 h-8 border-4 border-blue-500 border-t-transparent rounded-full animate-spin mx-auto mb-4"></div>
@@ -663,6 +728,7 @@ const PanelAgenda: React.FC<PanelAgendaProps> = ({
         )}
       </AnimatePresence>
       
+<<<<<<< HEAD
       {/* Modal para nuevo evento (existente) */}
       {mostrarFormularioEvento && (
         <div className="modal-overlay fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
@@ -843,3 +909,185 @@ const PanelAgenda: React.FC<PanelAgendaProps> = ({
 };
 
 export default PanelAgenda;
+=======
+        {/* Modal para nuevo evento (existente) */}
+        {mostrarFormularioEvento && (
+          <div className="modal-overlay fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              className="modal bg-white dark:bg-gray-800 rounded-lg shadow-xl p-6 max-w-md w-full mx-4"
+            >
+              <h3 className="text-xl font-bold text-gray-800 dark:text-white mb-4">Nuevo Evento</h3>
+              <div className="space-y-4">
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Título</label>
+                  <input
+                    type="text"
+                    placeholder="Título del evento"
+                    value={nuevoEvento.titulo || ''}
+                    onChange={e => setNuevoEvento({ ...nuevoEvento, titulo: e.target.value })}
+                    className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md bg-white dark:bg-gray-700 text-gray-800 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  />
+                </div>
+                
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Hora</label>
+                  <input
+                    type="time"
+                    value={nuevoEvento.hora || ''}
+                    onChange={e => setNuevoEvento({ ...nuevoEvento, hora: e.target.value })}
+                    className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md bg-white dark:bg-gray-700 text-gray-800 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  />
+                </div>
+                
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Tipo</label>
+                  <select
+                    value={nuevoEvento.tipo || 'entrenamiento'}
+                    onChange={e => setNuevoEvento({ ...nuevoEvento, tipo: e.target.value as any })}
+                    className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md bg-white dark:bg-gray-700 text-gray-800 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  >
+                    <option value="entrenamiento">Entrenamiento</option>
+                    <option value="nutricion">Nutrición</option>
+                    <option value="finanzas">Finanzas</option>
+                    <option value="otro">Otro</option>
+                  </select>
+                </div>
+                
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Descripción (opcional)</label>
+                  <textarea
+                    placeholder="Descripción del evento"
+                    value={nuevoEvento.descripcion || ''}
+                    onChange={e => setNuevoEvento({ ...nuevoEvento, descripcion: e.target.value })}
+                    className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md bg-white dark:bg-gray-700 text-gray-800 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-500 min-h-[100px]"
+                  />
+                </div>
+                
+                <label className="flex items-center space-x-2 cursor-pointer">
+                  <input
+                    type="checkbox"
+                    checked={nuevoEvento.esDelEntrenador || false}
+                    onChange={e => setNuevoEvento({ ...nuevoEvento, esDelEntrenador: e.target.checked })}
+                    className="form-checkbox h-5 w-5 text-blue-500 rounded border-gray-300 focus:ring-blue-500"
+                  />
+                  <span className="text-gray-700 dark:text-gray-300">Evento del entrenador</span>
+                </label>
+              </div>
+              
+              <div className="modal-actions flex justify-end space-x-3 mt-6">
+                <Button
+                  onClick={() => setMostrarFormularioEvento(false)}
+                  className="btn-cancelar bg-gray-200 hover:bg-gray-300 text-gray-800 px-4 py-2 rounded-md transition-all"
+                >
+                  <X size={18} className="mr-2" />
+                  Cancelar
+                </Button>
+                <Button 
+                  onClick={agregarEvento} 
+                  className="btn-guardar bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-md transition-all"
+                >
+                  <Check size={18} className="mr-2" />
+                  Guardar
+                </Button>
+              </div>
+            </motion.div>
+          </div>
+        )}
+  
+        {/* Nuevo popup de evento usando el componente externo */}
+        {mostrarPopupEvento && (
+          <EventoPopup 
+            onClose={() => setMostrarPopupEvento(false)}
+            onSave={handleCrearEvento}
+            fechaSeleccionada={selectedDate}
+          />
+        )}
+  
+        {/* Modal para nueva nota */}
+        {mostrarFormularioNota && (
+          <div className="modal-overlay fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              className="modal bg-white dark:bg-gray-800 rounded-lg shadow-xl p-6 max-w-md w-full mx-4"
+            >
+              <h3 className="text-xl font-bold text-gray-800 dark:text-white mb-4">Nueva Nota</h3>
+              <div className="space-y-4">
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Título</label>
+                  <input
+                    type="text"
+                    placeholder="Título de la nota"
+                    value={nuevaNota.titulo || ''}
+                    onChange={e => setNuevaNota({ ...nuevaNota, titulo: e.target.value })}
+                    className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md bg-white dark:bg-gray-700 text-gray-800 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  />
+                </div>
+                
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Categoría</label>
+                  <select
+                    value={nuevaNota.categoria || 'general'}
+                    onChange={e => setNuevaNota({ ...nuevaNota, categoria: e.target.value as any })}
+                    className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md bg-white dark:bg-gray-700 text-gray-800 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  >
+                    {categoriasNotas.map(cat => (
+                      <option key={cat.valor} value={cat.valor}>
+                        {cat.valor.charAt(0).toUpperCase() + cat.valor.slice(1)}
+                      </option>
+                    ))}
+                  </select>
+                </div>
+                
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Contenido</label>
+                  <textarea
+                    placeholder="Contenido de la nota"
+                    value={nuevaNota.contenido || ''}
+                    onChange={e => setNuevaNota({ ...nuevaNota, contenido: e.target.value })}
+                    className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md bg-white dark:bg-gray-700 text-gray-800 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-500 min-h-[120px]"
+                  />
+                </div>
+                
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Tags (separados por comas)</label>
+                  <input
+                    type="text"
+                    placeholder="ej: importante, seguimiento, revisión"
+                    value={nuevaNota.tags?.join(', ') || ''}
+                    onChange={e => setNuevaNota({
+                      ...nuevaNota,
+                      tags: e.target.value.split(',').map(tag => tag.trim()).filter(Boolean)
+                    })}
+                    className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md bg-white dark:bg-gray-700 text-gray-800 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  />
+                </div>
+              </div>
+              
+              <div className="modal-actions flex justify-end space-x-3 mt-6">
+                <Button
+                  onClick={() => setMostrarFormularioNota(false)}
+                  className="btn-cancelar bg-gray-200 hover:bg-gray-300 text-gray-800 px-4 py-2 rounded-md transition-all"
+                >
+                  <X size={18} className="mr-2" />
+                  Cancelar
+                </Button>
+                <Button 
+                  onClick={agregarNota} 
+                  className="btn-guardar bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-md transition-all"
+                >
+                  <Check size={18} className="mr-2" />
+                  Guardar
+                </Button>
+              </div>
+            </motion.div>
+          </div>
+        )}
+      </div>
+    );
+  };
+  
+  export default PanelAgenda;
+>>>>>>> 264be574fa9db2ca7c87c3d8b1e8ddad2d870b25

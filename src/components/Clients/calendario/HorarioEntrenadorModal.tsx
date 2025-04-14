@@ -67,7 +67,11 @@ export default function HorarioEntrenadorModal({ onClose }: HorarioEntrenadorMod
         }
         
         // Make the API request
+<<<<<<< HEAD
         const response = await fetch('https://fitoffice2-ff8035a9df10.herokuapp.com/api/horarios', {
+=======
+        const response = await fetch('https://fitoffice-a7ed6ea26ba4.herokuapp.com/api/horarios', {
+>>>>>>> 264be574fa9db2ca7c87c3d8b1e8ddad2d870b25
           method: 'GET',
           headers: {
             'Content-Type': 'application/json',
@@ -148,8 +152,13 @@ export default function HorarioEntrenadorModal({ onClose }: HorarioEntrenadorMod
       // Always use PUT if we have a scheduleId
       const method = scheduleId ? 'PUT' : 'POST';
       const url = scheduleId 
+<<<<<<< HEAD
         ? `https://fitoffice2-ff8035a9df10.herokuapp.com/api/horarios/${scheduleId}`
         : 'https://fitoffice2-ff8035a9df10.herokuapp.com/api/horarios';
+=======
+        ? `https://fitoffice-a7ed6ea26ba4.herokuapp.com/api/horarios/${scheduleId}`
+        : 'https://fitoffice-a7ed6ea26ba4.herokuapp.com/api/horarios';
+>>>>>>> 264be574fa9db2ca7c87c3d8b1e8ddad2d870b25
       
       console.log(`Making ${method} request to ${url}`);
       

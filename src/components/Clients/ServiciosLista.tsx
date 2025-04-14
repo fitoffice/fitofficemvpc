@@ -87,7 +87,16 @@ const categoriasServicios = [
     tipo: 'Pack de Citas',
     icono: <Clock style={{ color: '#4a90e2' }} />,
   },
+<<<<<<< HEAD
 
+=======
+  {
+    id: 'productos',
+    titulo: 'Productos',
+    tipo: 'Productos',
+    icono: <Package style={{ color: '#4a90e2' }} />,
+  },
+>>>>>>> 264be574fa9db2ca7c87c3d8b1e8ddad2d870b25
 ];
 
 interface ServiciosListaProps {
@@ -189,6 +198,7 @@ const ServiciosLista: React.FC<ServiciosListaProps> = ({
       let endpoint = '';
       switch (categoriaActiva) {
         case 'citas':
+<<<<<<< HEAD
           endpoint = 'https://fitoffice2-ff8035a9df10.herokuapp.com/api/servicios/pack-citas';
           break;
         case 'clases-grupales':
@@ -200,6 +210,19 @@ const ServiciosLista: React.FC<ServiciosListaProps> = ({
           break;
         default:
           endpoint = 'https://fitoffice2-ff8035a9df10.herokuapp.com/api/servicios/services';
+=======
+          endpoint = 'https://fitoffice-a7ed6ea26ba4.herokuapp.com/api/servicios/pack-citas';
+          break;
+        case 'clases-grupales':
+          endpoint = 'https://fitoffice-a7ed6ea26ba4.herokuapp.com/api/servicios/grupal';
+          break;
+        case 'asesorias':
+        case 'suscripciones':
+          endpoint = 'https://fitoffice-a7ed6ea26ba4.herokuapp.com/api/servicios/services';
+          break;
+        default:
+          endpoint = 'https://fitoffice-a7ed6ea26ba4.herokuapp.com/api/servicios/services';
+>>>>>>> 264be574fa9db2ca7c87c3d8b1e8ddad2d870b25
       }
 
       const response = await fetch(endpoint, {
@@ -250,7 +273,11 @@ const ServiciosLista: React.FC<ServiciosListaProps> = ({
         throw new Error('No se encontró el token de autenticación');
       }
 
+<<<<<<< HEAD
       const response = await fetch(`https://fitoffice2-ff8035a9df10.herokuapp.com/api/servicios/services/${servicioId}`, {
+=======
+      const response = await fetch(`https://fitoffice-a7ed6ea26ba4.herokuapp.com/api/servicios/services/${servicioId}`, {
+>>>>>>> 264be574fa9db2ca7c87c3d8b1e8ddad2d870b25
         method: 'DELETE',
         headers: {
           'Authorization': `Bearer ${token}`,
@@ -278,7 +305,11 @@ const ServiciosLista: React.FC<ServiciosListaProps> = ({
         throw new Error('No se encontró el token de autenticación');
       }
 
+<<<<<<< HEAD
       const response = await fetch(`https://fitoffice2-ff8035a9df10.herokuapp.com/api/servicios/paymentplans/${planId}`, {
+=======
+      const response = await fetch(`https://fitoffice-a7ed6ea26ba4.herokuapp.com/api/servicios/paymentplans/${planId}`, {
+>>>>>>> 264be574fa9db2ca7c87c3d8b1e8ddad2d870b25
         method: 'DELETE',
         headers: {
           'Content-Type': 'application/json',
@@ -316,7 +347,11 @@ const ServiciosLista: React.FC<ServiciosListaProps> = ({
           throw new Error('No se encontró el token de autenticación');
         }
         
+<<<<<<< HEAD
         const response = await fetch('https://fitoffice2-ff8035a9df10.herokuapp.com/api/servicios/services/tipo/Producto', {
+=======
+        const response = await fetch('https://fitoffice-a7ed6ea26ba4.herokuapp.com/api/servicios/services/tipo/Producto', {
+>>>>>>> 264be574fa9db2ca7c87c3d8b1e8ddad2d870b25
           headers: {
             'Authorization': `Bearer ${token}`,
           },
@@ -354,7 +389,11 @@ const ServiciosLista: React.FC<ServiciosListaProps> = ({
       }
 
       const encodedTipo = encodeURIComponent(tipo);
+<<<<<<< HEAD
       const response = await fetch(`https://fitoffice2-ff8035a9df10.herokuapp.com/api/servicios/services/tipo/${encodedTipo}`, {
+=======
+      const response = await fetch(`https://fitoffice-a7ed6ea26ba4.herokuapp.com/api/servicios/services/tipo/${encodedTipo}`, {
+>>>>>>> 264be574fa9db2ca7c87c3d8b1e8ddad2d870b25
         headers: {
           'Authorization': `Bearer ${token}`,
         },

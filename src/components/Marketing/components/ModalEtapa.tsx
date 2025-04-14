@@ -82,7 +82,11 @@ export function ModalEtapa({ isOpen, onClose, onSave, segmentosSeleccionados }: 
       });
       
       // Send the three inputs as separate fields to the specified endpoint
+<<<<<<< HEAD
       const response = await axios.post('https://fitoffice2-ff8035a9df10.herokuapp.com/api/campanas-correo/generar-correo-ia', { 
+=======
+      const response = await axios.post('https://fitoffice-a7ed6ea26ba4.herokuapp.com/api/campanas-correo/generar-correo-ia', { 
+>>>>>>> 264be574fa9db2ca7c87c3d8b1e8ddad2d870b25
         tematica,
         tono,
         instrucciones

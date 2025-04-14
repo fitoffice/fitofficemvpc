@@ -15,7 +15,10 @@ import Button from './Button';
 import { Exercise, Period, getWeekAndDay } from './utils/estadisticasUtils';
 import { useExercise } from '../../../contexts/ExerciseContext';
 import EditExercisePopup from '../../modals/EditExercisePopup';
+<<<<<<< HEAD
 import ConfirmApplyPeriodModal from './ConfirmApplyPeriodModal';
+=======
+>>>>>>> 264be574fa9db2ca7c87c3d8b1e8ddad2d870b25
 
 interface PeriodoItemProps {
   periodo: Period;
@@ -102,9 +105,12 @@ const PeriodoItem: React.FC<PeriodoItemProps> = ({
     setEjerciciosState(periodo.exercises || []);
   }, [periodo.exercises]);
 
+<<<<<<< HEAD
   // Nuevo estado para el modal de Confirmación de Aplicar Periodo
   const [isApplyPeriodModalOpen, setIsApplyPeriodModalOpen] = useState(false);
 
+=======
+>>>>>>> 264be574fa9db2ca7c87c3d8b1e8ddad2d870b25
   // Cuando se detecta un ejercicio pendiente que pertenece a este período,
   // actualizamos la lista local (si ya existe lo actualizamos, si no, lo agregamos)
   useEffect(() => {
@@ -252,7 +258,11 @@ const PeriodoItem: React.FC<PeriodoItemProps> = ({
       if (!token) {
         throw new Error('No se encontró el token de autenticación');
       }
+<<<<<<< HEAD
       const response = await fetch('https://fitofficecrm-7d2801a52c4c.herokuapp.com/api/exercises', {
+=======
+      const response = await fetch('https://fitoffice-a7ed6ea26ba4.herokuapp.com/api/exercises', {
+>>>>>>> 264be574fa9db2ca7c87c3d8b1e8ddad2d870b25
         method: 'GET',
         headers: {
           'Content-Type': 'application/json',
@@ -289,7 +299,11 @@ const PeriodoItem: React.FC<PeriodoItemProps> = ({
     try {
       const token = localStorage.getItem('token');
       if (!token) throw new Error('No se encontró el token de autenticación');
+<<<<<<< HEAD
       const apiUrl = `https://fitofficecrm-7d2801a52c4c.herokuapp.com/api/plannings/${periodo.planningId}/periodos/${periodo.id}/ejercicios`;
+=======
+      const apiUrl = `https://fitoffice-a7ed6ea26ba4.herokuapp.com/api/plannings/${periodo.planningId}/periodos/${periodo.id}/ejercicios`;
+>>>>>>> 264be574fa9db2ca7c87c3d8b1e8ddad2d870b25
       const exerciseData = {
         ejercicioId: completeExercise.id,
         porcentaje: completeExercise.porcentaje || 0,
@@ -536,7 +550,34 @@ const PeriodoItem: React.FC<PeriodoItemProps> = ({
             size="sm"
             onClick={(e) => {
               e.stopPropagation();
+<<<<<<< HEAD
               setIsApplyPeriodModalOpen(true);
+=======
+              const sendPeriodRequest = async () => {
+                try {
+                  const token = localStorage.getItem('token');
+                  if (!token) throw new Error('No se encontró el token de autenticación');
+                  const apiUrl = `https://fitoffice-a7ed6ea26ba4.herokuapp.com/api/plannings/${periodo.planningId}/periodos/${periodo.id}/aplicar-completo`;
+                  const response = await fetch(apiUrl, {
+                    method: 'POST',
+                    headers: {
+                      'Content-Type': 'application/json',
+                      'Authorization': `Bearer ${token}`
+                    }
+                  });
+                  if (!response.ok) {
+                    const errorData = await response.json();
+                    throw new Error(errorData.mensaje || `Error al aplicar periodo: ${response.status}`);
+                  }
+                  handleApplyPeriod(periodo.id);
+                  alert('Periodo aplicado correctamente');
+                } catch (error) {
+                  console.error('Error al aplicar periodo:', error);
+                  alert(error instanceof Error ? error.message : 'Error desconocido al aplicar periodo');
+                }
+              };
+              sendPeriodRequest();
+>>>>>>> 264be574fa9db2ca7c87c3d8b1e8ddad2d870b25
             }}
             className="flex items-center gap-1"
           >
@@ -762,7 +803,11 @@ const PeriodoItem: React.FC<PeriodoItemProps> = ({
                                 try {
                                   const token = localStorage.getItem('token');
                                   if (!token) throw new Error('No se encontró el token de autenticación');
+<<<<<<< HEAD
                                   const apiUrl = `https://fitofficecrm-7d2801a52c4c.herokuapp.com/api/plannings/${periodo.planningId}/periodos/${periodo.id}/aplicar/${ejercicio.id}/`;
+=======
+                                  const apiUrl = `https://fitoffice-a7ed6ea26ba4.herokuapp.com/api/plannings/${periodo.planningId}/periodos/${periodo.id}/aplicar/${ejercicio.id}/`;
+>>>>>>> 264be574fa9db2ca7c87c3d8b1e8ddad2d870b25
                                   const response = await fetch(apiUrl, {
                                     method: 'POST',
                                     headers: {
@@ -833,7 +878,11 @@ const PeriodoItem: React.FC<PeriodoItemProps> = ({
                                   try {
                                     const token = localStorage.getItem('token');
                                     if (!token) throw new Error('No se encontró el token de autenticación');
+<<<<<<< HEAD
                                     const response = await fetch('https://fitofficecrm-7d2801a52c4c.herokuapp.com/api/planning/apply-exercise', {
+=======
+                                    const response = await fetch('https://fitoffice-a7ed6ea26ba4.herokuapp.com/api/planning/apply-exercise', {
+>>>>>>> 264be574fa9db2ca7c87c3d8b1e8ddad2d870b25
                                       method: 'POST',
                                       headers: {
                                         'Content-Type': 'application/json',
@@ -946,7 +995,11 @@ const PeriodoItem: React.FC<PeriodoItemProps> = ({
                                     try {
                                       const token = localStorage.getItem('token');
                                       if (!token) throw new Error('No se encontró el token de autenticación');
+<<<<<<< HEAD
                                       const response = await fetch('https://fitofficecrm-7d2801a52c4c.herokuapp.com/api/planning/apply-exercise', {
+=======
+                                      const response = await fetch('https://fitoffice-a7ed6ea26ba4.herokuapp.com/api/planning/apply-exercise', {
+>>>>>>> 264be574fa9db2ca7c87c3d8b1e8ddad2d870b25
                                         method: 'POST',
                                         headers: {
                                           'Content-Type': 'application/json',
@@ -1000,6 +1053,7 @@ const PeriodoItem: React.FC<PeriodoItemProps> = ({
           )}
         </div>
       )}
+<<<<<<< HEAD
 
       {/* Condicionalmente se muestra el modal de Confirmación para Aplicar Periodo */}
       {isApplyPeriodModalOpen && (
@@ -1011,6 +1065,8 @@ const PeriodoItem: React.FC<PeriodoItemProps> = ({
           onCancel={() => setIsApplyPeriodModalOpen(false)}
         />
       )}
+=======
+>>>>>>> 264be574fa9db2ca7c87c3d8b1e8ddad2d870b25
     </div>
   );
 };

@@ -116,7 +116,11 @@ const VistaCompleja: React.FC<VistaComplejaProps> = ({
       }
 
       console.log('🔑 Token found, making API request...');
+<<<<<<< HEAD
       const response = await fetch(`https://fitoffice2-ff8035a9df10.herokuapp.com/api/plannings/${planningId}/exercises`, {
+=======
+      const response = await fetch(`https://fitoffice-a7ed6ea26ba4.herokuapp.com/api/plannings/${planningId}/exercises`, {
+>>>>>>> 264be574fa9db2ca7c87c3d8b1e8ddad2d870b25
         method: 'GET',
         headers: {
           'Authorization': `Bearer ${token}`,
@@ -214,7 +218,11 @@ const VistaCompleja: React.FC<VistaComplejaProps> = ({
 
       console.log('📦 Complete session data being sent:', sessionData);
 
+<<<<<<< HEAD
       const response = await axios.post('https://fitoffice2-ff8035a9df10.herokuapp.com/api/plannings/session', sessionData, {
+=======
+      const response = await axios.post('https://fitoffice-a7ed6ea26ba4.herokuapp.com/api/plannings/session', sessionData, {
+>>>>>>> 264be574fa9db2ca7c87c3d8b1e8ddad2d870b25
         headers: {
           'Content-Type': 'application/json',
           Authorization: `Bearer ${localStorage.getItem('token')}`
@@ -356,7 +364,11 @@ const VistaCompleja: React.FC<VistaComplejaProps> = ({
         throw new Error('No se encontró el token de autenticación');
       }
 
+<<<<<<< HEAD
       const url = `https://fitoffice2-ff8035a9df10.herokuapp.com/api/plannings/session/${sessionId}`;
+=======
+      const url = `https://fitoffice-a7ed6ea26ba4.herokuapp.com/api/plannings/session/${sessionId}`;
+>>>>>>> 264be574fa9db2ca7c87c3d8b1e8ddad2d870b25
       console.log('URL de eliminación:', url);
 
       const response = await fetch(url, {
